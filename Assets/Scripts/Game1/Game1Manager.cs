@@ -126,9 +126,12 @@ namespace Game1
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             var worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             var results = new List<Collider2D>();
+            var contactFilter = new ContactFilter2D();
+            contactFilter.NoFilter();
+
             var hits = Physics2D.OverlapPoint(
                 worldPoint,
-                ContactFilter2D.NoFilter,
+                contactFilter,
                 results
             );
             if (hits == 0)
@@ -138,7 +141,10 @@ namespace Game1
             }
 
             Misses.Hit();
-            hitInfo.transform.GetComponent<Click>().Clicked();
+            foreach (var result in results)
+            {
+                result.GetComponent<Click>().Clicked();
+            }
         }
 
         private void GameOver()

@@ -16,20 +16,19 @@ namespace Game1
             Time = -3f;
             Lives = 3;
             _prevLives = Lives;
+            UpdateLives();
         }
 
         private void Update()
         {
-            if (Lives != _prevLives)
-            {
-                UpdateLives();
-            }
+            if (Lives != _prevLives) UpdateLives();
+
         }
 
         private void UpdateLives()
         {
             _prevLives = Lives;
-            lifeDisplay.text = 3;
+            lifeDisplay.text = $"Health: {Lives}";
         }
     }
 }

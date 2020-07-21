@@ -80,6 +80,8 @@ namespace Game2
 
             if (Input.anyKeyDown) OnClick();
 
+            if (Paused) return;
+
             _fillAmount += Time.deltaTime;
             circle.fillAmount = _fillAmount % 1;
             Debug.Log("!!!");

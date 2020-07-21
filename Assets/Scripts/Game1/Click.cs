@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game1
@@ -9,9 +10,14 @@ namespace Game1
         private void Awake()
         {
             _renderer = GetComponent<Renderer>();
+            _renderer.material.color = Color.HSVToRGB(0.66f, 1, 1);
+
+                _remainingLifeTime = StartLifeTime;
         }
 
-        public float Lifetime;
+        [HideInInspector, NonSerialized]
+        public float StartLifeTime;
+        private float _remainingLifeTime;
 
         void Update()
         {

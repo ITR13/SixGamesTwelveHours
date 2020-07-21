@@ -132,22 +132,27 @@ namespace Game2
             {
                 GameOver();
             }
+            audioSource.clip.SetData()
         }
 
-        private byte[] GenerateAudio(int ms, int falloutMs, float hz)
+        private float[] GenerateAudio(int ms, int falloutMs, float hz)
         {
             const int bps = 44100;
 
             var totalSize = bps * ms / 1000;
             var preFalloff = totalSize - falloutMs * bps / 1000;
-            var bytes = new byte[totalSize];
+            var bytes = new float[totalSize];
+
+            hz *= bps;
 
             for (var i = 0; i < preFalloff; i++)
             {
-                var t = i * Mathf.PI / hz;
+                var t = 2 * i * Mathf.PI / hz;
                 var h = Mathf.Sin(t);
-                bytes[i] = t;
+                bytes[i] = h;
             }
+
+            return hz;
         }
     }
 }

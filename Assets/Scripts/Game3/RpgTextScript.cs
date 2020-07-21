@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,8 +12,9 @@ namespace Game3
         public static RpgTextScript Instance { get; private set; };
 
         [SerializeField] private Button[] buttons;
+        [SerializeField] private TextMeshProUGUI[] buttonTexts;
         [SerializeField] private Button backButton;
-        [SerializeField] private Text text;
+        [SerializeField] private TextMeshProUGUI text;
         [SerializeField] private Button textButton;
 
         [SerializeField] private GameObject textGo;
@@ -34,14 +36,17 @@ namespace Game3
         }
 
         public void SetButtons(
-            string[] text,
+            string[] textToShow,
             Action[] actions,
             Action backAction
         )
         {
+            textGo.SetActive(false);
+            buttonParent.SetActive(true);
+
             for (var i = 0; i < 4; i++)
             {
-
+                buttonTexts[i].text = textToShow[i];
             }
 
 

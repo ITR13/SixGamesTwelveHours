@@ -8,21 +8,27 @@ namespace Game2
     {
         [SerializeField] private Image circle;
 
-        private float _gameTime;
+        private float _fillAmount;
 
         private void Awake()
         {
-            _gameTime = -3;
+            _fillAmount = -3;
         }
 
         private void Awake()
         {
-            _gameTime += Time.deltaTime;
-            circle.fillAmount = _gameTime % 1;
+            _fillAmount += Time.deltaTime;
+            circle.fillAmount = _fillAmount % 1;
 
-            if (_gameTime < 1) return;
+            if (_fillAmount < 1) return;
 
-            
+            _fillAmount -= 1;
+            ExpendClick();
+        }
+
+        private void ExpendClick()
+        {
+
         }
     }
 }

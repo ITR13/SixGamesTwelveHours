@@ -57,6 +57,7 @@ namespace Game2
         private int _warmup;
         private float _fillAmount;
         private ClickState _currentClickState;
+        public bool Paused { get; set; }
 
         private void Awake()
         {

@@ -24,6 +24,11 @@ namespace Game3
             RunAway,
         }
 
+        private IEnumerable WaitFor(out Action action)
+        {
+            while(wait)
+        }
+
         private IEnumerable IntroOutro()
         {
             // Intro

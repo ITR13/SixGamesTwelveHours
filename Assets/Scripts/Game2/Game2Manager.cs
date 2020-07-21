@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using TMPro;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -17,6 +18,7 @@ namespace Game2
         }
 
         [SerializeField] private Image circle;
+        [SerializeField] private TextMeshProUGUI scoreText;
 
         private float TotalError
         {

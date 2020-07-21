@@ -48,6 +48,11 @@ namespace Game3
             var state = FightState.Selecting;
             while (true)
             {
+                yield return SelectAttack(out var attack);
+                yield return ExecuteAttack(attack);
+
+                yield return BillyAttack();
+
                 switch (state)
                 {
                     case FightState.Selecting:

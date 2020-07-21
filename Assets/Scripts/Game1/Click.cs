@@ -15,8 +15,8 @@ namespace Game1
                 _remainingLifeTime = StartLifeTime;
         }
 
-        [HideInInspector, NonSerialized]
-        public float StartLifeTime;
+        [NonSerialized]
+        public float StartLifeTime = 20;
         private float _remainingLifeTime;
 
         void Update()
@@ -27,12 +27,19 @@ namespace Game1
                 1,
                 1
             );
+        }
 
+        private void FixedUpdate()
+        {
+            if (_remainingLifeTime <= 0.02f)
+            {
+                Destroy(gameObject);
+            }
         }
 
         private void OnMouseDown()
         {
-            Debug.Log("Test!");
+            Destroy(gameObject);
         }
 
         private void OnDestroy()

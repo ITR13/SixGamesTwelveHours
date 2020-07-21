@@ -92,7 +92,7 @@ namespace Game3
             if (_selectedAttack != Attack.Attack) yield break;
 
             RpgTextScript.Instance.SetButtons(
-                new[] { "Milk [1]", "Pretty Good [3]", "Banana", "Vibe" },
+                new[] { "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]" },
                 new Action[]
                 {
                     () => _selectedAttack = Attack.Attack,

@@ -33,9 +33,11 @@ namespace Game1
         {
             _count++;
             _fadeTimer = 0;
+            new string(" X", _count - 1);
 
             if (_count < 3) return;
             _fadeTime = 3;
+
         }
 
         public static void Reset()

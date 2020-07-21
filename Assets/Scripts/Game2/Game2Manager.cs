@@ -152,6 +152,14 @@ namespace Game2
                 bytes[i] = h;
             }
 
+            for (var i = preFalloff; i < totalSize; i++)
+            {
+                var t = 2 * i * Mathf.PI / hz;
+                var h = Mathf.Sin(t);
+                var scale = 1 - ()
+                bytes[i] = h;
+            }
+
             return hz;
         }
     }

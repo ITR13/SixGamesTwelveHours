@@ -1,3 +1,4 @@
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,7 +17,12 @@ namespace Game2
 
         private void Awake()
         {
-            _gameTime
+            _gameTime += Time.deltaTime;
+            circle.fillAmount = _gameTime % 1;
+
+            if (_gameTime < 1) return;
+
+            
         }
     }
 }

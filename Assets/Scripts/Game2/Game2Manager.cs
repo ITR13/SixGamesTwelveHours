@@ -140,8 +140,10 @@ namespace Game2
             const int bps = 44100;
 
             var totalSize = bps * ms / 1000;
-            var preFalloff = totalSize - falloutMs * bps / 1000;
-            var bytes = new float[totalSize];
+            var falloffSize = falloutMs * bps / 1000;
+            var preFalloff = totalSize - falloffSize;
+
+            var data = new float[totalSize];
 
             hz *= bps;
 
@@ -149,18 +151,18 @@ namespace Game2
             {
                 var t = 2 * i * Mathf.PI / hz;
                 var h = Mathf.Sin(t);
-                bytes[i] = h;
+                data[i] = h;
             }
 
-            for (var i = preFalloff; i < totalSize; i++)
+            for (var i = 0; i < falloffSize; i++)
             {
                 var t = 2 * i * Mathf.PI / hz;
                 var h = Mathf.Sin(t);
-                var scale = 1 - ()
-                bytes[i] = h;
+                var scale = 1 - i / (float)falloffSize;
+                data[i+preFalloff] = h * scale;
             }
 
-            return hz;
+            return data;
         }
     }
 }

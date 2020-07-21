@@ -42,11 +42,10 @@ namespace Game3
 
         private IEnumerable MainLoop()
         {
-            var state = FightState.Selecting;
             while (true)
             {
-                yield return SelectAttack(out var attack);
-                yield return ExecuteAttack(attack);
+                yield return SelectAttack();
+                yield return ExecuteAttack();
                 if (enemy.Health <= 0)
                 {
                     Debug.Log("You won!");
@@ -62,9 +61,12 @@ namespace Game3
             }
         }
 
-        private IEnumerable SelectAttack(out Attacks attack)
+        private IEnumerable SelectAttack()
         {
-            yield return null;
+            RpgTextScript.Instance.SetButtons(
+                new []{"Attack", "Charge", "Defend", "Run away"},
+
+            );
         }
     }
 }

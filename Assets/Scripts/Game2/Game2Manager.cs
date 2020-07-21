@@ -44,7 +44,7 @@ namespace Game2
         {
             _warmup = -2;
             _fillAmount = 0;
-            _currentClickState = ClickState.WaitingForClick;
+            _currentClickState = ClickState.WaitingForPreClick;
         }
 
         private void Update()

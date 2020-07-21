@@ -6,10 +6,12 @@ namespace Game4
     public class HackAndSlasher : MonoBehaviour
     {
         private Rigidbody2D rigidBody;
+        private new Camera camera;
 
         private void Awake()
         {
             rigidBody = GetComponent<Rigidbody2D>();
+            camera = Camera.main;
         }
 
         private float horizontal;
@@ -23,6 +25,7 @@ namespace Game4
             {
                 jumpIfGrounded = 0.2f;
             }
+
         }
 
         private void FixedUpdate()
@@ -38,7 +41,7 @@ namespace Game4
             {
                 xForce = -dir * 2;
             }
-            else if (Mathf.Abs(dir) > 20)
+            else if (Mathf.Abs(dir) > 2)
             {
                 xForce = 0;
             }

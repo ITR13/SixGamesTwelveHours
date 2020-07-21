@@ -57,6 +57,10 @@ namespace Game3
                 backButton.gameObject.SetActive(false);
                 return;
             }
+
+            backButton.gameObject.SetActive(true);
+            backButton.onClick.RemoveAllListeners();
+            backButton.onClick.AddListener(new UnityAction(backAction));
         }
     }
 }

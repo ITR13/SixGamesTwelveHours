@@ -6,8 +6,9 @@ namespace Game1
     public class Misses : MonoBehaviour
     {
         private static Misses _misses;
-        private int _count;
+        private static int _count;
         private TextMeshProUGUI _text;
+        private float fadeTimer = 0;
 
         private void Awake()
         {
@@ -17,6 +18,19 @@ namespace Game1
             _text.text = "";
         }
 
-        public static void 
+        private void Update()
+        {
+
+        }
+
+        public static void Miss()
+        {
+
+        }
+
+        public static void Reset()
+        {
+            _text
+        }
     }
 }

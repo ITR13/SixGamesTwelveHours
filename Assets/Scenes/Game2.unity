@@ -428,6 +428,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   circle: {fileID: 662675635}
   scoreText: {fileID: 1801202405}
+  audioSource: {fileID: 1565461489}
 --- !u!82 &1565461489
 AudioSource:
   m_ObjectHideFlags: 0

@@ -67,6 +67,7 @@ namespace Game2
 
             if (_fillAmount < 1) return;
             _fillAmount -= 1;
+            PlayBeep();
 
             if (_warmup++ < 0) return;
             Debug.Log($"Filled!: {_currentClickState}");
@@ -138,7 +139,7 @@ namespace Game2
         private void PlayBeep()
         {
             var length = Mathf.FloorToInt(Mathf.Lerp(0.3f, 0.8f, _totalError) * 1000);
-            var clip = AudioClip.Create("beep", length, 0, 44100, false);
+            var clip = AudioClip.Create("beep", length, 1, 44100, false);
             clip.SetData(
                 GenerateAudio(
                     length,
@@ -147,6 +148,7 @@ namespace Game2
                 ),
                 0
             );
+            audioSource.PlayOneShot(clip);
         }
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)

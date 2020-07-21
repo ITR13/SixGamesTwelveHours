@@ -134,13 +134,17 @@ namespace Game2
             }
         }
 
-        private byte[] GenerateAudio(int ms, int fallout)
+        private byte[] GenerateAudio(int ms, int falloutMs)
         {
             const int bps = 44100;
-            var bytes = new byte[bps * ms / 1000];
-            for (var i = 0; i < ms - fallout; i++)
-            {
 
+            var totalSize = bps * ms / 1000;
+            var preFalloff = totalSize - falloutMs * bps / 1000;
+            var bytes = new byte[totalSize];
+
+            for (var i = 0; i < preFalloff; i++)
+            {
+                var t = float(i)
             }
         }
     }

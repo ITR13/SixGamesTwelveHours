@@ -40,8 +40,10 @@ namespace Game1
             Runtime = -3f;
             Lives = 3;
             Score = 0;
-
+            highscoreDisplay = PlayerPrefs.GetInt(HighscoreKey, 0);
         }
+
+        private const string HighscoreKey = nameof(Game1Manager) + ".Highscore";
 
         private void Update()
         {

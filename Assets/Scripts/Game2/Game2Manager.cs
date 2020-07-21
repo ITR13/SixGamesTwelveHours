@@ -86,6 +86,7 @@ namespace Game2
         private void OnClick()
         {
             if (_warmup < 0) return;
+            if (_warmup == 0 && _fillAmount < 0.5f) return;
 
             switch (_currentClickState)
             {

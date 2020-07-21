@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace Game3
@@ -22,7 +23,7 @@ namespace Game3
         [SerializeField] private RpgFighter player, enemy;
 
         private float billyAttack;
-        private int bananas;
+        private int bananas, prettyGoods;
 
         private Attack _selectedAttack;
 
@@ -30,6 +31,7 @@ namespace Game3
         {
             billyAttack = 0.02f;
             bananas = 0;
+            prettyGoods = 0;
         }
 
         private void Start()
@@ -114,6 +116,7 @@ namespace Game3
                     billyAttack *= 1.75f;
                     break;
                 case Attack.PrettyGood:
+                    if(player.Energy < 3)
                     yield return PrettyGoodAnim();
                     player.Health += 0.3f;
                     break;

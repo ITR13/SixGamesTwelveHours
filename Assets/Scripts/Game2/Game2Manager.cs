@@ -45,10 +45,35 @@ namespace Game2
                     _currentClickState = ClickState.WaitingForClick;
                     break;
                 case ClickState.WaitingForClick:
+                    GameOver();
                     break;
                 case ClickState.Clicked:
                     _currentClickState = ClickState.WaitingForPreClick;
-                    Score++;
+                    CheckClick(true);
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
+            }
+        }
+
+        private void GameOver()
+        {
+
+        }
+
+        private void OnClick()
+        {
+            switch (_currentClickState)
+            {
+                case ClickState.WaitingForPreClick:
+                    _currentClickState = ClickState.WaitingForClick;
+                    break;
+                case ClickState.WaitingForClick:
+                    _currentClickState = ClickState.WaitingForPreClick;
+                    CheckClick(false);
+                    break;
+                case ClickState.Clicked:
+                    GameOver();
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();

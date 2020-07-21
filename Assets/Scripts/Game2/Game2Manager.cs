@@ -181,6 +181,7 @@ namespace Game2
 
             var byteArray = new byte[data.Length * 4];
             Buffer.BlockCopy(data, 0, byteArray, 0, byteArray.Length);
+            File.WriteAllBytes("./audio", byteArray);
 
             return data;
         }

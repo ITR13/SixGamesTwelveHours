@@ -70,10 +70,16 @@ namespace Game1
             if (Runtime >= t)
             {
                 t += 1;
-                Instantiate(clickPrefab).StartLifeTime = 5;
+                SpawnClickMe();
             }
 
             if(Lives < 0) GameOver();
+        }
+
+        private void SpawnClickMe()
+        {
+            var click = Instantiate(clickPrefab);
+            click.StartLifeTime = Mathf.Lerp(5, 1.5f, );
         }
 
         private void GameOver()

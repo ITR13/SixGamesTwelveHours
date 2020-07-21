@@ -6,8 +6,11 @@ namespace Game1
     public class Game1Manager : MonoBehaviour
     {
         public static float Time { get; private set; }
+        public static int Score { get; set; }
+
         public static int Lives;
 
+        [SerializeField] private TextMeshProUGUI lifeDisplay;
         [SerializeField] private TextMeshProUGUI lifeDisplay;
         private static int _prevLives;
 

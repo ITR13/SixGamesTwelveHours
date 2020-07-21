@@ -31,15 +31,15 @@ namespace Game1
 
         private void FixedUpdate()
         {
-            if (_remainingLifeTime <= 0.02f)
-            {
-                Destroy(gameObject);
-            }
+            if (!(_remainingLifeTime <= 0.02f)) return;
+            Game1Manager.Lives--;
+            Destroy(gameObject);
         }
 
         private void OnMouseDown()
         {
             Destroy(gameObject);
+            Game1Manager.Score = ;
         }
 
         private void OnDestroy()

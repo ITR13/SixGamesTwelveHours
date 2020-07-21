@@ -554,7 +554,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07855c761318a164b8664117e00f170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeDisplay: {fileID: 0}
+  lifeDisplay: {fileID: 90307673}
 --- !u!4 &1275852470
 Transform:
   m_ObjectHideFlags: 0

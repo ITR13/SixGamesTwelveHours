@@ -49,7 +49,6 @@ namespace Game2
                     break;
                 case ClickState.Clicked:
                     _currentClickState = ClickState.WaitingForPreClick;
-                    CheckClick(true);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -67,6 +66,7 @@ namespace Game2
             {
                 case ClickState.WaitingForPreClick:
                     _currentClickState = ClickState.WaitingForClick;
+                    CheckClick(true);
                     break;
                 case ClickState.WaitingForClick:
                     _currentClickState = ClickState.WaitingForPreClick;
@@ -78,6 +78,11 @@ namespace Game2
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        private void CheckClick(bool pre)
+        {
+            var error = pre ? 1 - _fillAmount : _fillAmount;
         }
     }
 }

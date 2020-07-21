@@ -17,6 +17,7 @@ namespace Game1
             get => _score;
             set
             {
+                Debug.Log($"Score set to {Score}");
                 _instance.scoreDisplay.text = $"Score: {Score}";
                 _score = value;
             }
@@ -27,6 +28,7 @@ namespace Game1
             get => _prevLives;
             set
             {
+                Debug.Log($"Health set to {Score}");
                 _instance.lifeDisplay.text = $"HP: {Score}";
                 _prevLives = value;
             }

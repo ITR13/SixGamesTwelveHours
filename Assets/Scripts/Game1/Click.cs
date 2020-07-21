@@ -40,7 +40,7 @@ namespace Game1
         private void FixedUpdate()
         {
             if (Game1Manager.Paused) return;
-            if (!(_remainingLifeTime <= -0.02f)) return;
+            if (_remainingLifeTime > -0.02f) return;
             Game1Manager.Lives--;
             Destroy(gameObject);
         }

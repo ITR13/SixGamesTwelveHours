@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 namespace Game3
@@ -16,6 +17,7 @@ namespace Game3
             Selecting,
             Attacking,
             BillyAttacks,
+            Dead,
         }
 
         private enum SelectState
@@ -26,7 +28,17 @@ namespace Game3
 
         private enum AttackState
         {
+            Animation,
+            Health,
+            Text,
+        }
 
+        private IEnumerable MainLoop()
+        {
+            while (true)
+            {
+
+            }
         }
     }
 }

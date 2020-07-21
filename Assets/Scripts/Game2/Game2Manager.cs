@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -82,6 +83,7 @@ namespace Game2
         private void GameOver()
         {
             Time.timeScale = 0;
+            Debug.Log("Game Over");
         }
 
         private void OnClick()
@@ -113,6 +115,8 @@ namespace Game2
             var error = pre ? 1 - _fillAmount : _fillAmount;
             TotalError += error;
             Score++;
+
+            Debug.Log($"Error: {error}    Total: {TotalError}\nScore: {Score}");
 
             if (_totalError > 1)
             {

@@ -12,7 +12,7 @@ namespace Game2
 {
     public class Game2Manager : MonoBehaviour
     {
-        private const int Bps = 44100;
+        private const int Bps = 4410;
 
         private enum ClickState
         {
@@ -141,7 +141,7 @@ namespace Game2
 
         private void PlayBeep()
         {
-            var length = Mathf.FloorToInt(0.8f * 1000);
+            var length = Mathf.FloorToInt(0.5f * 1000);
             var clip = AudioClip.Create("beep", length * Bps, 1, Bps, false);
             clip.SetData(
                 GenerateAudio(
@@ -152,7 +152,6 @@ namespace Game2
                 0
             );
             audioSource.clip = clip;
-            SaveAudioClipToWav(clip, "./audio.wav");
             audioSource.Play();
         }
 
@@ -188,41 +187,6 @@ namespace Game2
             */
 
             return data;
-        }
-
-
-        static public void SaveAudioClipToWav(AudioClip audioClip, string filename)
-        {
-            FileStream fsWrite = File.Open(filename, FileMode.Create);
-
-            BinaryWriter bw = new BinaryWriter(fsWrite);
-
-            Byte[] header = { 82, 73, 70, 70, 22, 10, 4, 0, 87, 65, 86, 69, 102, 109, 116, 32 };
-            bw.Write(header);
-
-            Byte[] header2 = { 16, 0, 0, 0, 1, 0, 1, 0, 68, 172, 0, 0, 136, 88, 1, 0 };
-            bw.Write(header2);
-
-            Byte[] header3 = { 2, 0, 16, 0, 100, 97, 116, 97, 152, 9, 4, 0 };
-            bw.Write(header3);
-
-            float[] samples = new float[audioClip.samples];
-            audioClip.GetData(samples, 0);
-            int i = 0;
-
-            while (i < audioClip.samples)
-            {
-                int sampleInt = (int)(32000.0 * samples[i++]);
-
-                int msb = sampleInt / 256;
-                int lsb = sampleInt - (msb * 256);
-
-                bw.Write((Byte)lsb);
-                bw.Write((Byte)msb);
-            }
-
-            fsWrite.Close();
-
         }
     }
 }

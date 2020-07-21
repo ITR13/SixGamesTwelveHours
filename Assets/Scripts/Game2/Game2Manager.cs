@@ -25,6 +25,7 @@ namespace Game2
         [SerializeField] private GameObject subMenu;
         [SerializeField] private Image circle;
         [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private TextMeshProUGUI highscoreText;
         [SerializeField] private AudioSource audioSource;
 
         private static int Highscore
@@ -68,6 +69,8 @@ namespace Game2
 
             Score = 0;
             TotalError = 0;
+
+            highscoreText.text = Highscore.ToString();
         }
 
         private void Update()

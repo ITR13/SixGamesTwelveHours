@@ -23,10 +23,17 @@ namespace Game2
             set
             {
                 _totalError = value;
-
+                // Update something
             }
         }
 
+        public int Score
+        {
+            get => _score;
+            set => _score = value;
+        }
+
+        private int _score;
         private float _totalError;
         private int _warmup;
         private float _fillAmount;
@@ -101,6 +108,11 @@ namespace Game2
             var error = pre ? 1 - _fillAmount : _fillAmount;
             TotalError += error;
             Score++;
+
+            if (_totalError > 1)
+            {
+                GameOver();
+            }
         }
     }
 }

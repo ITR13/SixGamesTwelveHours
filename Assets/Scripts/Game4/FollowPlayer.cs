@@ -9,12 +9,13 @@ public class FollowPlayer : MonoBehaviour
 
     private void Awake()
     {
-        _offset = target.transform.position.x - transform.position.x;
+        _offset = transform.position.x - target.transform.position.x;
     }
 
     private void LateUpdate()
     {
         var pos = transform.position;
         pos.x = target.transform.position.x + _offset;
+        transform.position = pos;
     }
 }

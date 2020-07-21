@@ -40,14 +40,27 @@ namespace Game1
 
         private void FixedUpdate()
         {
+            if (_fade > 0)
+            {
+                _fade -= Time.deltaTime * 2;
+                if (_fade < 0)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+
+                _
+            }
+
             if (Game1Manager.Paused) return;
             if (_remainingLifeTime > -0.02f) return;
             Game1Manager.Lives--;
-            Destroy(gameObject);
+            _fade = 1f;
         }
 
         public void Clicked()
         {
+            if (_fade > 0) return;
             if (Game1Manager.Paused) return;
 
             Destroy(gameObject);

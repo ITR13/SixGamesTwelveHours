@@ -124,7 +124,7 @@ namespace Game1
         {
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             var worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (!Physics2D.Raycast(worldPoint, Vector3.forward, out var hitInfo))
+            if (!Physics2D.OverlapPoint(worldPoint, ContactFilter2D))
             {
                 Misses.Miss();
                 return;

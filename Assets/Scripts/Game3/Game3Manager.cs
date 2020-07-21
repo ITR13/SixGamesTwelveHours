@@ -121,6 +121,7 @@ namespace Game3
                 while (!back)
                 {
                     if (_selectedAttack != Attack.Attack) yield break;
+                    yield return null;
                 }
             }
         }

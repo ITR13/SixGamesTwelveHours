@@ -13,6 +13,13 @@ namespace Game3
 
         private enum FightState
         {
+            Animation,
+            Selecting,
+            ShowingText,
+        }
+
+        private enum SelectState
+        {
 
         }
     }

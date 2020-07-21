@@ -150,37 +150,43 @@ namespace Game3
 
         private IEnumerable RunAwayAnim()
         {
-            throw new NotImplementedException();
+            yield break;
         }
 
-        private object DefendAnim()
+        private IEnumerable DefendAnim()
         {
-            throw new NotImplementedException();
+            yield break;
         }
 
-        private object ChargeAnim()
+        private IEnumerable ChargeAnim()
         {
-            throw new NotImplementedException();
+            yield break;
         }
 
-        private object KarlsonVibeAnim()
+        private IEnumerable KarlsonVibeAnim()
         {
-            throw new NotImplementedException();
+            yield break;
         }
 
-        private object BananaAnim()
+        private IEnumerable BananaAnim()
         {
-            throw new NotImplementedException();
+            yield break;
         }
 
-        private object PrettyGoodAnim()
+        private IEnumerable PrettyGoodAnim()
         {
-            throw new NotImplementedException();
+            yield break;
         }
 
-        private object MilkAnim()
+        private IEnumerable MilkAnim()
         {
-            throw new NotImplementedException();
+            yield break;
+        }
+
+        private IEnumerable BillyAttack()
+        {
+            player.Health -= billyAttack;
+
         }
     }
 }

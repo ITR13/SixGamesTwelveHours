@@ -1,6 +1,7 @@
 using System;
 using System.ComponentModel;
 using TMPro;
+using UnityEditor.PackageManager;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -68,7 +69,9 @@ namespace Game2
             _fillAmount -= 1;
             audioSource.clip.SetData(
                 GenerateAudio(
-                    Mathf.Lerp(0.3f, 0.8f),
+                    Mathf.Lerp(0.3f, 0.8f,_totalError),
+                    0.2f,
+                    440 / Mathf.Pow(-2, _totalError * 10)
                 )
             );
 

@@ -147,7 +147,7 @@ namespace Game2
                 GenerateAudio(
                     length,
                     200,
-                    440
+                    1
                 ),
                 0
             );

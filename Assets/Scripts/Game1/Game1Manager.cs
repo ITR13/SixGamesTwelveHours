@@ -58,7 +58,11 @@ namespace Game1
         private void Update()
         {
             Runtime += Time.deltaTime;
-            
+            if (Runtime >= t)
+            {
+                t += 1;
+                Instantiate(clickPrefab);
+            }
         }
 
         private void GameOver()

@@ -383,7 +383,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -20, y: -20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &443211599
 MonoBehaviour:
@@ -405,7 +405,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Lorem ipsum sadjksd\xF8fksnd\xF8afljs\xF8dlfkjs\xF8lfdknj"
+  m_text: Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+    doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis
+    et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem
+    quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+    dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
+    qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
+    non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat
+    voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis
+    suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel
+    eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur,
+    vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -435,15 +445,15 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 110.4
-  m_fontSizeBase: 110.4
+  m_fontSize: 92.6
+  m_fontSizeBase: 92.6
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
-  m_VerticalAlignment: 512
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
@@ -454,8 +464,8 @@ MonoBehaviour:
   m_charWidthMaxAdj: 0
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_overflowMode: 3
+  m_firstOverflowCharacterIndex: 98
   m_linkedTextComponent: {fileID: 0}
   parentLinkedComponent: {fileID: 0}
   m_isTextTruncated: 0
@@ -479,12 +489,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 443211599}
-    characterCount: 45
+    characterCount: 102
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 13
+    wordCount: 14
     linkCount: 0
-    lineCount: 3
+    lineCount: 4
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0

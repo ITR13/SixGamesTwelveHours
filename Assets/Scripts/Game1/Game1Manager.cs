@@ -62,6 +62,9 @@ namespace Game1
             Lives = 3;
             Score = 0;
             highscoreDisplay.text = $"Highscore: {Highscore}";
+
+            _spawnTimer = 0f;
+            _healthTimer = 0f;
         }
 
         private void Update()
@@ -69,6 +72,8 @@ namespace Game1
             if (Paused) return;
 
             Runtime += Time.deltaTime;
+            if(Runtime < 0f) return;
+
             _spawnTimer -= Time.deltaTime;
             _healthTimer -= Time.deltaTime;
 
@@ -80,7 +85,11 @@ namespace Game1
 
         private void SpawnClickMe()
         {
-            _spawnTimer = Mathf.Lerp(7f, 1f, Runtime / 60f);
+            _spawnTimer = Mathf.Lerp(
+                4f,
+                1f,
+                Mathf.Sqrt(Mathf.Abs(Runtime)) / 60f
+            );
 
             var click = Instantiate(clickPrefab);
             click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);

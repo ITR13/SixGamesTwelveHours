@@ -47,10 +47,10 @@ namespace Game3
             }
         }
 
-        private float _size;
-        public float Size =>
+        public float Size
         {
-
+            get => sprite.transform.localScale.x;
+            set => sprite.transform.localScale = Vector3.one * value;
         }
     }
 }

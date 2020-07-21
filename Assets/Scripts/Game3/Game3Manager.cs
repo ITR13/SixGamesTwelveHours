@@ -41,7 +41,7 @@ namespace Game3
 
         private void Start()
         {
-            RpgTextScript.Instance.SetText("", () => {});
+            RpgTextScript.Instance.SetText("", () => { });
             StartCoroutine(IntroOutro());
         }
 
@@ -71,6 +71,7 @@ namespace Game3
                     Debug.Log("You won!");
                     break;
                 }
+
                 yield return BillyAttack();
 
                 if (player.Health <= 0)
@@ -87,7 +88,7 @@ namespace Game3
             {
                 _selectedAttack = Attack.None;
                 RpgTextScript.Instance.SetButtons(
-                    new[] { "Attack", "Charge", "Defend", "Run" },
+                    new[] {"Attack", "Charge", "Defend", "Run"},
                     new Action[]
                     {
                         () => _selectedAttack = Attack.Attack,
@@ -103,7 +104,10 @@ namespace Game3
 
                 var back = false;
                 RpgTextScript.Instance.SetButtons(
-                    new[] { "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]" },
+                    new[]
+                    {
+                        "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]"
+                    },
                     new Action[]
                     {
                         () => _selectedAttack = Attack.Milk,
@@ -242,15 +246,16 @@ namespace Game3
             {
                 enemy.Size += Time.deltaTime / 8;
             }
-
-
         }
 
         private IEnumerator BillyAttack()
         {
             player.Health -= billyAttack;
             var ack = false;
-            RpgTextScript.Instance.SetText("Billy bumped into you", () => ack = true);
+            RpgTextScript.Instance.SetText(
+                "Billy bumped into you",
+                () => ack = true
+            );
             while (!ack) yield return null;
             yield break;
         }

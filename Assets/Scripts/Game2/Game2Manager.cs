@@ -12,7 +12,7 @@ namespace Game2
 {
     public class Game2Manager : MonoBehaviour
     {
-        private const int Bps = 4410;
+        private const int Bps = 44100;
 
         private enum ClickState
         {
@@ -141,11 +141,11 @@ namespace Game2
 
         private void PlayBeep()
         {
-            var length = Mathf.FloorToInt(0.5f * 1000);
+            var length = Mathf.FloorToInt(Mathf.Lerp(0.6f, 1f, TotalError));
             var clip = AudioClip.Create("beep", length * Bps, 1, Bps, false);
             clip.SetData(
                 GenerateAudio(
-                    length,
+                    length * 1000,
                     200,
                     440
                 ),

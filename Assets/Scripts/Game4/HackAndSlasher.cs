@@ -27,6 +27,15 @@ namespace Game4
         private void FixedUpdate()
         {
             var dir = rigidBody.velocity.x;
+            var force = horizontal;
+            if (dir * force < 0)
+            {
+                force *= 2;
+            }
+            else if (force == 0)
+            {
+
+            }
             rigidBody.AddForce();
         }
     }

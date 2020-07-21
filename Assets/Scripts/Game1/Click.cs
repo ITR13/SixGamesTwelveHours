@@ -39,7 +39,7 @@ namespace Game1
         private void OnMouseDown()
         {
             Destroy(gameObject);
-            Game1Manager.Score = ;
+            Game1Manager.Score = 10 + Mathf.CeilToInt(_remainingLifeTime);
         }
 
         private void OnDestroy()

@@ -13,12 +13,18 @@ namespace Game3
 
         private enum FightState
         {
-            Animation,
             Selecting,
-            ShowingText,
+            Attacking,
+            BillyAttacks,
         }
 
         private enum SelectState
+        {
+            MainSelect,
+            AttackSelect,
+        }
+
+        private enum AttackState
         {
 
         }

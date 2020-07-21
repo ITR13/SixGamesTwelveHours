@@ -29,7 +29,7 @@ namespace Game1
             _text.text = "";
         }
 
-        public static void Miss()
+        public static bool Miss()
         {
             _count++;
             _fadeTimer = 0;
@@ -41,14 +41,11 @@ namespace Game1
 
             _instance._text.text = text;
 
-            if (_count < 3)
-            {
-                missSound.Play();
-                return;
-            }
+            if (_count < 3) return true;
             _fadeTimer = 3;
             _count = 0;
             Game1Manager.Lives--;
+            return false;
         }
 
         public static void Hit()

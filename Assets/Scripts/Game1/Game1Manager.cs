@@ -151,7 +151,10 @@ namespace Game1
             );
             if (hits == 0)
             {
-                Misses.Miss();
+                if (Misses.Miss())
+                {
+                    missSound.Play();
+                }
                 return;
             }
 

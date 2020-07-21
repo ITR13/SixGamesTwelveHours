@@ -10,7 +10,7 @@ namespace Game3
 {
     public class RpgTextScript : MonoBehaviour
     {
-        public static RpgTextScript Instance { get; private set; };
+        public static RpgTextScript Instance { get; private set; }
 
         [SerializeField] private Button[] buttons;
         [SerializeField] private TextMeshProUGUI[] buttonTexts;

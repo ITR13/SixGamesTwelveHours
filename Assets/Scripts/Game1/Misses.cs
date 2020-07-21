@@ -7,8 +7,9 @@ namespace Game1
     {
         private static Misses _misses;
         private static int _count;
+        private static float _fadeTimer = 0;
+
         private TextMeshProUGUI _text;
-        private float _fadeTimer = 0;
 
         private void Awake()
         {
@@ -16,6 +17,7 @@ namespace Game1
             _count = 0;
             _text = GetComponent<TextMeshProUGUI>();
             _text.text = "";
+            _fadeTimer = 0;
         }
 
         private void Update()
@@ -24,12 +26,16 @@ namespace Game1
             _fadeTimer -= Time.deltaTime;
             if(_fadeTimer > 0) return;
 
-
+            _text.text = "";
         }
 
         public static void Miss()
         {
+            _count++;
+            _fadeTimer = 0;
 
+            if (_count < 3) return;
+            _fadeTime = 3;
         }
 
         public static void Reset()

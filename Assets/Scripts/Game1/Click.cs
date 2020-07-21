@@ -63,7 +63,7 @@ namespace Game1
             if (Game1Manager.Paused) return;
             if (_remainingLifeTime > -0.02f) return;
             Game1Manager.Lives--;
-            _fade = 1f;
+            Destroy(gameObject);
         }
 
         public void Clicked()
@@ -71,8 +71,8 @@ namespace Game1
             if (_fade > 0) return;
             if (Game1Manager.Paused) return;
 
-            Destroy(gameObject);
             Game1Manager.Score += 10 + Mathf.CeilToInt(_remainingLifeTime);
+            _fade = 1f;
         }
 
         private void OnDestroy()

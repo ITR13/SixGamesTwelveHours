@@ -17,10 +17,20 @@ namespace Game2
 
         [SerializeField] private Image circle;
 
+        private float TotalError
+        {
+            get => _totalError;
+            set
+            {
+                _totalError = value;
+
+            }
+        }
+
+        private float _totalError;
         private int _warmup;
         private float _fillAmount;
         private ClickState _currentClickState;
-
 
         private void Awake()
         {
@@ -31,6 +41,8 @@ namespace Game2
 
         private void Update()
         {
+            if(Input.anyKeyDown) OnClick();
+
             _fillAmount += Time.deltaTime;
             circle.fillAmount = _fillAmount % 1;
 

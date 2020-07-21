@@ -24,7 +24,10 @@ namespace Game3
 
         public static void SetText(string text, Action go)
         {
-            _instance
+            _instance.textGo.SetActive(true);
+            _instance.buttonParent.SetActive(false);
+            _instance.text.text = text;
+
         }
     }
 }

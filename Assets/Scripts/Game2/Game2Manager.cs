@@ -12,8 +12,7 @@ namespace Game2
 {
     public class Game2Manager : MonoBehaviour
     {
-
-        private const float bps = 44100;
+        private const int Bps = 10;
 
         private enum ClickState
         {
@@ -143,12 +142,12 @@ namespace Game2
         private void PlayBeep()
         {
             var length = Mathf.FloorToInt(2 * 1000);
-            var clip = AudioClip.Create("beep", length, 1, bps, false);
+            var clip = AudioClip.Create("beep", length, 1, Bps, false);
             clip.SetData(
                 GenerateAudio(
                     length,
                     200,
-                    440 / Mathf.Pow(-2, _totalError * 10)
+                    440
                 ),
                 0
             );
@@ -157,13 +156,13 @@ namespace Game2
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)
         {
-            var totalSize = bps * ms / 1000;
-            var falloffSize = falloutMs * bps / 1000;
+            var totalSize = Bps * ms / 1000;
+            var falloffSize = falloutMs * Bps / 1000;
             var preFalloff = totalSize - falloffSize;
 
             var data = new float[totalSize];
 
-            hz *= bps;
+            hz *= Bps;
 
             for (var i = 0; i < preFalloff; i++)
             {

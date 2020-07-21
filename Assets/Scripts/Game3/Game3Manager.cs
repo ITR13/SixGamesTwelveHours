@@ -92,7 +92,7 @@ namespace Game3
             if (_selectedAttack != Attack.Attack) yield break;
 
             RpgTextScript.Instance.SetButtons(
-                new[] { "Milk", "Pretty Good", "Banana", "Vibe" },
+                new[] { "Milk [1]", "Pretty Good [3]", "Banana", "Vibe" },
                 new Action[]
                 {
                     () => _selectedAttack = Attack.Attack,
@@ -119,10 +119,11 @@ namespace Game3
                     break;
                 case Attack.Banana:
                     yield return BananaAnim();
-
+                    bananas++;
                     break;
                 case Attack.KarlsonVibe:
                     yield return KarlsonVibeAnim();
+                    enemy.Health -= 0.2f;
                     break;
                 case Attack.Charge:
                     yield return ChargeAnim();

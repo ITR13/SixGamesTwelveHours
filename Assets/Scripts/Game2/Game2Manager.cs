@@ -1,5 +1,7 @@
+using System;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 namespace Game2
@@ -24,7 +26,7 @@ namespace Game2
             _currentClickState = ClickState.WaitingForClick;
         }
 
-        private void Awake()
+        private void Update()
         {
             _fillAmount += Time.deltaTime;
             circle.fillAmount = _fillAmount % 1;
@@ -37,9 +39,19 @@ namespace Game2
 
         private void ExpendClick()
         {
-            switch ()
+            switch (_currentClickState)
             {
-                
+                case ClickState.WaitingForPreClick:
+                    _currentClickState = ClickState.WaitingForClick;
+                    break;
+                case ClickState.WaitingForClick:
+                    break;
+                case ClickState.Clicked:
+                    _currentClickState = ClickState.WaitingForPreClick;
+                    Score++;
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
     }

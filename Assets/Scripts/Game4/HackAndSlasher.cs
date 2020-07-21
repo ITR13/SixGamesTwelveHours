@@ -13,6 +13,7 @@ namespace Game4
         {
             rigidBody = GetComponent<Rigidbody2D>();
             camera = Camera.main;
+            arm = transform.GetChild("Arm");
         }
 
         private float horizontal;
@@ -28,7 +29,7 @@ namespace Game4
             }
 
             var worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
-
+            arm.right = worldMousePos - arm.position;
         }
 
         private void FixedUpdate()

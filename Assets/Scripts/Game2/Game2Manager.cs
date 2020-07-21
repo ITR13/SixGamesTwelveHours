@@ -45,6 +45,7 @@ namespace Game2
             _warmup = -2;
             _fillAmount = 0;
             _currentClickState = ClickState.WaitingForPreClick;
+            circle.color = Color.white;
         }
 
         private void Update()
@@ -115,6 +116,8 @@ namespace Game2
             var error = pre ? 1 - _fillAmount : _fillAmount;
             TotalError += error;
             Score++;
+
+            circle.color = Color.HSVToRGB(0, Mathf.Clamp01(1 - TotalError), 1);
 
             Debug.Log($"Error: {error}    Total: {TotalError}\nScore: {Score}");
 

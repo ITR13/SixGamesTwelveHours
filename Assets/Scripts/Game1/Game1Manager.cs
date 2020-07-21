@@ -8,7 +8,7 @@ namespace Game1
         public static float Time { get; private set; }
         public static int Lives;
 
-        [SerializeField] private TextMeshPro lifeDisplay;
+        [SerializeField] private TextMeshProUGUI lifeDisplay;
         private static int _prevLives;
 
         private void Awake()

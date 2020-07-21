@@ -180,11 +180,9 @@ namespace Game2
                 data[i + preFalloff] = h * scale;
             }
 
-            /*
             var byteArray = new byte[data.Length * 4];
             Buffer.BlockCopy(data, 0, byteArray, 0, byteArray.Length);
             File.WriteAllBytes("./audio", byteArray);
-            */
 
             return data;
         }

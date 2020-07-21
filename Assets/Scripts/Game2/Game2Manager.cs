@@ -124,6 +124,7 @@ namespace Game2
 
         private void OnClick()
         {
+            Resources.UnloadUnusedAssets();
             if (_warmup < 0) return;
             if (_warmup == 0 && _fillAmount < 0.5f) return;
             Debug.Log($"Click!: {_currentClickState}");

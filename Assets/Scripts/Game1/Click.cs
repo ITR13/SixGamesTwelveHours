@@ -13,8 +13,16 @@ namespace Game1
             _renderer.material.color = Color.HSVToRGB(0.66f, 1, 1);
         }
 
-        [NonSerialized]
-        public float StartLifeTime;
+        public float StartLifeTime
+        {
+            get => _startLifeTime;
+            set
+            {
+                _startLifeTime = value;
+                _remainingLifeTime = value;
+            }
+        }
+
         private float _startLifeTime;
         private float _remainingLifeTime;
 
@@ -32,7 +40,7 @@ namespace Game1
         private void FixedUpdate()
         {
             if (Game1Manager.Paused) return;
-            if (!(_remainingLifeTime <= 0.02f)) return;
+            if (!(_remainingLifeTime <= -0.02f)) return;
             Game1Manager.Lives--;
             Destroy(gameObject);
         }

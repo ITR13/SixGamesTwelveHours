@@ -82,34 +82,40 @@ namespace Game3
 
         private IEnumerator SelectAttack()
         {
-            _selectedAttack = Attack.None;
-            RpgTextScript.Instance.SetButtons(
-                new []{"Attack", "Charge", "Defend", "Run"},
-                new Action[]
-                {
-                    () => _selectedAttack = Attack.Attack,
-                    () => _selectedAttack = Attack.Charge,
-                    () => _selectedAttack = Attack.Defend,
-                    () => _selectedAttack = Attack.RunAway
-                },
-                null
-            );
-            while (_selectedAttack == Attack.None) yield return null;
+            while (true)
+            {
+                _selectedAttack = Attack.None;
+                RpgTextScript.Instance.SetButtons(
+                    new[] { "Attack", "Charge", "Defend", "Run" },
+                    new Action[]
+                    {
+                        () => _selectedAttack = Attack.Attack,
+                        () => _selectedAttack = Attack.Charge,
+                        () => _selectedAttack = Attack.Defend,
+                        () => _selectedAttack = Attack.RunAway
+                    },
+                    null
+                );
+                while (_selectedAttack == Attack.None) yield return null;
 
-            if (_selectedAttack != Attack.Attack) yield break;
+                if (_selectedAttack != Attack.Attack) yield break;
 
-            RpgTextScript.Instance.SetButtons(
-                new[] { "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]" },
-                new Action[]
-                {
-                    () => _selectedAttack = Attack.Milk,
-                    () => _selectedAttack = Attack.PrettyGood,
-                    () => _selectedAttack = Attack.Banana,
-                    () => _selectedAttack = Attack.KarlsonVibe
-                },
-                null
-            );
-            while (_selectedAttack == Attack.Attack) yield return null;
+                RpgTextScript.Instance.SetButtons(
+                    new[] { "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]" },
+                    new Action[]
+                    {
+                        () => _selectedAttack = Attack.Milk,
+                        () => _selectedAttack = Attack.PrettyGood,
+                        () => _selectedAttack = Attack.Banana,
+                        () => _selectedAttack = Attack.KarlsonVibe
+                    },
+                    null
+                );
+                while (_selectedAttack == Attack.Attack) yield return null;
+
+                yield break;
+            }
+
         }
 
         private IEnumerator ExecuteAttack()

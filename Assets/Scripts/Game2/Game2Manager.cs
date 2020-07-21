@@ -83,6 +83,8 @@ namespace Game2
         private void CheckClick(bool pre)
         {
             var error = pre ? 1 - _fillAmount : _fillAmount;
+            TotalError += error;
+            Score++;
         }
     }
 }

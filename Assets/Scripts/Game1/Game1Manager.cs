@@ -124,7 +124,14 @@ namespace Game1
         {
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             var cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition));
-            if (!Physics.Raycast(cameraRay, )
+            if (!Physics.Raycast(cameraRay, out var hitInfo))
+            {
+                Misses++;
+                return;
+            }
+
+            Misses = 0;
+
         }
 
         private void GameOver()

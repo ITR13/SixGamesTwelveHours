@@ -66,6 +66,11 @@ namespace Game2
 
             if (_fillAmount < 1) return;
             _fillAmount -= 1;
+            audioSource.clip.SetData(
+                GenerateAudio(
+                    Mathf.Lerp(0.3f, 0.8f),
+                )
+            );
 
             if (_warmup++ < 0) return;
             Debug.Log($"Filled!: {_currentClickState}");
@@ -132,7 +137,6 @@ namespace Game2
             {
                 GameOver();
             }
-            audioSource.clip.SetData()
         }
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)

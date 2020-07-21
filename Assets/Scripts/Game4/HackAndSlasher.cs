@@ -55,5 +55,11 @@ namespace Game4
             rigidBody.AddForce(new Vector2(xForce, 0));
             rigidBody.AddForce(new Vector2(0, yForce), ForceMode2D.Impulse);
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Ground")) return;
+            grounded = false;
+        }
     }
 }

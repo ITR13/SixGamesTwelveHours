@@ -11,21 +11,29 @@ namespace Game1
 
         public static int Score
         {
-            get => _prevScore;
+            get => _score;
             set
             {
                 _instance.scoreDisplay.text = $"Score: {Score}";
-                _prevScore = Score;
+                _score = value;
             }
         }
 
-        public static int Lives;
+        public static int Lives
+        {
+            get => _prevLives;
+            set
+            {
+                _instance.lifeDisplay.text = $"HP: {Score}";
+                _prevLives = value;
+            }
+        }
 
         [SerializeField] private TextMeshProUGUI lifeDisplay;
         [SerializeField] private TextMeshProUGUI scoreDisplay;
         [SerializeField] private TextMeshProUGUI highscoreDisplay;
         private static int _prevLives;
-        private static int _prevScore;
+        private static int _score;
 
         private void Awake()
         {
@@ -33,12 +41,6 @@ namespace Game1
             Lives = 3;
             _prevLives = Lives;
             UpdateLives();
-        }
-
-        private void Update()
-        {
-            if (Lives != _prevLives) UpdateLives();
-            if(_prevScore != _prevScore)
         }
 
         private void UpdateLives()

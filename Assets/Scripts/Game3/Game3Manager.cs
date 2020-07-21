@@ -37,9 +37,10 @@ namespace Game3
         private void Start()
         {
             RpgTextScript.Instance.SetText("", () => {});
+            StartCoroutine(IntroOutro());
         }
 
-        private IEnumerable IntroOutro()
+        private IEnumrator IntroOutro()
         {
             // Intro
             var ack = false;
@@ -54,7 +55,7 @@ namespace Game3
             // Menu
         }
 
-        private IEnumerable MainLoop()
+        private IEnumrator MainLoop()
         {
             while (true)
             {
@@ -75,7 +76,7 @@ namespace Game3
             }
         }
 
-        private IEnumerable SelectAttack()
+        private IEnumrator SelectAttack()
         {
             _selectedAttack = Attack.None;
             RpgTextScript.Instance.SetButtons(
@@ -107,7 +108,7 @@ namespace Game3
             while (_selectedAttack == Attack.Attack) yield return null;
         }
 
-        private IEnumerable ExecuteAttack()
+        private IEnumrator ExecuteAttack()
         {
             switch (_selectedAttack)
             {
@@ -148,45 +149,47 @@ namespace Game3
             yield break;
         }
 
-        private IEnumerable RunAwayAnim()
+        private IEnumrator RunAwayAnim()
         {
             yield break;
         }
 
-        private IEnumerable DefendAnim()
+        private IEnumrator DefendAnim()
         {
             yield break;
         }
 
-        private IEnumerable ChargeAnim()
+        private IEnumrator ChargeAnim()
         {
             yield break;
         }
 
-        private IEnumerable KarlsonVibeAnim()
+        private IEnumrator KarlsonVibeAnim()
         {
             yield break;
         }
 
-        private IEnumerable BananaAnim()
+        private IEnumrator BananaAnim()
         {
             yield break;
         }
 
-        private IEnumerable PrettyGoodAnim()
+        private IEnumrator PrettyGoodAnim()
         {
             yield break;
         }
 
-        private IEnumerable MilkAnim()
+        private IEnumrator MilkAnim()
         {
             yield break;
         }
 
-        private IEnumerable BillyAttack()
+        private IEnumrator BillyAttack()
         {
             player.Health -= billyAttack;
-            RpgTextScript.Instance.SetText("");
+            var ack = false;
+            RpgTextScript.Instance.SetText("Billy bumped into you", () => ack = true);
+            while (!ack) yield return null;
             yield break;
         }
     }

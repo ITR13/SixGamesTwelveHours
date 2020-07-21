@@ -37,7 +37,17 @@ namespace Game4
             {
                 xForce = -dir * 2;
             }
-            rigidBody.AddForce(new Vector2(xForce, ));
+
+            var yForce = 0;
+            if (grounded && jumpIfGrounded > 0)
+            {
+                grounded = false;
+                yForce = 10;
+            }
+
+            jumpIfGrounded -= Time.fixedDeltaTime;
+
+            rigidBody.AddForce(new Vector2(xForce, yForce));
         }
     }
 }

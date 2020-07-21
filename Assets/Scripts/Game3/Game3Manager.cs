@@ -29,7 +29,13 @@ namespace Game3
         private IEnumerable IntroOutro()
         {
             // Intro
-            RpgTextScript.Instance.SetText("A wild billy approaches");
+            var ack = false;
+            RpgTextScript.Instance.SetText(
+                "A wild billy approaches",
+                () => ack = true
+            );
+            while (!ack) yield return null;
+
             yield return MainLoop();
             // Outro
             // Menu
@@ -96,5 +102,7 @@ namespace Game3
             }
             yield break;
         }
+
+
     }
 }

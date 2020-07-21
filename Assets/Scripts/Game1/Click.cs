@@ -4,21 +4,28 @@ namespace Game1
 {
     public class Click : MonoBehaviour
     {
-        // Start is called before the first frame update
-        void Start()
+        private Renderer _renderer;
+
+        private void Awake()
         {
-        
+            _renderer = GetComponent<Renderer>();
         }
 
-        // Update is called once per frame
+        public float Lifetime;
+
         void Update()
         {
-        
+            
         }
 
         private void OnMouseDown()
         {
             Debug.Log("Test!");
+        }
+
+        private void OnDestroy()
+        {
+            
         }
     }
 }

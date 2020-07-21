@@ -7,6 +7,7 @@ namespace Game4
     {
         private Rigidbody2D rigidBody;
         private new Camera camera;
+        private Transform arm;
 
         private void Awake()
         {
@@ -25,6 +26,8 @@ namespace Game4
             {
                 jumpIfGrounded = 0.2f;
             }
+
+            var worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
 
         }
 

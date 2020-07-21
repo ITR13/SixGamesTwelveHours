@@ -1083,6 +1083,7 @@ GameObject:
   - component: {fileID: 591301250}
   - component: {fileID: 591301252}
   - component: {fileID: 591301251}
+  - component: {fileID: 591301253}
   m_Layer: 5
   m_Name: TextBox
   m_TagString: Untagged
@@ -1149,6 +1150,33 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 591301249}
   m_CullTransparentMesh: 0
+--- !u!114 &591301253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 591301249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bac1479656abc8e4dbb51426b64962dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttons:
+  - {fileID: 1800690937}
+  - {fileID: 219195286}
+  - {fileID: 614113298}
+  - {fileID: 1226883616}
+  buttonTexts:
+  - {fileID: 50035461}
+  - {fileID: 975349122}
+  - {fileID: 1151220661}
+  - {fileID: 600008173}
+  backButton: {fileID: 238838677}
+  text: {fileID: 443211599}
+  textButton: {fileID: 0}
+  textGo: {fileID: 1329553902}
+  buttonParent: {fileID: 443211597}
 --- !u!1 &600008171
 GameObject:
   m_ObjectHideFlags: 0

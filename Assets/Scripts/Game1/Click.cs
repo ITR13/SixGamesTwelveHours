@@ -38,12 +38,13 @@ namespace Game1
                     Destroy(gameObject);
                     return;
                 }
-                _renderer.material.color = Color.HSVToRGB(
+                var color = Color.HSVToRGB(
                     Mathf.Lerp(1f, 0.66f, _remainingLifeTime / StartLifeTime),
                     1,
                     1
                 );
-
+                color.a = _fade;
+                _renderer.material.color = color;
                 return;
             }
 

@@ -72,14 +72,19 @@ namespace Game1
 
         private void Update()
         {
+            if(Paused || Runtime < 0) return;
+            CheckClick();
+        }
+
+        private void FixedUpdate()
+        {
             if (Paused) return;
 
-            Runtime += Time.deltaTime;
+            Runtime += Time.fixedDeltaTime;
             if(Runtime < 0f) return;
 
-
-            _spawnTimer -= Time.deltaTime;
-            _healthTimer -= Time.deltaTime;
+            _spawnTimer -= Time.fixedDeltaTime;
+            _healthTimer -= Time.fixedDeltaTime;
 
             if (_spawnTimer <= 0) SpawnClickMe();
             if (_healthTimer <= 0) RegenHealth();

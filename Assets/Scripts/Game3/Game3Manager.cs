@@ -32,6 +32,10 @@ namespace Game3
             billyAttack = 0.02f;
             bananas = 0;
             prettyGoods = 1;
+
+            player.Energy = 4;
+            player.Health = 1;
+            enemy.Health = 1;
         }
 
         private void Start()
@@ -117,7 +121,11 @@ namespace Game3
                     billyAttack *= 1.75f;
                     break;
                 case Attack.PrettyGood:
-                    if(player.Energy < 3)
+                    if (player.Energy < 3)
+                    {
+
+                    }
+
                     yield return PrettyGoodAnim();
                     player.Health += 0.1f * prettyGoods;
                     prettyGoods++;

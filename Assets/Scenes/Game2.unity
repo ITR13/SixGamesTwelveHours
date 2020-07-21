@@ -362,7 +362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4470057369692207461, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -250
       objectReference: {fileID: 0}
     - target: {fileID: 4470057369692207461, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
       propertyPath: m_SizeDelta.x
@@ -370,7 +370,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4470057369692207461, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0.000021576881
+      value: -500
       objectReference: {fileID: 0}
     - target: {fileID: 4470057369692207461, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
       propertyPath: m_AnchorMin.x
@@ -477,6 +477,11 @@ PrefabInstance:
 --- !u!224 &805560618 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4470057369692207461, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
+  m_PrefabInstance: {fileID: 805560617}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &805560619 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4470057369692207460, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
   m_PrefabInstance: {fileID: 805560617}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1317728873
@@ -606,10 +611,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bd7c8a120202034996e60465257fdc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  subMenu: {fileID: 0}
+  subMenu: {fileID: 805560619}
   circle: {fileID: 662675635}
   scoreText: {fileID: 1801202405}
-  highscoreText: {fileID: 0}
+  highscoreText: {fileID: 2032620052}
   audioSource: {fileID: 1565461489}
 --- !u!82 &1565461489
 AudioSource:

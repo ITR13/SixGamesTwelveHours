@@ -104,18 +104,25 @@ namespace Game3
             switch (_selectedAttack)
             {
                 case Attack.Milk:
+                    yield return MilkAnim();
                     break;
                 case Attack.PrettyGood:
+                    yield return PrettyGoodAnim();
                     break;
                 case Attack.Banana:
+                    yield return BananaAnim();
                     break;
                 case Attack.KarlsonVibe:
+                    yield return KarlsonVibeAnim();
                     break;
                 case Attack.Charge:
+                    yield return ChargeAnim();
                     break;
                 case Attack.Defend:
+                    yield return DefendAnim();
                     break;
                 case Attack.RunAway:
+                    yield return RunAwayAnim();
                     break;
                 case Attack.None:
                 case Attack.Attack:

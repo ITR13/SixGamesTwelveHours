@@ -175,7 +175,7 @@ namespace Game2
                 var t = 2 * i * Mathf.PI / hz;
                 var h = Mathf.Sin(t);
                 var scale = 1 - i / (float)falloffSize;
-                data[i+preFalloff] = h * scale;
+                data[i + preFalloff] = h * scale;
             }
 
             return data;

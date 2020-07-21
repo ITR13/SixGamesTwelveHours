@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
@@ -124,7 +125,13 @@ namespace Game1
         {
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             var worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            if (!Physics2D.OverlapPoint(worldPoint, ContactFilter2D))
+            var results = new List<Collider2D>
+            Physics2D.OverlapPoint(
+                worldPoint,
+                ContactFilter2D.NoFilter,
+                results
+            );
+            if (!)
             {
                 Misses.Miss();
                 return;

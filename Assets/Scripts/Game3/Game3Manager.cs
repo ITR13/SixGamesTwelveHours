@@ -48,7 +48,11 @@ namespace Game3
                         break;
                     case FightState.BillyAttacks:
                         break;
+                    case FightState.Victory:
+                        Debug.Log("You won!");
+                        break;
                     case FightState.Dead:
+                        Debug.Log("You lost!");
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();

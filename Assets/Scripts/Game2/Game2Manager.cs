@@ -134,10 +134,14 @@ namespace Game2
             }
         }
 
-        private byte[] GenerateAudio(int bitrate, int ms, float falloff)
+        private byte[] GenerateAudio(int ms, int fallout)
         {
-            audioSource.clip.SetData()
-            var bytes = new byte[(int)bitrate*seconds]
+            const int bps = 44100;
+            var bytes = new byte[bps * ms / 1000];
+            for (var i = 0; i < ms - fallout; i++)
+            {
+
+            }
         }
     }
 }

@@ -13,11 +13,21 @@ namespace Game4
 
         private float horizontal;
         private float jumpIfGrounded;
+        private bool grounded;
 
         private void Update()
         {
             horizontal = Input.GetAxis("Horizontal");
-            if(Input.GetButton("Fire");)
+            if (Input.GetButtonDown("Fire") || Input.GetAxis("Vertical") > 0)
+            {
+                jumpIfGrounded = 0.2f;
+            }
+        }
+
+        private void FixedUpdate()
+        {
+            var dir = rigidBody.velocity.x;
+            rigidBody.AddForce();
         }
     }
 }

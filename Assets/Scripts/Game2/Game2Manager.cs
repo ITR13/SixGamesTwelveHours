@@ -155,10 +155,8 @@ namespace Game2
             audioSource.Play();
         }
 
-        private float[] GenerateAudio(int ms, int falloutMs, float hz)
+        private float[] GenerateAudio(int totalSize, int falloffSize, float hz)
         {
-            var totalSize = ms / 1000;
-            var falloffSize = falloutMs * Bps / 1000;
             var preFalloff = totalSize - falloffSize;
 
             var data = new float[totalSize];

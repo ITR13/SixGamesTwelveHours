@@ -6,5 +6,14 @@ namespace Game3
     {
         [SerializeField] private RpgFighter player, enemy;
 
+        private void Start()
+        {
+            RpgTextScript.Instance.SetText("", () => {});
+        }
+
+        private enum FightState
+        {
+
+        }
     }
 }

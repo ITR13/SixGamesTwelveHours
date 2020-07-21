@@ -178,6 +178,8 @@ namespace Game2
                 data[i + preFalloff] = h * scale;
             }
 
+            Debug.Log(string.Join(";", data));
+
             return data;
         }
     }

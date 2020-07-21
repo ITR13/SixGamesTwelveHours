@@ -80,7 +80,7 @@ namespace Game2
 
         private void GameOver()
         {
-
+            Time.timeScale = 0;
         }
 
         private void OnClick()

@@ -68,14 +68,32 @@ namespace Game3
             var selectedAttack = Attacks.None;
             RpgTextScript.Instance.SetButtons(
                 new []{"Attack", "Charge", "Defend", "Run"},
-                new []
+                new Action[]
                 {
                     () => selectedAttack = Attacks.Attack,
                     () => selectedAttack = Attacks.Charge,
                     () => selectedAttack = Attacks.Defend,
                     () => selectedAttack = Attacks.RunAway
                 },
+                null
             );
+            while (selectedAttack == Attacks.None) yield return null;
+
+            if (selectedAttack != Attacks.Attack) yield break;
+
+            RpgTextScript.Instance.SetButtons(
+                new[] { "Attack", "Charge", "Defend", "Run" },
+                new Action[]
+                {
+                    () => selectedAttack = Attacks.Attack,
+                    () => selectedAttack = Attacks.Charge,
+                    () => selectedAttack = Attacks.Defend,
+                    () => selectedAttack = Attacks.RunAway
+                },
+                null
+            );
+            while (selectedAttack == Attacks.Attack) yield return null;
+
         }
     }
 }

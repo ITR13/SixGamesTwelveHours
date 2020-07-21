@@ -174,7 +174,7 @@ namespace Game2
 
             for (var i = 0; i < falloffSize; i++)
             {
-                var t = 2f * i * Mathf.PI * frequency;
+                var t = 2f * (i + preFalloff) * Mathf.PI * frequency;
                 var h = Mathf.Sin(t);
                 var scale = 1 - i / (float)falloffSize;
                 data[i + preFalloff] = h * scale;

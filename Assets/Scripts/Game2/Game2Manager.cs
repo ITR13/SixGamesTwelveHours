@@ -151,7 +151,7 @@ namespace Game2
                 ),
                 0
             );
-            audioSource.PlayOneShot(clip);
+            audioSource.PlayOneShot(clip, 0.4f);
         }
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)

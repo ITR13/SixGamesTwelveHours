@@ -131,7 +131,7 @@ namespace Game3
                     break;
                 case Attack.Charge:
                     yield return ChargeAnim();
-
+                    player.Energy += 1 + bananas;
                     break;
                 case Attack.Defend:
                     yield return DefendAnim();
@@ -146,6 +146,41 @@ namespace Game3
                     break;
             }
             yield break;
+        }
+
+        private IEnumerable RunAwayAnim()
+        {
+            throw new NotImplementedException();
+        }
+
+        private object DefendAnim()
+        {
+            throw new NotImplementedException();
+        }
+
+        private object ChargeAnim()
+        {
+            throw new NotImplementedException();
+        }
+
+        private object KarlsonVibeAnim()
+        {
+            throw new NotImplementedException();
+        }
+
+        private object BananaAnim()
+        {
+            throw new NotImplementedException();
+        }
+
+        private object PrettyGoodAnim()
+        {
+            throw new NotImplementedException();
+        }
+
+        private object MilkAnim()
+        {
+            throw new NotImplementedException();
         }
     }
 }

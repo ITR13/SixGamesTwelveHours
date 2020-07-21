@@ -87,6 +87,7 @@ namespace Game1
         private void RegenHealth()
         {
             if (Lives < 3) Lives++;
+            _healthTimer += Runtime < 60 ? 20 : 120;
         }
 
         private void GameOver()

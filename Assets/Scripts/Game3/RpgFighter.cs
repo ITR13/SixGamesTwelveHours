@@ -28,10 +28,17 @@ namespace Game3
                 if (value < 0)
                 {
                     _currentEnergy = 0;
-                }else if (value >= totalEnergy)
+                }
+                else if (value >= totalEnergy)
                 {
                     _currentEnergy = totalEnergy;
                 }
+                else
+                {
+                    _currentEnergy = value;
+                }
+
+                energyBar.fillAmount = _currentEnergy / (float) totalEnergy;
             }
         }
     }

@@ -7,6 +7,7 @@ namespace Game1
     {
         private Renderer _renderer;
         private float _fade;
+        private float 
 
         private void Awake()
         {

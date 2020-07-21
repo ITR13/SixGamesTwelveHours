@@ -162,20 +162,18 @@ namespace Game2
 
             var data = new float[totalSize];
 
-            hz *= Bps;
             var frequency = Bps / hz;
 
             for (var i = 0; i < preFalloff; i++)
             {
-                var t = 2f * i * Mathf.PI / hz;
-                Debug.Log(t);
+                var t = 2f * i * Mathf.PI * frequency;
                 var h = Mathf.Sin(t);
                 data[i] = h;
             }
 
             for (var i = 0; i < falloffSize; i++)
             {
-                var t = 2f * i * Mathf.PI / hz;
+                var t = 2f * i * Mathf.PI * frequency;
                 var h = Mathf.Sin(t);
                 var scale = 1 - i / (float)falloffSize;
                 data[i + preFalloff] = h * scale;

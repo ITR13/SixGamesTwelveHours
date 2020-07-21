@@ -163,6 +163,7 @@ namespace Game2
             var data = new float[totalSize];
 
             hz *= Bps;
+            var frequency = Bps / hz;
 
             for (var i = 0; i < preFalloff; i++)
             {

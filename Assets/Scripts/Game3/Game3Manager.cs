@@ -35,6 +35,14 @@ namespace Game3
             Text,
         }
 
+        private IEnumerable IntroOutro()
+        {
+            // Intro
+            yield return MainLoop();
+            // Outro
+            // Menu
+        }
+
         private IEnumerable MainLoop()
         {
             var state = FightState.Selecting;
@@ -43,6 +51,7 @@ namespace Game3
                 switch (state)
                 {
                     case FightState.Selecting:
+                        state = Select();
                         break;
                     case FightState.Attacking:
                         break;
@@ -50,10 +59,10 @@ namespace Game3
                         break;
                     case FightState.Victory:
                         Debug.Log("You won!");
-                        break;
+                        yield break;
                     case FightState.Dead:
                         Debug.Log("You lost!");
-                        break;
+                        yield break;
                     default:
                         throw new ArgumentOutOfRangeException();
                 }

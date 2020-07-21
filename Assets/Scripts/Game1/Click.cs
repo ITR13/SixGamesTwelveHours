@@ -6,6 +6,7 @@ namespace Game1
     public class Click : MonoBehaviour
     {
         private Renderer _renderer;
+        private float _fade;
 
         private void Awake()
         {
@@ -31,7 +32,7 @@ namespace Game1
             if (Game1Manager.Paused) return;
             _remainingLifeTime -= Time.deltaTime;
             _renderer.material.color = Color.HSVToRGB(
-                Mathf.Lerp(1f, 0.66f, _remainingLifeTime/StartLifeTime),
+                Mathf.Lerp(1f, 0.66f, _remainingLifeTime / StartLifeTime),
                 1,
                 1
             );

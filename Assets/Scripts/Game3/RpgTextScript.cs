@@ -8,7 +8,7 @@ namespace Game3
 {
     public class RpgTextScript : MonoBehaviour
     {
-        private static RpgTextScript _instance;
+        public static RpgTextScript Instance { get; private set; };
 
         [SerializeField] private Button[] buttons;
         [SerializeField] private Button backButton;
@@ -20,25 +20,30 @@ namespace Game3
 
         private void Awake()
         {
-            _instance = this;
+            Instance = this;
         }
 
-        public static void SetText(string text, Action go)
+        public void SetText(string textToShow, Action go)
         {
-            _instance.textGo.SetActive(true);
-            _instance.buttonParent.SetActive(false);
-            _instance.text.text = text;
-
-            _instance.textButton.onClick.RemoveAllListeners();
-            _instance.textButton.onClick.AddListener(new UnityAction(go));
+            textGo.SetActive(true);
+            buttonParent.SetActive(false);
+            text.text = textToShow;
+            
+            textButton.onClick.RemoveAllListeners();
+            textButton.onClick.AddListener(new UnityAction(go));
         }
 
-        public static void SetButtons(
+        public void SetButtons(
             string[] text,
             Action[] actions,
             Action backAction
         )
         {
+            for (var i = 0; i < 4; i++)
+            {
+
+            }
+
 
         }
     }

@@ -31,7 +31,7 @@ namespace Game3
         {
             billyAttack = 0.02f;
             bananas = 0;
-            prettyGoods = 0;
+            prettyGoods = 1;
         }
 
         private void Start()
@@ -118,7 +118,8 @@ namespace Game3
                 case Attack.PrettyGood:
                     if(player.Energy < 3)
                     yield return PrettyGoodAnim();
-                    player.Health += 0.3f;
+                    player.Health += 0.1f * prettyGoods;
+                    prettyGoods++;
                     break;
                 case Attack.Banana:
                     yield return BananaAnim();
@@ -130,9 +131,11 @@ namespace Game3
                     break;
                 case Attack.Charge:
                     yield return ChargeAnim();
+
                     break;
                 case Attack.Defend:
                     yield return DefendAnim();
+                    billyAttack *= 0.4f;
                     break;
                 case Attack.RunAway:
                     yield return RunAwayAnim();

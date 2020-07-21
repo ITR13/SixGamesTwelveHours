@@ -40,7 +40,7 @@ namespace Game3
             StartCoroutine(IntroOutro());
         }
 
-        private IEnumrator IntroOutro()
+        private IEnumerator IntroOutro()
         {
             // Intro
             var ack = false;
@@ -55,7 +55,7 @@ namespace Game3
             // Menu
         }
 
-        private IEnumrator MainLoop()
+        private IEnumerator MainLoop()
         {
             while (true)
             {
@@ -76,7 +76,7 @@ namespace Game3
             }
         }
 
-        private IEnumrator SelectAttack()
+        private IEnumerator SelectAttack()
         {
             _selectedAttack = Attack.None;
             RpgTextScript.Instance.SetButtons(
@@ -108,7 +108,7 @@ namespace Game3
             while (_selectedAttack == Attack.Attack) yield return null;
         }
 
-        private IEnumrator ExecuteAttack()
+        private IEnumerator ExecuteAttack()
         {
             switch (_selectedAttack)
             {
@@ -149,42 +149,42 @@ namespace Game3
             yield break;
         }
 
-        private IEnumrator RunAwayAnim()
+        private IEnumerator RunAwayAnim()
         {
             yield break;
         }
 
-        private IEnumrator DefendAnim()
+        private IEnumerator DefendAnim()
         {
             yield break;
         }
 
-        private IEnumrator ChargeAnim()
+        private IEnumerator ChargeAnim()
         {
             yield break;
         }
 
-        private IEnumrator KarlsonVibeAnim()
+        private IEnumerator KarlsonVibeAnim()
         {
             yield break;
         }
 
-        private IEnumrator BananaAnim()
+        private IEnumerator BananaAnim()
         {
             yield break;
         }
 
-        private IEnumrator PrettyGoodAnim()
+        private IEnumerator PrettyGoodAnim()
         {
             yield break;
         }
 
-        private IEnumrator MilkAnim()
+        private IEnumerator MilkAnim()
         {
             yield break;
         }
 
-        private IEnumrator BillyAttack()
+        private IEnumerator BillyAttack()
         {
             player.Health -= billyAttack;
             var ack = false;

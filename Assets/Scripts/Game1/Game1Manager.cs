@@ -80,7 +80,7 @@ namespace Game1
 
         private void SpawnClickMe()
         {
-            _spawnTimer = Mathf.Lerp(7f, 1f, (Runtime))
+            _spawnTimer = Mathf.Lerp(7f, 1f, Runtime / 60f);
 
             var click = Instantiate(clickPrefab);
             click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);

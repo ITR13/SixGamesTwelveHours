@@ -50,7 +50,7 @@ namespace Game1
             if (Game1Manager.Paused) return;
 
             Destroy(gameObject);
-            Game1Manager.Score = 10 + Mathf.CeilToInt(_remainingLifeTime);
+            Game1Manager.Score += 10 + Mathf.CeilToInt(_remainingLifeTime);
         }
 
         private void OnDestroy()

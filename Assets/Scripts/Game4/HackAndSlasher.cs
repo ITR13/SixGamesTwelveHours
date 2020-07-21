@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Game4
@@ -27,16 +28,16 @@ namespace Game4
         private void FixedUpdate()
         {
             var dir = rigidBody.velocity.x;
-            var force = horizontal;
-            if (dir * force < 0)
+            var xForce = horizontal * 4;
+            if (dir * xForce < 0)
             {
-                force *= 2;
+                xForce *= 2;
             }
-            else if (force == 0)
+            else if (Math.Abs(xForce) < 0.01f)
             {
-
+                xForce = -dir * 2;
             }
-            rigidBody.AddForce();
+            rigidBody.AddForce(new Vector2(xForce, ));
         }
     }
 }

@@ -110,17 +110,13 @@ namespace Game3
                         () => _selectedAttack = Attack.Banana,
                         () => _selectedAttack = Attack.KarlsonVibe
                     },
-                    () => back = true;
+                    () => back = true
                 );
 
                 while (!back)
                 {
-                    if (back) break;
-                        yield return null;
+                    if (_selectedAttack != Attack.Attack) yield break;
                 }
-                if(back) contionue
-
-                yield break;
             }
         }
 

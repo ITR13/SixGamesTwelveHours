@@ -37,6 +37,9 @@ namespace Game1
             set => PlayerPrefs.SetInt(HighscoreKey, value);
         }
 
+
+        [SerializeField] private Click clickPrefab;
+
         [SerializeField] private TextMeshProUGUI lifeDisplay;
         [SerializeField] private TextMeshProUGUI scoreDisplay;
         [SerializeField] private TextMeshProUGUI highscoreDisplay;
@@ -51,9 +54,11 @@ namespace Game1
             highscoreDisplay.text = $"Highscore: {Highscore}";
         }
 
+        private int t;
         private void Update()
         {
             Runtime += Time.deltaTime;
+            
         }
 
         private void GameOver()
@@ -61,8 +66,9 @@ namespace Game1
             if (Score > Highscore)
             {
                 Highscore = Score;
-                highscoreDisplay.text = $"Highscore: {Highscore}";
             }
+
+            // Show menu
         }
     }
 }

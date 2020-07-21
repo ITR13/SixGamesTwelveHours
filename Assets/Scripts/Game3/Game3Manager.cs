@@ -28,8 +28,8 @@ namespace Game3
 
         private void Awake()
         {
-            billyAttack = 0.01f;
-            bananas
+            billyAttack = 0.02f;
+            bananas = 0;
         }
 
         private void Start()
@@ -111,13 +111,15 @@ namespace Game3
             {
                 case Attack.Milk:
                     yield return MilkAnim();
-                    billyAttack *= 2f;
+                    billyAttack *= 1.75f;
                     break;
                 case Attack.PrettyGood:
                     yield return PrettyGoodAnim();
+                    player.Health += 0.3f;
                     break;
                 case Attack.Banana:
                     yield return BananaAnim();
+
                     break;
                 case Attack.KarlsonVibe:
                     yield return KarlsonVibeAnim();

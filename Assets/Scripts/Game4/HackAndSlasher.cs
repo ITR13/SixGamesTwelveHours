@@ -11,7 +11,8 @@ namespace Game4
             rigidBody = GetComponent<Rigidbody2D>();
         }
 
-        private Vector2 Movement;
+        private float horizontal;
+        private float jumpIfGrounded;
 
         private  
     }

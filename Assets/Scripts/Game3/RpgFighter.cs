@@ -1,4 +1,5 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,9 +20,19 @@ namespace Game3
             set => healthBar.fillAmount = value;
         }
 
-        public float Energy
+        public int Energy
         {
-            set => energyBar.fillAmount = 
+            get => _currentEnergy;
+            set
+            {
+                if (value < 0)
+                {
+                    _currentEnergy = 0;
+                }else if (value >= totalEnergy)
+                {
+                    _currentEnergy = totalEnergy;
+                }
+            }
         }
     }
 }

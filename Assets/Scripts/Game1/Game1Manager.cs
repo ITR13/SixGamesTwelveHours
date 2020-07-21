@@ -46,6 +46,11 @@ namespace Game1
         [SerializeField] private TextMeshProUGUI lifeDisplay;
         [SerializeField] private TextMeshProUGUI scoreDisplay;
         [SerializeField] private TextMeshProUGUI highscoreDisplay;
+
+        [SerializeField] private AudioSource hitSound;
+        [SerializeField] private AudioSource missSound;
+        [SerializeField] private AudioSource hurtSound;
+
         private static int _prevLives;
         private static int _score;
 
@@ -143,6 +148,7 @@ namespace Game1
             if (hits == 0)
             {
                 Misses.Miss();
+                missSound.Play();
                 return;
             }
 

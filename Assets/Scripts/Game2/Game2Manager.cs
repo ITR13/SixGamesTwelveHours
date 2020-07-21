@@ -17,12 +17,15 @@ namespace Game2
 
         [SerializeField] private Image circle;
 
+        private int _warmup;
         private float _fillAmount;
         private ClickState _currentClickState;
 
+
         private void Awake()
         {
-            _fillAmount = -3;
+            _warmup = 2;
+            _fillAmount = 0;
             _currentClickState = ClickState.WaitingForClick;
         }
 
@@ -32,8 +35,9 @@ namespace Game2
             circle.fillAmount = _fillAmount % 1;
 
             if (_fillAmount < 1) return;
-
             _fillAmount -= 1;
+
+            if(_warmup++ < 0) return;
             ExpendClick();
         }
 

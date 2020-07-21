@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,8 +14,15 @@ namespace Game3
 
         [SerializeField] private GameObject textGo;
         [SerializeField] private GameObject buttonParent;
-    
-        
-    
+
+        private void Awake()
+        {
+            _instance = this;
+        }
+
+        public static void SetText(string text, Action go)
+        {
+
+        }
     }
 }

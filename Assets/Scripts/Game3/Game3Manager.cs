@@ -21,6 +21,7 @@ namespace Game3
         }
 
         [SerializeField] private RpgFighter player, enemy;
+        [SerializeField] private GameObject milkGo;
 
         private float billyAttack;
         private int bananas, prettyGoods;
@@ -230,9 +231,11 @@ namespace Game3
 
             for (var t = 0; t < 0.5f; t += Time.deltaTime)
             {
-                milkT
                 yield return null;
+                milkT.Rotate(0, 0, Time.deltaTime * 360);
             }
+
+            milkStreamGo.SetActive(true);
 
             yield break;
         }

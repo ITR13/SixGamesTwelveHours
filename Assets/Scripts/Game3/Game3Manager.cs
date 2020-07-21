@@ -224,6 +224,16 @@ namespace Game3
 
         private IEnumerator MilkAnim()
         {
+            var milkT = milkGo.transform;
+            milkT.rotation = Quaternion.identity;
+            milkGo.SetActive(true);
+
+            for (var t = 0; t < 0.5f; t += Time.deltaTime)
+            {
+                milkT
+                yield return null;
+            }
+
             yield break;
         }
 

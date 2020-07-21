@@ -41,7 +41,7 @@ namespace Game2
 
         private void Awake()
         {
-            _warmup = 2;
+            _warmup = -2;
             _fillAmount = 0;
             _currentClickState = ClickState.WaitingForClick;
         }
@@ -57,6 +57,7 @@ namespace Game2
             _fillAmount -= 1;
 
             if(_warmup++ < 0) return;
+            Debug.Log("Filled!");
             ExpendClick();
         }
 
@@ -87,6 +88,7 @@ namespace Game2
         {
             if (_warmup < 0) return;
             if (_warmup == 0 && _fillAmount < 0.5f) return;
+            Debug.Log("Click!");
 
             switch (_currentClickState)
             {

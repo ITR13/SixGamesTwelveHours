@@ -67,16 +67,6 @@ namespace Game2
 
             if (_fillAmount < 1) return;
             _fillAmount -= 1;
-            var clip = new AudioClip();
-            audioSource.clip.SetData(
-
-                GenerateAudio(
-                    Mathf.FloorToInt(Mathf.Lerp(0.3f, 0.8f, _totalError) * 1000),
-                    200,
-                    440 / Mathf.Pow(-2, _totalError * 10)
-                ),
-                0
-            );
 
             if (_warmup++ < 0) return;
             Debug.Log($"Filled!: {_currentClickState}");
@@ -143,6 +133,21 @@ namespace Game2
             {
                 GameOver();
             }
+        }
+
+        private void PlayBeep()
+        {
+            var length = Mathf.Lerp(0.3f, 0.8f, _totalError) * 1000;
+            var clip = new AudioClip(1000);
+            audioSource.clip.SetData(
+
+                GenerateAudio(
+                    Mathf.FloorToInt(),
+                    200,
+                    440 / Mathf.Pow(-2, _totalError * 10)
+                ),
+                0
+            );
         }
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)

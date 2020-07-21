@@ -29,6 +29,24 @@ namespace Game1
 
         void Update()
         {
+
+            if (_fade > 0)
+            {
+                _fade -= Time.deltaTime * 2;
+                if (_fade < 0)
+                {
+                    Destroy(gameObject);
+                    return;
+                }
+                _renderer.material.color = Color.HSVToRGB(
+                    Mathf.Lerp(1f, 0.66f, _remainingLifeTime / StartLifeTime),
+                    1,
+                    1
+                );
+
+                return;
+            }
+
             if (Game1Manager.Paused) return;
             _remainingLifeTime -= Time.deltaTime;
             _renderer.material.color = Color.HSVToRGB(
@@ -40,18 +58,7 @@ namespace Game1
 
         private void FixedUpdate()
         {
-            if (_fade > 0)
-            {
-                _fade -= Time.deltaTime * 2;
-                if (_fade < 0)
-                {
-                    Destroy(gameObject);
-                    return;
-                }
-
-                _
-            }
-
+            if (_fade > 0) return;
             if (Game1Manager.Paused) return;
             if (_remainingLifeTime > -0.02f) return;
             Game1Manager.Lives--;

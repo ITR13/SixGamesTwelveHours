@@ -1152,9 +1152,9 @@ MonoBehaviour:
   lifeDisplay: {fileID: 90307673}
   scoreDisplay: {fileID: 195399827}
   highscoreDisplay: {fileID: 2032620052}
-  hitSound: {fileID: 0}
-  missSound: {fileID: 0}
-  hurtSound: {fileID: 0}
+  hitSound: {fileID: 77324760}
+  missSound: {fileID: 1756986870}
+  hurtSound: {fileID: 1099484497}
 --- !u!4 &1275852470
 Transform:
   m_ObjectHideFlags: 0

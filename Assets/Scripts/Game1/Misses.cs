@@ -5,7 +5,7 @@ namespace Game1
 {
     public class Misses : MonoBehaviour
     {
-        private static Misses _misses;
+        private static Misses _instance;
         private static int _count;
         private static float _fadeTimer = 0;
 
@@ -13,7 +13,7 @@ namespace Game1
 
         private void Awake()
         {
-            _misses = this;
+            _instance = this;
             _count = 0;
             _text = GetComponent<TextMeshProUGUI>();
             _text.text = "";
@@ -33,7 +33,13 @@ namespace Game1
         {
             _count++;
             _fadeTimer = 0;
-            new string(" X", _count - 1);
+            var text = "X";
+            for (var i = 1; i < _count; i++)
+            {
+                text += " X";
+            }
+
+            _instance._text.text = text;
 
             if (_count < 3) return;
             _fadeTime = 3;

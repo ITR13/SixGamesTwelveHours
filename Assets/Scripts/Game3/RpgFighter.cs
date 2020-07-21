@@ -19,7 +19,7 @@ namespace Game3
             get => healthBar.fillAmount;
             set
             {
-                Debug.Log($"Health: {healthBar.fillAmount} -> {value}");
+                Debug.Log($"Health: {value}");
                 healthBar.fillAmount = value;
             }
         }
@@ -29,7 +29,7 @@ namespace Game3
             get => _currentEnergy;
             set
             {
-                Debug.Log($"Energy: {energyBar.fillAmount} -> {value}");
+                Debug.Log($"Energy: {value}");
                 if (value < 0)
                 {
                     _currentEnergy = 0;

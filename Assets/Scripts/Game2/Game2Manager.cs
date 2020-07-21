@@ -26,14 +26,18 @@ namespace Game2
             set
             {
                 _totalError = value;
-                // Update something
+                circle.color = Color.HSVToRGB(0, Mathf.Clamp01(value), 1);
             }
         }
 
         public int Score
         {
             get => _score;
-            set => _score = value;
+            set
+            {
+                _score = value;
+                scoreText.text = value.ToString();
+            }
         }
 
         private int _score;
@@ -48,11 +52,14 @@ namespace Game2
             _fillAmount = 0;
             _currentClickState = ClickState.WaitingForPreClick;
             circle.color = Color.white;
+
+            Score = 0;
+            TotalError = 0;
         }
 
         private void Update()
         {
-            if(Input.anyKeyDown) OnClick();
+            if (Input.anyKeyDown) OnClick();
 
             _fillAmount += Time.deltaTime;
             circle.fillAmount = _fillAmount % 1;
@@ -60,7 +67,7 @@ namespace Game2
             if (_fillAmount < 1) return;
             _fillAmount -= 1;
 
-            if(_warmup++ < 0) return;
+            if (_warmup++ < 0) return;
             Debug.Log($"Filled!: {_currentClickState}");
             ExpendClick();
         }
@@ -118,8 +125,6 @@ namespace Game2
             var error = pre ? 1 - _fillAmount : _fillAmount;
             TotalError += error;
             Score++;
-
-            circle.color = Color.HSVToRGB(0, Mathf.Clamp01(TotalError), 1);
 
             Debug.Log($"Error: {error}    Total: {TotalError}\nScore: {Score}");
 

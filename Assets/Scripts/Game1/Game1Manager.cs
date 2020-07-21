@@ -65,6 +65,8 @@ namespace Game1
                 t += 1;
                 Instantiate(clickPrefab);
             }
+
+            if(Lives < 0) GameOver();
         }
 
         private void GameOver()

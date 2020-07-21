@@ -1,5 +1,6 @@
 using System;
 using TMPro;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.Events;
@@ -47,9 +48,15 @@ namespace Game3
             for (var i = 0; i < 4; i++)
             {
                 buttonTexts[i].text = textToShow[i];
+                buttons[i].onClick.RemoveAllListeners();
+                buttons[i].onClick.AddListener(new UnityAction(actions[i]));
             }
 
-
+            if (backAction == null)
+            {
+                backButton.gameObject.SetActive(false);
+                return;
+            }
         }
     }
 }

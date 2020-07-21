@@ -142,11 +142,11 @@ namespace Game2
         private void PlayBeep()
         {
             var length = Mathf.FloorToInt(Mathf.Lerp(0.6f, 1f, TotalError) * Bps);
-            var clip = AudioClip.Create("beep", length * Bps, 1, Bps, false);
+            var clip = AudioClip.Create("beep", length, 1, Bps, false);
             clip.SetData(
                 GenerateAudio(
-                    length * 1000,
-                    200,
+                    length,
+                    Bps / 5,
                     440
                 ),
                 0

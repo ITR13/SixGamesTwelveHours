@@ -90,9 +90,18 @@ namespace Game1
                 _spawnTimer = Mathf.Lerp(
                     4f,
                     1f,
-                    Mathf.Sqrt(Mathf.Abs(Runtime)) / 60f
+                    Mathf.Sqrt(Mathf.Abs(Runtime)) / 10f
                 );
                 _burst = 3;
+            }
+            else
+            {
+                _spawnTimer = Mathf.Lerp(
+                    2f,
+                    0.5f,
+                    Runtime / 60f
+                );
+                _burst--;
             }
 
             var click = Instantiate(clickPrefab);

@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game3
@@ -26,7 +27,9 @@ namespace Game3
 
         private IEnumerable WaitFor(out Action action)
         {
-            while(wait)
+            var waiting = true;
+            action = () => waiting = false;
+            while (waiting) yield return null;
         }
 
         private IEnumerable IntroOutro()
@@ -60,7 +63,7 @@ namespace Game3
             }
         }
 
-        private IEnumerable SelectAttack(out Attacks attack)
+        private IEnumerable<Attacks> SelectAttack(out Attacks attack)
         {
             yield return null;
         }

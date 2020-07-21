@@ -90,6 +90,7 @@ namespace Game1
                 1f,
                 Mathf.Sqrt(Mathf.Abs(Runtime)) / 60f
             );
+            Debug.Log();
 
             var click = Instantiate(clickPrefab);
             click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);

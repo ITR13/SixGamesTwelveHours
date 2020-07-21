@@ -240,7 +240,7 @@ namespace Game3
             yield return new WaitForSeconds(0.1f);
             for (var t = 0f; t < 3f; t += Time.deltaTime)
             {
-                
+                enemy.Size += Time.deltaTime / 8;
             }
 
 

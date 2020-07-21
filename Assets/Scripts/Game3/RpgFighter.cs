@@ -46,5 +46,11 @@ namespace Game3
                 energyBar.fillAmount = _currentEnergy / (float) totalEnergy;
             }
         }
+
+        private float _size;
+        public float Size =>
+        {
+
+        }
     }
 }

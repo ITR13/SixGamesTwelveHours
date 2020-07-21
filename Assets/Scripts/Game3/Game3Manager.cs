@@ -229,15 +229,21 @@ namespace Game3
             milkT.rotation = Quaternion.identity;
             milkGo.SetActive(true);
 
-            for (var t = 0; t < 0.5f; t += Time.deltaTime)
+            for (var t = 0f; t < 0.5f; t += Time.deltaTime)
             {
                 yield return null;
                 milkT.Rotate(0, 0, Time.deltaTime * 360);
             }
 
+            yield return new WaitForSeconds(0.1f);
             milkStreamGo.SetActive(true);
+            yield return new WaitForSeconds(0.1f);
+            for (var t = 0f; t < 3f; t += Time.deltaTime)
+            {
+                
+            }
 
-            yield break;
+
         }
 
         private IEnumerator BillyAttack()

@@ -169,7 +169,12 @@ namespace Game3
             }
 
             if (!notEnoughEnergy) yield break;
-
+            var ack = false;
+            RpgTextScript.Instance.SetText(
+                "You tried to do something, but was too tired.",
+                () => ack = true
+            );
+            player.Energy++;
         }
 
         private IEnumerator RunAwayAnim()

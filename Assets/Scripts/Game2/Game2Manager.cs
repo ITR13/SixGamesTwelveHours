@@ -82,6 +82,7 @@ namespace Game2
 
             _fillAmount += Time.deltaTime;
             circle.fillAmount = _fillAmount % 1;
+            Debug.Log("!!!");
 
             if (_fillAmount < 1) return;
             _fillAmount -= 1;
@@ -114,6 +115,7 @@ namespace Game2
         {
             Paused = true;
             circle.fillAmount = 1;
+            Debug.Log("???");
 
             if (Score > Highscore)
             {

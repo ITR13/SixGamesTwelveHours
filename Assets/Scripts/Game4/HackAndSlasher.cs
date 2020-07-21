@@ -58,6 +58,7 @@ namespace Game4
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            Debug.Log("!!!");
             if (!other.gameObject.CompareTag("Ground")) return;
             grounded = false;
         }

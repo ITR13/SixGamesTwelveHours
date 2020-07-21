@@ -63,6 +63,11 @@ namespace Game3
             }
         }
 
+        private IEnumerable ExecuteAttack()
+        {
+            throw new NotImplementedException();
+        }
+
         private IEnumerable SelectAttack()
         {
             var selectedAttack = Attacks.None;
@@ -82,7 +87,7 @@ namespace Game3
             if (selectedAttack != Attacks.Attack) yield break;
 
             RpgTextScript.Instance.SetButtons(
-                new[] { "Attack", "Charge", "Defend", "Run" },
+                new[] { "Milk", "Pretty Good", "Banana", "Vibe" },
                 new Action[]
                 {
                     () => selectedAttack = Attacks.Attack,
@@ -93,7 +98,6 @@ namespace Game3
                 null
             );
             while (selectedAttack == Attacks.Attack) yield return null;
-
         }
     }
 }

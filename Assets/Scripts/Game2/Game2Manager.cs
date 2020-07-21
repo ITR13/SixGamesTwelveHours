@@ -51,7 +51,6 @@ namespace Game2
             _warmup = -2;
             _fillAmount = 0;
             _currentClickState = ClickState.WaitingForPreClick;
-            circle.color = Color.white;
 
             Score = 0;
             TotalError = 0;

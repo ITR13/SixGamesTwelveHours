@@ -426,6 +426,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   circle: {fileID: 662675635}
+  scoreText: {fileID: 1801202405}
 --- !u!1 &1801202403
 GameObject:
   m_ObjectHideFlags: 0

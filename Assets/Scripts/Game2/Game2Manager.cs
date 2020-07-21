@@ -132,5 +132,10 @@ namespace Game2
                 GameOver();
             }
         }
+
+        private byte[] GenerateAudio(int bitrate, int ms, float falloff)
+        {
+            var bytes = new byte[(int)bitrate*seconds]
+        }
     }
 }

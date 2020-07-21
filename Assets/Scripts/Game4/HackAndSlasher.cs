@@ -21,6 +21,7 @@ namespace Game4
             horizontal = Input.GetAxis("Horizontal");
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Vertical") > 0)
             {
+                Debug.Log("Jump");
                 jumpIfGrounded = 0.2f;
             }
         }
@@ -47,7 +48,7 @@ namespace Game4
             if (grounded && jumpIfGrounded > 0)
             {
                 grounded = false;
-                yForce = 20;
+                yForce = 200;
             }
 
             jumpIfGrounded -= Time.fixedDeltaTime;

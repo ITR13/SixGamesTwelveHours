@@ -709,10 +709,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07855c761318a164b8664117e00f170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clickPrefab: {fileID: 0}
+  clickPrefab: {fileID: 39456947, guid: 0c023be2b4be299438545e5f7f843503, type: 3}
   lifeDisplay: {fileID: 90307673}
-  scoreDisplay: {fileID: 0}
-  highscoreDisplay: {fileID: 0}
+  scoreDisplay: {fileID: 195399827}
+  highscoreDisplay: {fileID: 2032620052}
 --- !u!4 &1275852470
 Transform:
   m_ObjectHideFlags: 0

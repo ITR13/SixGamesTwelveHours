@@ -48,6 +48,8 @@ namespace Game1
 
         private void Awake()
         {
+            _instance = this;
+
             Runtime = -3f;
             Lives = 3;
             Score = 0;

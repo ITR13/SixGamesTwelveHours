@@ -93,10 +93,10 @@ namespace Game1
 
             var click = Instantiate(clickPrefab);
             click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);
-            var position = Random.insideUnitCircle * 4;
+            var position = Random.insideUnitCircle;
+            position.x *= 15f;
             position.y *= 7.5f;
-            position.y *= 15f;
-            click.transform.position = 
+            click.transform.position = position;
         }
 
         private void RegenHealth()

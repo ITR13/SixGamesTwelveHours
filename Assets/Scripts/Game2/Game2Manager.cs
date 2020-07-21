@@ -76,7 +76,7 @@ namespace Game2
 
         private void Update()
         {
-            if(Paused) return;
+            if (Paused) return;
 
             if (Input.anyKeyDown) OnClick();
 
@@ -165,7 +165,7 @@ namespace Game2
         private void PlayBeep()
         {
             var length = Mathf.FloorToInt(Mathf.Lerp(0.3f, 0.75f, TotalError) * Bps);
-            var frequency = 440 * Mathf.Pow(2, TotalError * 10);
+            var frequency = 440 * Mathf.Pow(2, -TotalError / 10);
             var clip = AudioClip.Create("beep", length, 1, Bps, false);
             clip.SetData(
                 GenerateAudio(
@@ -175,8 +175,7 @@ namespace Game2
                 ),
                 0
             );
-            audioSource.clip = clip;
-            audioSource.Play();
+            audioSource.PlayOneShot(clip, 0.35f);
         }
 
         private float[] GenerateAudio(int totalSize, int falloffSize, float hz)

@@ -16,6 +16,7 @@ namespace Game3
         private enum Attacks
         {
             None,
+            Attack,
             Milk, 
             PrettyGood,
             Banana,
@@ -64,10 +65,16 @@ namespace Game3
 
         private IEnumerable SelectAttack()
         {
-            
+            var selectedAttack = Attacks.None;
             RpgTextScript.Instance.SetButtons(
-                new []{"Attack", "Charge", "Defend", "Run away"},
-                new []{}
+                new []{"Attack", "Charge", "Defend", "Run"},
+                new []
+                {
+                    () => selectedAttack = Attacks.Attack,
+                    () => selectedAttack = Attacks.Charge,
+                    () => selectedAttack = Attacks.Defend,
+                    () => selectedAttack = Attacks.RunAway
+                },
             );
         }
     }

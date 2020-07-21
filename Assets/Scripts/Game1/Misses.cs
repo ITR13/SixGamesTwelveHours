@@ -41,7 +41,11 @@ namespace Game1
 
             _instance._text.text = text;
 
-            if (_count < 3) return;
+            if (_count < 3)
+            {
+                missSound.Play();
+                return;
+            }
             _fadeTimer = 3;
             _count = 0;
             Game1Manager.Lives--;

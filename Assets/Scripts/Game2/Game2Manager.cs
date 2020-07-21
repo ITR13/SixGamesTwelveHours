@@ -166,14 +166,15 @@ namespace Game2
 
             for (var i = 0; i < preFalloff; i++)
             {
-                var t = 2 * i * Mathf.PI / hz;
+                var t = 2f * i * Mathf.PI / hz;
+                Debug.Log(t);
                 var h = Mathf.Sin(t);
                 data[i] = h;
             }
 
             for (var i = 0; i < falloffSize; i++)
             {
-                var t = 2 * i * Mathf.PI / hz;
+                var t = 2f * i * Mathf.PI / hz;
                 var h = Mathf.Sin(t);
                 var scale = 1 - i / (float)falloffSize;
                 data[i + preFalloff] = h * scale;

@@ -7,7 +7,7 @@ namespace Game1
     {
         private static Game1Manager _instance;
 
-        public static float Time { get; private set; }
+        public static float Runtime { get; private set; }
 
         public static int Score
         {
@@ -37,16 +37,15 @@ namespace Game1
 
         private void Awake()
         {
-            Time = -3f;
+            Runtime = -3f;
             Lives = 3;
-            _prevLives = Lives;
-            UpdateLives();
+            Score = 0;
+
         }
 
-        private void UpdateLives()
+        private void Update()
         {
-            _prevLives = Lives;
-            lifeDisplay.text = $"Health: {Lives}";
+            Runtime += Time.deltaTime;
         }
     }
 }

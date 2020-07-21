@@ -21,9 +21,13 @@ namespace Game1
 
         void Update()
         {
+            _remainingLifeTime -= Time.deltaTime;
             _renderer.material.color = Color.HSVToRGB(
-                Mathf.Lerp(0.66f, 1f, Lifetime)
+                Mathf.Lerp(1f, 0.66f, _remainingLifeTime/StartLifeTime),
+                1,
+                1
             );
+
         }
 
         private void OnMouseDown()

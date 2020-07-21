@@ -6,7 +6,7 @@ namespace Game3
 {
     public class Game3Manager : MonoBehaviour
     {
-        private enum Attacks
+        private enum Attack
         {
             None,
             Attack,
@@ -23,6 +23,8 @@ namespace Game3
 
         [SerializeField] private float billyAttack;
         [SerializeField] private int bananas;
+
+        private Attack _selectedAttack;
 
         private void Start()
         {
@@ -67,41 +69,58 @@ namespace Game3
 
         private IEnumerable SelectAttack()
         {
-            var selectedAttack = Attacks.None;
+            _selectedAttack = Attack.None;
             RpgTextScript.Instance.SetButtons(
                 new []{"Attack", "Charge", "Defend", "Run"},
                 new Action[]
                 {
-                    () => selectedAttack = Attacks.Attack,
-                    () => selectedAttack = Attacks.Charge,
-                    () => selectedAttack = Attacks.Defend,
-                    () => selectedAttack = Attacks.RunAway
+                    () => _selectedAttack = Attack.Attack,
+                    () => _selectedAttack = Attack.Charge,
+                    () => _selectedAttack = Attack.Defend,
+                    () => _selectedAttack = Attack.RunAway
                 },
                 null
             );
-            while (selectedAttack == Attacks.None) yield return null;
+            while (_selectedAttack == Attack.None) yield return null;
 
-            if (selectedAttack != Attacks.Attack) yield break;
+            if (_selectedAttack != Attack.Attack) yield break;
 
             RpgTextScript.Instance.SetButtons(
                 new[] { "Milk", "Pretty Good", "Banana", "Vibe" },
                 new Action[]
                 {
-                    () => selectedAttack = Attacks.Attack,
-                    () => selectedAttack = Attacks.Charge,
-                    () => selectedAttack = Attacks.Defend,
-                    () => selectedAttack = Attacks.RunAway
+                    () => _selectedAttack = Attack.Attack,
+                    () => _selectedAttack = Attack.Charge,
+                    () => _selectedAttack = Attack.Defend,
+                    () => _selectedAttack = Attack.RunAway
                 },
                 null
             );
-            while (selectedAttack == Attacks.Attack) yield return null;
+            while (_selectedAttack == Attack.Attack) yield return null;
         }
 
         private IEnumerable ExecuteAttack()
         {
-            switch ()
+            switch (_selectedAttack)
             {
-                
+                case Attack.Milk:
+                    break;
+                case Attack.PrettyGood:
+                    break;
+                case Attack.Banana:
+                    break;
+                case Attack.KarlsonVibe:
+                    break;
+                case Attack.Charge:
+                    break;
+                case Attack.Defend:
+                    break;
+                case Attack.RunAway:
+                    break;
+                case Attack.None:
+                case Attack.Attack:
+                default:
+                    break;
             }
             yield break;
         }

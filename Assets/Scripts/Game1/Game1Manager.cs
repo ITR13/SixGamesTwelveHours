@@ -49,6 +49,9 @@ namespace Game1
         private static int _prevLives;
         private static int _score;
 
+        private float _healthTimer;
+        private float _spawnTimer;
+
         private void Awake()
         {
             _instance = this;

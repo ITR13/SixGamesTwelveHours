@@ -1176,8 +1176,8 @@ MonoBehaviour:
   backButton: {fileID: 238838677}
   text: {fileID: 443211599}
   textButton: {fileID: 1303303122}
-  textGo: {fileID: 1329553902}
-  buttonParent: {fileID: 443211597}
+  textGo: {fileID: 443211597}
+  buttonParent: {fileID: 1329553902}
 --- !u!1 &600008171
 GameObject:
   m_ObjectHideFlags: 0

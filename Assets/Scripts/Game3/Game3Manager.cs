@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game3
@@ -63,7 +62,7 @@ namespace Game3
             }
         }
 
-        private IEnumerable<Attacks> SelectAttack(out Attacks attack)
+        private IEnumerable SelectAttack(out Attacks attack)
         {
             yield return null;
         }

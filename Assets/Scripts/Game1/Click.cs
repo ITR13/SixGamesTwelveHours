@@ -15,7 +15,9 @@ namespace Game1
 
         void Update()
         {
-            
+            _renderer.material.color = Color.HSVToRGB(
+                Mathf.Lerp(0.66f, 1f, Lifetime)
+            );
         }
 
         private void OnMouseDown()
@@ -25,7 +27,7 @@ namespace Game1
 
         private void OnDestroy()
         {
-            
+            Destroy(_renderer.material);
         }
     }
 }

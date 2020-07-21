@@ -245,7 +245,11 @@ namespace Game3
             for (var t = 0f; t < 3f; t += Time.deltaTime)
             {
                 enemy.Size += Time.deltaTime / 8;
+                yield return null;
             }
+
+            milkGo.SetActive(false);
+            milkStreamGo.SetActive(false);
         }
 
         private IEnumerator BillyAttack()

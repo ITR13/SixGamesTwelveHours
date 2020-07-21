@@ -6,24 +6,27 @@ namespace Game3
 {
     public class Game3Manager : MonoBehaviour
     {
-        [SerializeField] private RpgFighter player, enemy;
-
-        private void Start()
-        {
-            RpgTextScript.Instance.SetText("", () => {});
-        }
-
         private enum Attacks
         {
             None,
             Attack,
-            Milk, 
+            Milk,
             PrettyGood,
             Banana,
             KarlsonVibe,
             Charge,
             Defend,
             RunAway,
+        }
+
+        [SerializeField] private RpgFighter player, enemy;
+
+        [SerializeField] private float billyAttack;
+        [SerializeField] private int bananas;
+
+        private void Start()
+        {
+            RpgTextScript.Instance.SetText("", () => {});
         }
 
         private IEnumerable IntroOutro()
@@ -102,7 +105,5 @@ namespace Game3
             }
             yield break;
         }
-
-
     }
 }

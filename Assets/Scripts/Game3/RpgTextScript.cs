@@ -1,6 +1,7 @@
 using System;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 namespace Game3
@@ -27,6 +28,17 @@ namespace Game3
             _instance.textGo.SetActive(true);
             _instance.buttonParent.SetActive(false);
             _instance.text.text = text;
+
+            _instance.textButton.onClick.RemoveAllListeners();
+            _instance.textButton.onClick.AddListener(new UnityAction(go));
+        }
+
+        public static void SetButtons(
+            string[] text,
+            Action[] actions,
+            Action backAction
+        )
+        {
 
         }
     }

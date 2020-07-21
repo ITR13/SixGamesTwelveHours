@@ -21,10 +21,16 @@ namespace Game3
 
         [SerializeField] private RpgFighter player, enemy;
 
-        [SerializeField] private float billyAttack;
-        [SerializeField] private int bananas;
+        private float billyAttack;
+        private int bananas;
 
         private Attack _selectedAttack;
+
+        private void Awake()
+        {
+            billyAttack = 0.01f;
+            bananas
+        }
 
         private void Start()
         {
@@ -105,6 +111,7 @@ namespace Game3
             {
                 case Attack.Milk:
                     yield return MilkAnim();
+                    billyAttack *= 2f;
                     break;
                 case Attack.PrettyGood:
                     yield return PrettyGoodAnim();

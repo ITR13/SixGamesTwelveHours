@@ -123,15 +123,15 @@ namespace Game1
         private void CheckClick()
         {
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
-            var cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition));
+            var cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (!Physics.Raycast(cameraRay, out var hitInfo))
             {
-                Misses++;
+                Misses.Miss();
                 return;
             }
 
-            Misses = 0;
-
+            Misses.Hit();
+            hitInfo.transform.GetComponent<Click>().Clicked();
         }
 
         private void GameOver()

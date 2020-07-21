@@ -13,26 +13,15 @@ namespace Game3
             RpgTextScript.Instance.SetText("", () => {});
         }
 
-        private enum FightState
+        private enum Attacks
         {
-            Selecting,
-            Attacking,
-            BillyAttacks,
-            Victory,
-            Dead,
-        }
-
-        private enum SelectState
-        {
-            MainSelect,
-            AttackSelect,
-        }
-
-        private enum AttackState
-        {
-            Animation,
-            Health,
-            Text,
+            Milk, 
+            PrettyGood,
+            Banana,
+            KarlsonVibe,
+            Charge,
+            Defend,
+            RunAway,
         }
 
         private IEnumerable IntroOutro()

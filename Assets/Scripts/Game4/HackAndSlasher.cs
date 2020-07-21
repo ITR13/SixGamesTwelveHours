@@ -21,7 +21,6 @@ namespace Game4
             horizontal = Input.GetAxis("Horizontal");
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Vertical") > 0)
             {
-                Debug.Log("Jump");
                 jumpIfGrounded = 0.2f;
             }
         }
@@ -48,7 +47,7 @@ namespace Game4
             if (grounded && jumpIfGrounded > 0)
             {
                 grounded = false;
-                yForce = 200;
+                yForce = 20;
             }
 
             jumpIfGrounded -= Time.fixedDeltaTime;
@@ -59,9 +58,8 @@ namespace Game4
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log("!!!");
             if (!other.gameObject.CompareTag("Ground")) return;
-            grounded = false;
+            grounded = true;
         }
     }
 }

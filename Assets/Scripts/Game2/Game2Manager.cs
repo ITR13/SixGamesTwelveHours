@@ -134,7 +134,7 @@ namespace Game2
             }
         }
 
-        private byte[] GenerateAudio(int ms, int falloutMs)
+        private byte[] GenerateAudio(int ms, int falloutMs, float hz)
         {
             const int bps = 44100;
 
@@ -144,7 +144,9 @@ namespace Game2
 
             for (var i = 0; i < preFalloff; i++)
             {
-                var t = float(i)
+                var t = i * Mathf.PI / hz;
+                var h = Mathf.Sin(t);
+                bytes[i] = t;
             }
         }
     }

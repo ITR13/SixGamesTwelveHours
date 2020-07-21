@@ -114,6 +114,8 @@ namespace Game3
 
         private IEnumerator ExecuteAttack()
         {
+            var notEnoughEnergy = false;
+
             switch (_selectedAttack)
             {
                 case Attack.Milk:
@@ -123,7 +125,8 @@ namespace Game3
                 case Attack.PrettyGood:
                     if (player.Energy < 3)
                     {
-
+                        notEnoughEnergy = true;
+                        break;
                     }
 
                     yield return PrettyGoodAnim();
@@ -131,10 +134,20 @@ namespace Game3
                     prettyGoods++;
                     break;
                 case Attack.Banana:
+                    if (player.Energy < 2)
+                    {
+                        notEnoughEnergy = true;
+                        break;
+                    }
                     yield return BananaAnim();
                     bananas++;
                     break;
                 case Attack.KarlsonVibe:
+                    if (player.Energy < 10)
+                    {
+                        notEnoughEnergy = true;
+                        break;
+                    }
                     yield return KarlsonVibeAnim();
                     enemy.Health -= 0.2f;
                     break;
@@ -154,7 +167,9 @@ namespace Game3
                 default:
                     break;
             }
-            yield break;
+
+            if (!notEnoughEnergy) yield break;
+
         }
 
         private IEnumerator RunAwayAnim()

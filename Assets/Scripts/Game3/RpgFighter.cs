@@ -17,7 +17,11 @@ namespace Game3
         public float Health
         {
             get => healthBar.fillAmount;
-            set => healthBar.fillAmount = value;
+            set
+            {
+                Debug.Log($"Health: {healthBar.fillAmount} -> {value}");
+                healthBar.fillAmount = value;
+            }
         }
 
         public int Energy
@@ -25,6 +29,7 @@ namespace Game3
             get => _currentEnergy;
             set
             {
+                Debug.Log($"Energy: {energyBar.fillAmount} -> {value}");
                 if (value < 0)
                 {
                     _currentEnergy = 0;

@@ -67,12 +67,15 @@ namespace Game2
 
             if (_fillAmount < 1) return;
             _fillAmount -= 1;
+            var clip = new AudioClip();
             audioSource.clip.SetData(
+
                 GenerateAudio(
-                    Mathf.Lerp(0.3f, 0.8f,_totalError),
-                    0.2f,
+                    Mathf.FloorToInt(Mathf.Lerp(0.3f, 0.8f, _totalError) * 1000),
+                    200,
                     440 / Mathf.Pow(-2, _totalError * 10)
-                )
+                ),
+                0
             );
 
             if (_warmup++ < 0) return;

@@ -120,6 +120,13 @@ namespace Game1
             _healthTimer += Runtime < 60 ? 20 : 120;
         }
 
+        private void CheckClick()
+        {
+            if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
+            var cameraRay = Camera.main.ScreenPointToRay(Input.mousePosition));
+            if (!Physics.Raycast(cameraRay, )
+        }
+
         private void GameOver()
         {
             Paused = true;

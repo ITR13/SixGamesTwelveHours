@@ -17,7 +17,6 @@ namespace Game1
             get => _score;
             set
             {
-                Debug.Log($"Score set to {value}");
                 _instance.scoreDisplay.text = $"Score: {value}";
                 _score = value;
             }
@@ -28,7 +27,6 @@ namespace Game1
             get => _prevLives;
             set
             {
-                Debug.Log($"Health set to {value}");
                 _instance.lifeDisplay.text = $"HP: {value}";
                 _prevLives = value;
             }
@@ -51,6 +49,7 @@ namespace Game1
 
         private float _healthTimer;
         private float _spawnTimer;
+        private int _burst;
 
         private void Awake()
         {
@@ -65,6 +64,7 @@ namespace Game1
 
             _spawnTimer = 0f;
             _healthTimer = 0f;
+            _burst = 0;
         }
 
         private void Update()
@@ -85,11 +85,15 @@ namespace Game1
 
         private void SpawnClickMe()
         {
-            _spawnTimer = Mathf.Lerp(
-                4f,
-                1f,
-                Mathf.Sqrt(Mathf.Abs(Runtime)) / 60f
-            );
+            if (_burst <= 0)
+            {
+                _spawnTimer = Mathf.Lerp(
+                    4f,
+                    1f,
+                    Mathf.Sqrt(Mathf.Abs(Runtime)) / 60f
+                );
+                _burst = 3;
+            }
 
             var click = Instantiate(clickPrefab);
             click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);

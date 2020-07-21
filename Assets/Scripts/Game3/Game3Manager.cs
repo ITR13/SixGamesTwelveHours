@@ -148,6 +148,8 @@ namespace Game3
                         notEnoughEnergy = true;
                         break;
                     }
+
+                    player.Energy -= 10;
                     yield return KarlsonVibeAnim();
                     enemy.Health -= 0.2f;
                     break;

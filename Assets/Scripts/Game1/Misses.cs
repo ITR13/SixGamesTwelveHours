@@ -42,13 +42,15 @@ namespace Game1
             _instance._text.text = text;
 
             if (_count < 3) return;
-            _fadeTime = 3;
-
+            _fadeTimer = 3;
+            _count = 0;
+            Game1Manager.Lives--;
         }
 
-        public static void Reset()
+        public static void Hit()
         {
-            _count
+            _count = 0;
+            if (_fadeTimer <= 0) _instance._text.text = "";
         }
     }
 }

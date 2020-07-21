@@ -21,7 +21,7 @@ namespace Game3
         }
 
         [SerializeField] private RpgFighter player, enemy;
-        [SerializeField] private GameObject milkGo;
+        [SerializeField] private GameObject milkGo, milkStreamGo;
 
         private float billyAttack;
         private int bananas, prettyGoods;

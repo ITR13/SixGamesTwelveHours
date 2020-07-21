@@ -50,26 +50,17 @@ namespace Game3
             {
                 yield return SelectAttack(out var attack);
                 yield return ExecuteAttack(attack);
-
+                if (enemy.Health <= 0)
+                {
+                    Debug.Log("You won!");
+                    break;
+                }
                 yield return BillyAttack();
 
-                switch (state)
+                if (player.Health <= 0)
                 {
-                    case FightState.Selecting:
-                        state = Select();
-                        break;
-                    case FightState.Attacking:
-                        break;
-                    case FightState.BillyAttacks:
-                        break;
-                    case FightState.Victory:
-                        Debug.Log("You won!");
-                        yield break;
-                    case FightState.Dead:
-                        Debug.Log("You lost!");
-                        yield break;
-                    default:
-                        throw new ArgumentOutOfRangeException();
+                    Debug.Log("You lost!");
+                    break;
                 }
             }
         }

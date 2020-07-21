@@ -28,6 +28,10 @@ namespace Game1
             get => _prevLives;
             set
             {
+                if (_prevLives > value)
+                {
+                    _instance.hurtSound.Play();
+                }
                 _instance.lifeDisplay.text = value < 0 ? "DEAD" : $"HP: {value}";
                 _prevLives = value;
             }
@@ -153,6 +157,7 @@ namespace Game1
             }
 
             Misses.Hit();
+            hitSound.Play();
             foreach (var result in results)
             {
                 result.GetComponent<Click>().Clicked();

@@ -16,7 +16,7 @@ namespace Game1
         }
 
         [NonSerialized]
-        public float StartLifeTime = 5;
+        public float StartLifeTime;
         private float _remainingLifeTime;
 
         void Update()

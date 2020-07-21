@@ -95,7 +95,7 @@ namespace Game2
             switch (_currentClickState)
             {
                 case ClickState.WaitingForPreClick:
-                    _currentClickState = ClickState.WaitingForClick;
+                    _currentClickState = ClickState.Clicked;
                     CheckClick(true);
                     break;
                 case ClickState.WaitingForClick:

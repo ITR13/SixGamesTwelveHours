@@ -16,6 +16,8 @@ public class SubMenu : MonoBehaviour
                 SceneManager.GetActiveScene().buildIndex
             )
         );
-        MainMenu.onClick.AddListener();
+        MainMenu.onClick.AddListener(
+            () => SceneManager.LoadScene(0)
+        );
     }
 }

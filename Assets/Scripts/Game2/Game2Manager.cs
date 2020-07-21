@@ -147,7 +147,7 @@ namespace Game2
                 GenerateAudio(
                     length,
                     200,
-                    1
+                    440
                 ),
                 0
             );
@@ -179,6 +179,8 @@ namespace Game2
                 data[i + preFalloff] = h * scale;
             }
 
+            var byteArray = new byte[data.Length * 4];
+            Buffer.BlockCopy(data, 0, byteArray, 0, byteArray.Length);
 
             return data;
         }

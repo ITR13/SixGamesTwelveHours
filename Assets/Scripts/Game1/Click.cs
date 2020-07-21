@@ -11,12 +11,11 @@ namespace Game1
         {
             _renderer = GetComponent<Renderer>();
             _renderer.material.color = Color.HSVToRGB(0.66f, 1, 1);
-
-                _remainingLifeTime = StartLifeTime;
         }
 
         [NonSerialized]
         public float StartLifeTime;
+        private float _startLifeTime;
         private float _remainingLifeTime;
 
         void Update()

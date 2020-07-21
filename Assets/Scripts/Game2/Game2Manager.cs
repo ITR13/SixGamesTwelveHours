@@ -58,7 +58,7 @@ namespace Game2
             _fillAmount -= 1;
 
             if(_warmup++ < 0) return;
-            Debug.Log("Filled!");
+            Debug.Log($"Filled!: {_currentClickState}");
             ExpendClick();
         }
 
@@ -90,7 +90,7 @@ namespace Game2
         {
             if (_warmup < 0) return;
             if (_warmup == 0 && _fillAmount < 0.5f) return;
-            Debug.Log("Click!");
+            Debug.Log($"Click!: {_currentClickState}");
 
             switch (_currentClickState)
             {

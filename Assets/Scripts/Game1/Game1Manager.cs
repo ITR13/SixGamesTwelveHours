@@ -64,17 +64,16 @@ namespace Game1
             highscoreDisplay.text = $"Highscore: {Highscore}";
         }
 
-        private int t;
         private void Update()
         {
             if (Paused) return;
 
             Runtime += Time.deltaTime;
-            if (Runtime >= t)
-            {
-                t += 1;
-                SpawnClickMe();
-            }
+            _spawnTimer -= Time.deltaTime;
+            _healthTimer -= Time.deltaTime;
+
+            if (_spawnTimer <= 0) SpawnClickMe();
+            if (_healthTimer <= 0) RegenHealth();
 
             if(Lives < 0) GameOver();
         }
@@ -83,6 +82,11 @@ namespace Game1
         {
             var click = Instantiate(clickPrefab);
             click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);
+        }
+
+        private void RegenHealth()
+        {
+            if (Lives < 3) Lives++;
         }
 
         private void GameOver()

@@ -28,7 +28,8 @@ namespace Game4
         private void FixedUpdate()
         {
             var dir = rigidBody.velocity.x;
-            var xForce = horizontal * 4;
+            var xForce = horizontal * 8;
+
             if (dir * xForce < 0)
             {
                 xForce *= 2;
@@ -37,17 +38,21 @@ namespace Game4
             {
                 xForce = -dir * 2;
             }
+            else if (Mathf.Abs(dir) > 20)
+            {
+                xForce = 0;
+            }
 
             var yForce = 0;
             if (grounded && jumpIfGrounded > 0)
             {
                 grounded = false;
-                yForce = 10;
+                yForce = 20;
             }
 
             jumpIfGrounded -= Time.fixedDeltaTime;
 
-            rigidBody.AddForce(new Vector2(xForce, yForce));
+            rigidBody.AddForce(new Vector2(xForce, 0));
         }
     }
 }

@@ -117,7 +117,7 @@ namespace Game2
             TotalError += error;
             Score++;
 
-            circle.color = Color.HSVToRGB(0, Mathf.Clamp01(1 - TotalError), 1);
+            circle.color = Color.HSVToRGB(0, Mathf.Clamp01(TotalError), 1);
 
             Debug.Log($"Error: {error}    Total: {TotalError}\nScore: {Score}");
 

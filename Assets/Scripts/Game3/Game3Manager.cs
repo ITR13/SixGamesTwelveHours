@@ -26,13 +26,6 @@ namespace Game3
             RunAway,
         }
 
-        private IEnumerable WaitFor(out Action action)
-        {
-            var waiting = true;
-            action = () => waiting = false;
-            while (waiting) yield return null;
-        }
-
         private IEnumerable IntroOutro()
         {
             // Intro
@@ -61,11 +54,6 @@ namespace Game3
                     break;
                 }
             }
-        }
-
-        private IEnumerable ExecuteAttack()
-        {
-            throw new NotImplementedException();
         }
 
         private IEnumerable SelectAttack()
@@ -98,6 +86,15 @@ namespace Game3
                 null
             );
             while (selectedAttack == Attacks.Attack) yield return null;
+        }
+
+        private IEnumerable ExecuteAttack()
+        {
+            switch ()
+            {
+                
+            }
+            yield break;
         }
     }
 }

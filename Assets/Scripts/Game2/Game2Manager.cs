@@ -12,7 +12,7 @@ namespace Game2
 {
     public class Game2Manager : MonoBehaviour
     {
-        private const int Bps = 10;
+        private const int Bps = 44100;
 
         private enum ClickState
         {

@@ -98,10 +98,10 @@ namespace Game3
                 new[] { "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]" },
                 new Action[]
                 {
-                    () => _selectedAttack = Attack.Attack,
-                    () => _selectedAttack = Attack.Charge,
-                    () => _selectedAttack = Attack.Defend,
-                    () => _selectedAttack = Attack.RunAway
+                    () => _selectedAttack = Attack.Milk,
+                    () => _selectedAttack = Attack.PrettyGood,
+                    () => _selectedAttack = Attack.Banana,
+                    () => _selectedAttack = Attack.KarlsonVibe
                 },
                 null
             );

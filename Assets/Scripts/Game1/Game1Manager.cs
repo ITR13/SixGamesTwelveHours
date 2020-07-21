@@ -5,6 +5,8 @@ namespace Game1
 {
     public class Game1Manager : MonoBehaviour
     {
+        private const string HighscoreKey = nameof(Game1Manager) + ".Highscore";
+
         private static Game1Manager _instance;
 
         public static float Runtime { get; private set; }
@@ -29,6 +31,12 @@ namespace Game1
             }
         }
 
+        private static int Highscore
+        {
+            get => PlayerPrefs.GetInt(HighscoreKey, 0);
+            set => PlayerPrefs.SetInt(HighscoreKey, value);
+        }
+
         [SerializeField] private TextMeshProUGUI lifeDisplay;
         [SerializeField] private TextMeshProUGUI scoreDisplay;
         [SerializeField] private TextMeshProUGUI highscoreDisplay;
@@ -43,16 +51,18 @@ namespace Game1
             highscoreDisplay.text = $"Highscore: {Highscore}";
         }
 
-        private int Highscore
-        {
-            get => PlayerPrefs.GetInt(HighscoreKey, 0);
-            set => PlayerPrefs.SetInt(HighscoreKey, value);
-        }
-        private const string HighscoreKey = nameof(Game1Manager) + ".Highscore";
-
         private void Update()
         {
             Runtime += Time.deltaTime;
+        }
+
+        private void GameOver()
+        {
+            if (Score > Highscore)
+            {
+                Highscore = Score;
+                highscoreDisplay.text = $"Highscore: {Highscore}";
+            }
         }
     }
 }

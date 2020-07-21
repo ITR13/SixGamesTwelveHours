@@ -14,6 +14,10 @@ namespace Game4
         private float horizontal;
         private float jumpIfGrounded;
 
-        private  
+        private void Update()
+        {
+            horizontal = Input.GetAxis("Horizontal");
+            if(Input.GetButton("Fire");)
+        }
     }
 }

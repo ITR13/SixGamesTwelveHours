@@ -141,7 +141,7 @@ namespace Game2
 
         private void PlayBeep()
         {
-            var length = Mathf.FloorToInt(Mathf.Lerp(0.6f, 1f, TotalError));
+            var length = Mathf.FloorToInt(Mathf.Lerp(0.6f, 1f, TotalError) * Bps);
             var clip = AudioClip.Create("beep", length * Bps, 1, Bps, false);
             clip.SetData(
                 GenerateAudio(
@@ -157,7 +157,7 @@ namespace Game2
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)
         {
-            var totalSize = Bps * ms / 1000;
+            var totalSize = ms / 1000;
             var falloffSize = falloutMs * Bps / 1000;
             var preFalloff = totalSize - falloffSize;
 

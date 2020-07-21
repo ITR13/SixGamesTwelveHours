@@ -21,6 +21,7 @@ namespace Game1
 
         void Update()
         {
+            if (Game1Manager.Paused) return;
             _remainingLifeTime -= Time.deltaTime;
             _renderer.material.color = Color.HSVToRGB(
                 Mathf.Lerp(1f, 0.66f, _remainingLifeTime/StartLifeTime),
@@ -31,6 +32,7 @@ namespace Game1
 
         private void FixedUpdate()
         {
+            if (Game1Manager.Paused) return;
             if (!(_remainingLifeTime <= 0.02f)) return;
             Game1Manager.Lives--;
             Destroy(gameObject);
@@ -38,6 +40,8 @@ namespace Game1
 
         private void OnMouseDown()
         {
+            if (Game1Manager.Paused) return;
+
             Destroy(gameObject);
             Game1Manager.Score = 10 + Mathf.CeilToInt(_remainingLifeTime);
         }

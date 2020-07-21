@@ -10,6 +10,7 @@ namespace Game1
         private static Game1Manager _instance;
 
         public static float Runtime { get; private set; }
+        public static bool Paused { get; private set; }
 
         public static int Score
         {
@@ -50,6 +51,8 @@ namespace Game1
         {
             _instance = this;
 
+            Paused = false;
+
             Runtime = -3f;
             Lives = 3;
             Score = 0;
@@ -59,11 +62,13 @@ namespace Game1
         private int t;
         private void Update()
         {
+            if (Paused) return;
+
             Runtime += Time.deltaTime;
             if (Runtime >= t)
             {
                 t += 1;
-                Instantiate(clickPrefab);
+                Instantiate(clickPrefab).StartLifeTime = 5;
             }
 
             if(Lives < 0) GameOver();
@@ -71,6 +76,8 @@ namespace Game1
 
         private void GameOver()
         {
+            Paused = true;
+
             if (Score > Highscore)
             {
                 Highscore = Score;

@@ -19,7 +19,7 @@ namespace Game4
         private void Update()
         {
             horizontal = Input.GetAxis("Horizontal");
-            if (Input.GetButtonDown("Fire") || Input.GetAxis("Vertical") > 0)
+            if (Input.GetButtonDown("Fire1") || Input.GetAxis("Vertical") > 0)
             {
                 jumpIfGrounded = 0.2f;
             }

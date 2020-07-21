@@ -365,8 +365,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 1057495741}
-  healthBar: {fileID: 1979988093}
-  energyBar: {fileID: 1148709383}
+  healthBar: {fileID: 395449207}
+  energyBar: {fileID: 1871133722}
   totalEnergy: 10
 --- !u!1 &219195284
 GameObject:
@@ -2107,8 +2107,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 286988462}
-  healthBar: {fileID: 1889739532}
-  energyBar: {fileID: 2088372829}
+  healthBar: {fileID: 789369205}
+  energyBar: {fileID: 612404869}
   totalEnergy: 1
 --- !u!1 &1148709381
 GameObject:

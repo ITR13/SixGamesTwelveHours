@@ -85,6 +85,8 @@ namespace Game2
 
         private void OnClick()
         {
+            if (_warmup < 0) return;
+
             switch (_currentClickState)
             {
                 case ClickState.WaitingForPreClick:

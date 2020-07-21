@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using System.IO;
 using TMPro;
 using UnityEditor.PackageManager;
 using UnityEditorInternal;
@@ -11,6 +12,9 @@ namespace Game2
 {
     public class Game2Manager : MonoBehaviour
     {
+
+        private const float bps = 44100;
+
         private enum ClickState
         {
             WaitingForPreClick,
@@ -139,7 +143,7 @@ namespace Game2
         private void PlayBeep()
         {
             var length = Mathf.FloorToInt(2 * 1000);
-            var clip = AudioClip.Create("beep", length, 1, 44100, false);
+            var clip = AudioClip.Create("beep", length, 1, bps, false);
             clip.SetData(
                 GenerateAudio(
                     length,
@@ -153,8 +157,6 @@ namespace Game2
 
         private float[] GenerateAudio(int ms, int falloutMs, float hz)
         {
-            const int bps = 44100;
-
             var totalSize = bps * ms / 1000;
             var falloffSize = falloutMs * bps / 1000;
             var preFalloff = totalSize - falloffSize;
@@ -178,7 +180,6 @@ namespace Game2
                 data[i + preFalloff] = h * scale;
             }
 
-            Debug.Log(string.Join(";", data));
 
             return data;
         }

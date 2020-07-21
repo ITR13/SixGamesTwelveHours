@@ -186,7 +186,8 @@ namespace Game3
         private IEnumerable BillyAttack()
         {
             player.Health -= billyAttack;
-
+            RpgTextScript.Instance.SetText("");
+            yield break;
         }
     }
 }

@@ -5,11 +5,18 @@ namespace Game1
 {
     public class Game1Manager : MonoBehaviour
     {
+        private static Game1Manager _instance;
+
         public static float Time { get; private set; }
 
         public static int Score
         {
-
+            get => _prevScore;
+            set
+            {
+                _instance.scoreDisplay.text = $"Score: {Score}";
+                _prevScore = Score;
+            }
         }
 
         public static int Lives;

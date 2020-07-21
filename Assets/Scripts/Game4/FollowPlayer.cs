@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Transform target;
+    private float _offset;
+
+    private void Awake()
     {
-        
+        _offset = target.transform.position.x - transform.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void LateUpdate()
     {
-        
+        var pos = transform.position;
+        pos.x = target.transform.position.x + _offset;
     }
 }

@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 84024077}
   - component: {fileID: 84024079}
   - component: {fileID: 84024078}
+  - component: {fileID: 84024080}
   m_Layer: 5
   m_Name: Player
   m_TagString: Untagged
@@ -277,6 +278,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84024076}
   m_CullTransparentMesh: 0
+--- !u!114 &84024080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84024076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d9b1aca7b021849bc1099f69c6eaa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 1057495741}
+  healthBar: {fileID: 1979988093}
+  energyBar: {fileID: 1148709383}
+  totalEnergy: 10
 --- !u!1 &286988460
 GameObject:
   m_ObjectHideFlags: 0
@@ -1347,6 +1364,7 @@ GameObject:
   - component: {fileID: 1148702732}
   - component: {fileID: 1148702734}
   - component: {fileID: 1148702733}
+  - component: {fileID: 1148702735}
   m_Layer: 5
   m_Name: Enemy
   m_TagString: Untagged
@@ -1411,6 +1429,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1148702731}
   m_CullTransparentMesh: 0
+--- !u!114 &1148702735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148702731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7d9b1aca7b021849bc1099f69c6eaa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 286988462}
+  healthBar: {fileID: 1889739532}
+  energyBar: {fileID: 2088372829}
+  totalEnergy: 1
 --- !u!1 &1148709381
 GameObject:
   m_ObjectHideFlags: 0

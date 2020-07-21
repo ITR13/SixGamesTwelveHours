@@ -74,6 +74,8 @@ namespace Game1
             Runtime += Time.deltaTime;
             if(Runtime < 0f) return;
 
+            CheckClick();
+
             _spawnTimer -= Time.deltaTime;
             _healthTimer -= Time.deltaTime;
 

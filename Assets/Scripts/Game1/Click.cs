@@ -45,7 +45,7 @@ namespace Game1
             Destroy(gameObject);
         }
 
-        private void OnMouseDown()
+        public void Clicked()
         {
             if (Game1Manager.Paused) return;
 

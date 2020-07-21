@@ -100,6 +100,7 @@ namespace Game3
 
                 if (_selectedAttack != Attack.Attack) yield break;
 
+                var back = false;
                 RpgTextScript.Instance.SetButtons(
                     new[] { "Milk [0]", "Pretty Good [3]", "Banana [4]", "Vibe [10]" },
                     new Action[]
@@ -109,13 +110,18 @@ namespace Game3
                         () => _selectedAttack = Attack.Banana,
                         () => _selectedAttack = Attack.KarlsonVibe
                     },
-                    null
+                    () => back = true;
                 );
-                while (_selectedAttack == Attack.Attack) yield return null;
+
+                while (!back)
+                {
+                    if (back) break;
+                        yield return null;
+                }
+                if(back) contionue
 
                 yield break;
             }
-
         }
 
         private IEnumerator ExecuteAttack()

@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 namespace Game1
@@ -7,6 +8,7 @@ namespace Game1
         public static float Time { get; private set; }
         public static int Lives;
 
+        [SerializeField] private TextMeshPro lifeDisplay;
         private static int _prevLives;
 
         private void Awake()
@@ -27,7 +29,7 @@ namespace Game1
         private void UpdateLives()
         {
             _prevLives = Lives;
-
+            lifeDisplay.text = 3;
         }
     }
 }

@@ -41,6 +41,7 @@ namespace Game1
 
 
         [SerializeField] private Click clickPrefab;
+        [SerializeField] private SubMenu subMenu;
 
         [SerializeField] private TextMeshProUGUI lifeDisplay;
         [SerializeField] private TextMeshProUGUI scoreDisplay;
@@ -57,6 +58,7 @@ namespace Game1
             _instance = this;
 
             Paused = false;
+            subMenu.gameObject.SetActive(false);
 
             Runtime = -3f;
             Lives = 3;
@@ -156,7 +158,7 @@ namespace Game1
                 Highscore = Score;
             }
 
-            // Show menu
+            subMenu.gameObject.SetActive(true);
         }
     }
 }

@@ -125,13 +125,13 @@ namespace Game1
         {
             if (!Input.GetKeyDown(KeyCode.Mouse0)) return;
             var worldPoint = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            var results = new List<Collider2D>
-            Physics2D.OverlapPoint(
+            var results = new List<Collider2D>();
+            var hits = Physics2D.OverlapPoint(
                 worldPoint,
                 ContactFilter2D.NoFilter,
                 results
             );
-            if (!)
+            if (hits == 0)
             {
                 Misses.Miss();
                 return;

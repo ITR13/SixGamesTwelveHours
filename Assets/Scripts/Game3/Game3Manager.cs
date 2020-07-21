@@ -129,6 +129,8 @@ namespace Game3
                         break;
                     }
 
+                    player.Energy -= 3;
+
                     yield return PrettyGoodAnim();
                     player.Health += 0.1f * prettyGoods;
                     prettyGoods++;
@@ -139,6 +141,9 @@ namespace Game3
                         notEnoughEnergy = true;
                         break;
                     }
+
+                    player.Energy -= 2;
+
                     yield return BananaAnim();
                     bananas++;
                     break;

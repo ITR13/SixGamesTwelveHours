@@ -19,6 +19,7 @@ namespace Game2
 
         [SerializeField] private Image circle;
         [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private AudioSource audioSource;
 
         private float TotalError
         {
@@ -135,6 +136,7 @@ namespace Game2
 
         private byte[] GenerateAudio(int bitrate, int ms, float falloff)
         {
+            audioSource.clip.SetData()
             var bytes = new byte[(int)bitrate*seconds]
         }
     }

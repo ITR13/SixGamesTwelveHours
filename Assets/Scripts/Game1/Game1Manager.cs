@@ -170,7 +170,6 @@ namespace Game1
         {
             Paused = true;
 
-
             if (Score > Highscore)
             {
                 Highscore = Score;

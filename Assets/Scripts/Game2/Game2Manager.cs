@@ -22,6 +22,7 @@ namespace Game2
             Clicked
         }
 
+        [SerializeField] private GameObject subMenu;
         [SerializeField] private Image circle;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private AudioSource audioSource;
@@ -71,6 +72,8 @@ namespace Game2
 
         private void Update()
         {
+            if(Paused) return;
+
             if (Input.anyKeyDown) OnClick();
 
             _fillAmount += Time.deltaTime;
@@ -106,6 +109,7 @@ namespace Game2
         private void GameOver()
         {
             Paused = true;
+            circle.fillAmount = 1;
 
             if (Score > Highscore)
             {

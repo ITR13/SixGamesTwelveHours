@@ -13,6 +13,7 @@ namespace Game2
     public class Game2Manager : MonoBehaviour
     {
         private const int Bps = 44100;
+        private const string HighscoreKey = nameof(Game2Manager) + ".Highscore";
 
         private enum ClickState
         {
@@ -24,6 +25,12 @@ namespace Game2
         [SerializeField] private Image circle;
         [SerializeField] private TextMeshProUGUI scoreText;
         [SerializeField] private AudioSource audioSource;
+
+        private static int Highscore
+        {
+            get => PlayerPrefs.GetInt(HighscoreKey, 0);
+            set => PlayerPrefs.SetInt(HighscoreKey, value);
+        }
 
         private float TotalError
         {
@@ -97,8 +104,14 @@ namespace Game2
 
         private void GameOver()
         {
-            Time.timeScale = 0;
-            Debug.Log("Game Over");
+            Paused = true;
+
+            if (Score > Highscore)
+            {
+                Highscore = Score;
+            }
+
+            subMenu.gameObject.SetActive(true);
         }
 
         private void OnClick()

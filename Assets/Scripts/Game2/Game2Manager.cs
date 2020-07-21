@@ -1,18 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Game2Manager : MonoBehaviour
+namespace Game2
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Game2Manager : MonoBehaviour
     {
-        
-    }
+        [SerializeField] private Image circle;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        private float _gameTime;
+
+        private void Awake()
+        {
+            _gameTime = -3;
+        }
+
+        private void Awake()
+        {
+            _gameTime
+        }
     }
 }

@@ -79,7 +79,7 @@ namespace Game1
         private void SpawnClickMe()
         {
             var click = Instantiate(clickPrefab);
-            click.StartLifeTime = Mathf.Lerp(5, 1.5f, );
+            click.StartLifeTime = Mathf.Lerp(5, 1.5f, (Runtime - 10f)/40);
         }
 
         private void GameOver()

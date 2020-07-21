@@ -28,7 +28,14 @@ namespace Game1
             get => _prevLives;
             set
             {
-                _instance.lifeDisplay.text = $"HP: {value}";
+                if (value < 0)
+                {
+                    _instance.lifeDisplay.text = "DEAD";
+                }
+                else
+                {
+                    _instance.lifeDisplay.text = $"HP: {value}";
+                }
                 _prevLives = value;
             }
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -17,6 +18,7 @@ namespace Game3
             Selecting,
             Attacking,
             BillyAttacks,
+            Victory,
             Dead,
         }
 
@@ -35,9 +37,22 @@ namespace Game3
 
         private IEnumerable MainLoop()
         {
+            var state = FightState.Selecting;
             while (true)
             {
-
+                switch (state)
+                {
+                    case FightState.Selecting:
+                        break;
+                    case FightState.Attacking:
+                        break;
+                    case FightState.BillyAttacks:
+                        break;
+                    case FightState.Dead:
+                        break;
+                    default:
+                        throw new ArgumentOutOfRangeException();
+                }
             }
         }
     }

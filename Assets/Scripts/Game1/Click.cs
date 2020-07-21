@@ -32,7 +32,7 @@ namespace Game1
 
             if (_fade > 0)
             {
-                _fade -= Time.deltaTime * 2;
+                _fade -= Time.deltaTime * 5;
                 if (_fade < 0)
                 {
                     Destroy(gameObject);

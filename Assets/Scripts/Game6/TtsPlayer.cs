@@ -6,6 +6,7 @@ using UnityEngine.PlayerLoop;
 public class TtsPlayer : MonoBehaviour
 {
     [SerializeField] private new Camera camera;
+    [SerializeField] private GameObject bullet;
 
     private Vector3 movementDir;
     private Vector3 shootDir;

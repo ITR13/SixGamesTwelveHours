@@ -16,6 +16,12 @@ namespace Game6
         private Vector3 shootDir;
 
         private float shootCooldown;
+        private int _hurtLayer;
+
+        private void Awake()
+        {
+            _hurtLayer = LayerMask.NameToLayer("Hurt");
+        }
 
         private void Update()
         {
@@ -70,16 +76,9 @@ namespace Game6
             bullet.transform.position = transform.position + direction / 2;
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-
-            Debug.Log("!???!", other);
-        }
-
         private void OnCollisionEnter2D(Collision2D other)
         {
-            Debug.Log(other.gameObject.layer);
-            if (other.gameObject.layer != LayerMask.NameToLayer("Hurt")) return;
+            if (other.gameObject.layer != _hurtLayer) return;
             transform.position =
                 SavePoint.CurrentSavePoint == null
                     ? Vector3.zero

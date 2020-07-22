@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Game5
@@ -14,11 +16,18 @@ namespace Game5
         public static readonly int FalloffLength = Mathf.FloorToInt(
             44100 * 0.1f / BeatsPerSecond
         );
+
+        [SerializeField] List<Tuple<>
         
-        [SerializeField] private Row[] rows;
+        private Row[] _rows;
 
         private float _time;
         private int _beat;
+
+        private void Awake()
+        {
+            
+        }
 
         private void Update()
         {

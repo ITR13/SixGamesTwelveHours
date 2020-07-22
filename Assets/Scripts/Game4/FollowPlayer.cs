@@ -19,6 +19,10 @@ public class FollowPlayer : MonoBehaviour
         targetPos.x = target.transform.position.x + _offset * mousePos;
 
 
-        transform.position = Vector3.Lerp()
+        transform.position = Vector3.MoveTowards(
+            transform.position,
+            targetPos,
+            Time.deltaTime * 20
+        );
     }
 }

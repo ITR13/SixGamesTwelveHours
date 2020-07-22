@@ -37,7 +37,7 @@ namespace Game5
             _beat++;
         }
 
-        private void Reset()
+        private void Awake()
         {
             _rows = new Row[notes.Count];
             var parent = transform.GetChild(0);

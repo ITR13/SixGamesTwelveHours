@@ -490,33 +490,29 @@ MonoBehaviour:
     frequency: 263.74
   - noteName: D3
     frequency: 234
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
-  - noteName: 
-    frequency: 0
+  - noteName: E3
+    frequency: 209.33
+  - noteName: F3
+    frequency: 197.58
+  - noteName: G3
+    frequency: 176.02
+  - noteName: A3
+    frequency: 156.82
+  - noteName: B3
+    frequency: 139.71
+  - noteName: C4
+    frequency: 131.87
+  - noteName: D4
+    frequency: 117.48
+  - noteName: E4
+    frequency: 104.66
+  - noteName: F4
+    frequency: 98.79
+  - noteName: G4
+    frequency: 88.01
+  - noteName: A4
+    frequency: 78.41
+  - noteName: B4
+    frequency: 69.85
+  - noteName: C5
+    frequency: 65.93

@@ -39,6 +39,7 @@ namespace Game5
 
         private void Awake()
         {
+            notes.Reverse();
             _rows = new Row[notes.Count];
             var parent = transform.GetChild(0);
 

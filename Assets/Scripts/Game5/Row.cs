@@ -34,6 +34,7 @@ namespace Game5
         private AudioClip _audioClip;
         private ButtonState[] _buttonStates;
         private float _frequency;
+        private float _volume;
 
         private void Awake()
         {
@@ -100,7 +101,7 @@ namespace Game5
                 ),
                 0
             );
-            audioSource.PlayOneShot(_audioClip, 0.15f);
+            audioSource.PlayOneShot(_audioClip, 0.15f + Mathf.Log(_frequency / 440));
         }
 
         private float[] GenerateAudio(

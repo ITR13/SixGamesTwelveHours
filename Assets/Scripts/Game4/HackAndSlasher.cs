@@ -96,5 +96,10 @@ namespace Game4
                 ForceMode2D.Impulse
             );
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }

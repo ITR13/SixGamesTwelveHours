@@ -23,8 +23,9 @@ public class TtsPlayer : MonoBehaviour
         transform.position += movementDir *
                               Time.fixedDeltaTime *
                               Mathf.Lerp(
-
-                                  dist/100
+                                  10,
+                                  2,
+                                  (dist-4)/100
                               );
     }
 }

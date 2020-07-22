@@ -5,7 +5,7 @@ using UnityEngine.PlayerLoop;
 
 public class TtsPlayer : MonoBehaviour
 {
-    private const float ShootInterval = 0.4f;
+    private const float ShootInterval = 0.2f;
 
     [SerializeField] private new Camera camera;
     [SerializeField] private Transform visuals;
@@ -73,7 +73,5 @@ public class TtsPlayer : MonoBehaviour
                 Vector3.forward
             )
         );
-        bullet.
-        bullet.transform.position = 
     }
 }

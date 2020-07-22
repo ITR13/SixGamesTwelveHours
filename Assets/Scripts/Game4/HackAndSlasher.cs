@@ -124,8 +124,7 @@ namespace Game4
             _health--;
             UpdateHealthText();
 
-            menu.SetActive(health<=0);
-            
+            menu.SetActive(_health <= 0);
         }
 
         private void OnTriggerEnter2D(Collider2D other)

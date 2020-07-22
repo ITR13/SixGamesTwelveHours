@@ -19,7 +19,8 @@ namespace Game5
 
         [SerializeField] private Row rowPrefab;
         [SerializeField] private List<NoteInfo> notes;
-        
+        [SerializeField] private Transform rowParent;
+
         private Row[] _rows;
 
         private float _time;
@@ -41,7 +42,7 @@ namespace Game5
         {
             notes.Reverse();
             _rows = new Row[notes.Count];
-            var parent = transform.GetChild(0);
+            var parent = rowParent;
 
             for (var i = parent.childCount - 1; i > 0; i--)
             {

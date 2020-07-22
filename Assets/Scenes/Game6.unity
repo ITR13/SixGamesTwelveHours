@@ -437,6 +437,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathWall (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 688100498975640399, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 13
@@ -533,6 +541,14 @@ PrefabInstance:
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Name
       value: DeathWall (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640399, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -636,6 +652,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathWall (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 688100498975640399, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13
@@ -701,6 +725,14 @@ PrefabInstance:
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Name
       value: DeathWall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640399, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -830,6 +862,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathWall (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
+      objectReference: {fileID: 0}
     - target: {fileID: 688100498975640399, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -895,6 +935,14 @@ PrefabInstance:
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Name
       value: DeathWall
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.x
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Size.y
+      value: 0.01
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640399, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_LocalPosition.x

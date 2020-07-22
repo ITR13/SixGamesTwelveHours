@@ -5,7 +5,7 @@ namespace Game4
 {
     public class HackAndSlasher : MonoBehaviour
     {
-        private SpriteRender sprite;
+        private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidBody;
         private new Camera camera;
         private Transform arm;
@@ -13,6 +13,7 @@ namespace Game4
         private void Awake()
         {
             rigidBody = GetComponent<Rigidbody2D>();
+            spriteRenderer = GetComponent<SpriteRenderer>();
             camera = Camera.main;
             arm = transform.Find("Arm");
         }
@@ -24,7 +25,9 @@ namespace Game4
 
         private void Update()
         {
-            sprite.
+            spriteRenderer.color = new Color(
+                1, 1, 1, Mathf.Clamp01(0.5f - _invulnerable + 0.5f)
+            );
 
             horizontal = Input.GetAxis("Horizontal");
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Vertical") > 0)

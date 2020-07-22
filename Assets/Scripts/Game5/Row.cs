@@ -38,26 +38,32 @@ namespace Game5
         public void Play(int index)
         {
             index %= buttons.Length;
-            switch (hideFlags)
+            switch (_buttonStates[index])
             {
                 
             }
         }
 
-        private void PlayBeep(Func<float, float> )
+        private void PlayBeep(Func<float, float> wave)
         {
             _audioClip.SetData(
                 GenerateAudio(
                     Bps * 9 / 10,
                     Bps / 5,
-                    frequency
+                    frequency,
+                    wave
                 ),
                 0
             );
             audioSource.PlayOneShot(_audioClip, 0.35f);
         }
 
-        private float[] GenerateAudio(int totalSize, int falloffSize, float hz)
+        private float[] GenerateAudio(
+            int totalSize,
+            int falloffSize,
+            float hz,
+            Func<float, float> wave
+        )
         {
             var preFalloff = totalSize - falloffSize;
 
@@ -68,15 +74,15 @@ namespace Game5
             for (var i = 0; i < preFalloff; i++)
             {
                 var t = 2f * i * Mathf.PI * frequency;
-                var h = Mathf.Sin(t);
+                var h = wave(t);
                 data[i] = h;
             }
 
             for (var i = 0; i < falloffSize; i++)
             {
                 var t = 2f * (i + preFalloff) * Mathf.PI * frequency;
-                var h = Mathf.Sin(t);
-                var scale = 1 - i / (float)falloffSize;
+                var h = wave(t);
+                var scale = 1 - i / (float) falloffSize;
                 data[i + preFalloff] = h * scale;
             }
 

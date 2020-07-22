@@ -21,11 +21,11 @@ public class TtsPlayer : MonoBehaviour
         var worldPoint = camera.ScreenToWorldPoint(Input.mousePosition);
         movementDir = transform.position - worldPoint;
 
-        shootDir = new Vector3(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical"),
-            0
-        );
+        shootDir = Vector3.zero;
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+
+        }
 
         if (shootDir.sqrMagnitude > 0.1f)
         {

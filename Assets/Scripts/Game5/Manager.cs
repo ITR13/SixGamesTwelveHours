@@ -18,7 +18,7 @@ namespace Game5
         );
 
         [SerializeField] private Row rowPrefab;
-        [SerializeField] private List<KeyValuePair<string, float>> notes;
+        [SerializeField] private List<NoteInfo> notes;
         
         private Row[] _rows;
 
@@ -50,14 +50,15 @@ namespace Game5
             for (var i = 0; i < _rows.Length; i++)
             {
                 _rows[i] = Instantiate(rowPrefab, parent);
-                _rows[i].Set(notes[i].Key, notes[i].Value);
+                _rows[i].Set(notes[i].noteName, notes[i].frequency);
             }
         }
 
         [Serializable]
-        private struct MyStruct
+        public struct NoteInfo
         {
-            
+            public string noteName;
+            public float frequency;
         }
     }
 }

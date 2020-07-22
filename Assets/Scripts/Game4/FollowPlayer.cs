@@ -6,9 +6,11 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform target;
     private float _offset;
+    private Camera _camera;
 
     private void Awake()
     {
+        _camera = GetComponent<Camera>();
         _offset = transform.position.x - target.transform.position.x;
     }
 

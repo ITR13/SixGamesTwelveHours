@@ -21,7 +21,6 @@ namespace Game5
         [SerializeField] private AudioSource audioSource;
         [SerializeField] private Button[] buttons;
         [SerializeField] private Image[] buttonImages;
-        [SerializeField] private float frequency;
 
         private readonly Color[] colors = new[]
         {
@@ -33,11 +32,12 @@ namespace Game5
 
         private AudioClip _audioClip;
         private ButtonState[] _buttonStates;
+        private float _frequency;
 
         private void Awake()
         {
             _audioClip = AudioClip.Create(
-                frequency.ToString(CultureInfo.InvariantCulture),
+                _frequency.ToString(CultureInfo.InvariantCulture),
                 Manager.ClipLength,
                 1,
                 Manager.BitsPerSecond,
@@ -94,7 +94,7 @@ namespace Game5
                 GenerateAudio(
                     Manager.ClipLength,
                     Manager.FalloffLength,
-                    frequency,
+                    _frequency,
                     wave
                 ),
                 0
@@ -131,6 +131,12 @@ namespace Game5
             }
 
             return data;
+        }
+
+        public void Set(string note, float frequency)
+        {
+            gameObject.name = note;
+            _frequency = frequency;
         }
     }
 }

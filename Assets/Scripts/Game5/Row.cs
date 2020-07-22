@@ -11,7 +11,8 @@ namespace Game5
         private enum ButtonState
         {
             Off,
-            Beep,
+            Sine,
+            SawTooth
         }
 
 
@@ -40,7 +41,16 @@ namespace Game5
             index %= buttons.Length;
             switch (_buttonStates[index])
             {
-                
+                case ButtonState.Off:
+                    break;
+                case ButtonState.Sine:
+                    PlayBeep(Mathf.Sin);
+                    break;
+                case ButtonState.SawTooth:
+                    PlayBeep(Mathf.Repeat());
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
         }
 

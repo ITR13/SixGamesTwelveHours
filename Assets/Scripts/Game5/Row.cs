@@ -78,7 +78,7 @@ namespace Game5
                     PlayBeep(t => Mathf.Sin(t * Mathf.PI * 2));
                     break;
                 case ButtonState.SawTooth:
-                    PlayBeep(t => Mathf.Repeat(t, 1));
+                    PlayBeep(t => Mathf.Repeat(t, 1) * 0.5f);
                     break;
                 case ButtonState.Triangle:
                     PlayBeep(t => Mathf.PingPong(t * 2, 1));
@@ -99,7 +99,7 @@ namespace Game5
                 ),
                 0
             );
-            audioSource.PlayOneShot(_audioClip, 0.35f);
+            audioSource.PlayOneShot(_audioClip, 0.15f);
         }
 
         private float[] GenerateAudio(

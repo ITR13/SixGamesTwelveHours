@@ -58,7 +58,12 @@ namespace Game5
                 button.onClick.AddListener(
                     () =>
                     {
-                        _buttonStates[index] = ((int)_buttonStates + 1) % ButtonState.MAX;
+                        _buttonStates[index] =
+                            (ButtonState) (
+                                (
+                                               (int) _buttonStates[index] + 1) %
+                                           (int) ButtonState.MAX
+                            );
                         image.color = colors[(int)_buttonStates[index]];
 
                     }

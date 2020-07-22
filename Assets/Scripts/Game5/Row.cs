@@ -36,7 +36,7 @@ namespace Game5
         private float _frequency;
         private float _volume;
 
-        private void Awake()
+        private void Start()
         {
             _audioClip = AudioClip.Create(
                 _frequency.ToString(CultureInfo.InvariantCulture),

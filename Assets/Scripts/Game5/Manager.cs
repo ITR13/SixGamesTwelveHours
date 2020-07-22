@@ -28,12 +28,6 @@ namespace Game5
         private void Awake()
         {
             _rows = new Row[notes.Count];
-            var parent = transform.GetChild(0);
-            for (var i = 0; i < _rows.Length; i++)
-            {
-                _rows[i] = Instantiate(rowPrefab, parent);
-                _rows[i].Set(notes[i].Item1);
-            }
         }
 
         private void Update()
@@ -46,6 +40,23 @@ namespace Game5
             }
 
             _beat++;
+        }
+
+        private void Reset()
+        {
+            var parent = transform.GetChild(0);
+
+            while (parent.childCount > 0)
+            {
+
+            }
+
+
+            for (var i = 0; i < _rows.Length; i++)
+            {
+                _rows[i] = Instantiate(rowPrefab, parent);
+                _rows[i].Set(notes[i].Item1, notes[i].Item2);
+            }
         }
     }
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Globalization;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -137,6 +138,7 @@ namespace Game5
         {
             gameObject.name = note;
             _frequency = frequency;
+            GetComponentInChildren<TextMeshProUGUI>().text = note;
         }
     }
 }

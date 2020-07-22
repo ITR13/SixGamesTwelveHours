@@ -10,13 +10,21 @@ public class Row : MonoBehaviour
 
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Button[] buttons;
+    [SerializeField] private Image[] buttonImages;
+
     [SerializeField] private float frequency;
 
     private AudioClip audioClip;
 
     private void Awake()
     {
-        audioClip = AudioClip.Create(frequency.ToString(), Bps);
+        audioClip = AudioClip.Create(
+            frequency.ToString(),
+            Bps * 9 / 10,
+            1,
+            Bps,
+            false
+        );
     }
 
     private void PlayBeep()

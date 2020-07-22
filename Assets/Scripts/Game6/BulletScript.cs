@@ -6,6 +6,6 @@ public class BulletScript : MonoBehaviour
 {
     private void FixedUpdate()
     {
-        throw new System.NotImplementedException();
+        transform.Translate(transform.forward * Time.deltaTime * 5);
     }
 }

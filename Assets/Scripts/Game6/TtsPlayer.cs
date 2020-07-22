@@ -6,7 +6,7 @@ using UnityEngine.PlayerLoop;
 public class TtsPlayer : MonoBehaviour
 {
     [SerializeField] private new Camera camera;
-    [SerializeField] private GameObject bullet;
+    [SerializeField] private BulletScript bulletPrefab;
 
     private Vector3 movementDir;
     private Vector3 shootDir;
@@ -46,7 +46,7 @@ public class TtsPlayer : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        var bullet = Instantiate(bullet);
+        var bullet = Instantiate(bulletPrefab);
         bullet.transform.up = direction;
         bullet.transform.position = transform.position + direction / 2;
     }

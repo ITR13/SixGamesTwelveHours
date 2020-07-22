@@ -46,7 +46,7 @@ namespace Game4
             {
                 xForce = -dir * 2;
             }
-            else if (Mathf.Abs(dir) > 2)
+            else if (Mathf.Abs(dir) > 5)
             {
                 xForce = 0;
             }
@@ -66,8 +66,7 @@ namespace Game4
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (!other.gameObject.CompareTag("Ground")) return;
-            grounded = true;
+            if (other.gameObject.CompareTag("Ground")) grounded = true;
         }
     }
 }

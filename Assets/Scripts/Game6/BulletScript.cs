@@ -20,5 +20,11 @@ namespace Game6
         {
             Debug.Log("TRIGGER");
         }
+
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            Debug.Log("COLLISIOn");
+        }
     }
 }

@@ -14,7 +14,10 @@ namespace Game5
             Off,
             Sine,
             SawTooth,
-            Triangle
+            Triangle,
+
+
+            MAX,
         }
 
 
@@ -48,14 +51,15 @@ namespace Game5
 
             for (var i = 0; i < buttons.Length; i++)
             {
+                var index = i;
                 var button = buttons[i];
                 var image = buttonImages[i];
 
                 button.onClick.AddListener(
                     () =>
                     {
-
-                        image.color = colors[_buttonStates[i]];
+                        _buttonStates[index] = ((int)_buttonStates + 1) % ButtonState.MAX;
+                        image.color = colors[(int)_buttonStates[index]];
 
                     }
                 );

@@ -36,6 +36,7 @@ namespace Game5
             {
                 row.Play(_beat);
             }
+            playbar.Play(_beat);
 
             _beat++;
         }
@@ -62,8 +63,7 @@ namespace Game5
                     );
             }
 
-            {
-            }
+            playbar = Instantiate(playbarPrefab, parent);
         }
 
         [Serializable]

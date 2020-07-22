@@ -884,6 +884,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rowPrefab: {fileID: 242101637520080680, guid: ef0e056303fc24c4ea17bec2d131ebd0, type: 3}
+  playbarPrefab: {fileID: 6490299628508693112, guid: c9d56124f6f4ae84eafb07e7af880164, type: 3}
   notes:
   - noteName: C3
     frequency: 130.81

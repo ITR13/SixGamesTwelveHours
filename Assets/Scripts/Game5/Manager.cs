@@ -23,7 +23,7 @@ namespace Game5
 
         private Row[] _rows;
 
-        private float _time;
+        private float _time = -3f;
         private int _beat;
 
         private void Update()

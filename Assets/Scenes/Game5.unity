@@ -442,7 +442,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0037841797, y: -8.5}
+  m_AnchoredPosition: {x: 0, y: -8.5}
   m_SizeDelta: {x: 2521, y: 1417}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &283244902
@@ -915,7 +915,7 @@ MonoBehaviour:
     frequency: 493.88
   - noteName: C5
     frequency: 523.25
-  rowParent: {fileID: 0}
+  rowParent: {fileID: 283244901}
 --- !u!1 &1745513633
 GameObject:
   m_ObjectHideFlags: 0

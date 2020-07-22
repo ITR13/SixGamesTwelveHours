@@ -52,7 +52,6 @@ namespace Game5
                     PlayerPrefs.GetInt(gameObject.name + "." + i);
             }
 
-
             for (var i = 0; i < buttons.Length; i++)
             {
                 var index = i;
@@ -68,7 +67,10 @@ namespace Game5
                                 (int)ButtonState.MAX
                             );
                         image.color = colors[(int)_buttonStates[index]];
-                        PlayerPrefs.SetInt(gameObject.name + "." + i, (int)_buttonStates[index]);
+                        PlayerPrefs.SetInt(
+                            gameObject.name + "." + index,
+                            (int) _buttonStates[index]
+                        );
                     }
                 );
                 image.color = colors[(int)_buttonStates[index]];

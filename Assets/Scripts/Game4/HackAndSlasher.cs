@@ -35,6 +35,7 @@ namespace Game4
             _score = 0;
             _health = 6;
             UpdateHealthText();
+            menu.SetActive(false);
         }
 
         private float horizontal;
@@ -44,6 +45,8 @@ namespace Game4
 
         private void Update()
         {
+            if (menu.activeSelf) return;
+
             _invulnerable -= Time.deltaTime;
             spriteRenderer.color = new Color(
                 1, 1, 1, Mathf.Clamp01(0.5f - _invulnerable) + 0.5f
@@ -66,6 +69,8 @@ namespace Game4
 
         private void FixedUpdate()
         {
+            if (menu.activeSelf) return;
+
             var dir = rigidBody.velocity.x;
             var xForce = horizontal * 8;
 
@@ -106,6 +111,8 @@ namespace Game4
 
         public void HurtMe()
         {
+            if (menu.activeSelf) return;
+
             if (_invulnerable > 0) return;
             var dir = -Mathf.Sign(rigidBody.velocity.x);
             _invulnerable = 2.7f;
@@ -116,6 +123,9 @@ namespace Game4
 
             _health--;
             UpdateHealthText();
+
+            menu.SetActive(health<=0);
+            
         }
 
         private void OnTriggerEnter2D(Collider2D other)

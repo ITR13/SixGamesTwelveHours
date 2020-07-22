@@ -17,6 +17,6 @@ public class TtsPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        transform.position += movementDir * Time.deltaTime;
     }
 }

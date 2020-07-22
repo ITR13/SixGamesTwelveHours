@@ -7,7 +7,7 @@ namespace Game5
 {
     public class Row : MonoBehaviour
     {
-        private const int Bps = 44100;
+        private const int BitsPerSecond = 44100;
 
         private enum ButtonState
         {
@@ -41,9 +41,9 @@ namespace Game5
         {
             _audioClip = AudioClip.Create(
                 frequency.ToString(CultureInfo.InvariantCulture),
-                Bps * 9 / 10,
+                BitsPerSecond * 9 / 10,
                 1,
-                Bps,
+                BitsPerSecond,
                 false
             );
             _buttonStates = new ButtonState[buttons.Length];
@@ -95,8 +95,8 @@ namespace Game5
         {
             _audioClip.SetData(
                 GenerateAudio(
-                    Bps * 9 / 10,
-                    Bps / 5,
+                    BitsPerSecond * 9 / 10,
+                    BitsPerSecond / 5,
                     frequency,
                     wave
                 ),
@@ -116,7 +116,7 @@ namespace Game5
 
             var data = new float[totalSize];
 
-            var frequency = hz / Bps;
+            var frequency = hz / BitsPerSecond;
 
             for (var i = 0; i < preFalloff; i++)
             {

@@ -487,15 +487,15 @@ MonoBehaviour:
   rowPrefab: {fileID: 242101637520080680, guid: ef0e056303fc24c4ea17bec2d131ebd0, type: 3}
   notes:
   - noteName: C3
-    frequency: 263.74
+    frequency: 130.81
   - noteName: D3
-    frequency: 234
+    frequency: 146.83
   - noteName: E3
-    frequency: 209.33
+    frequency: 164.81
   - noteName: F3
-    frequency: 197.58
+    frequency: 174.61
   - noteName: G3
-    frequency: 176.02
+    frequency: 174.61
   - noteName: A3
     frequency: 156.82
   - noteName: B3

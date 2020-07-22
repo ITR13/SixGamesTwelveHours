@@ -20,6 +20,10 @@ public class TtsPlayer : MonoBehaviour
         movementDir.z = 0;
         var dist = movementDir.sqrMagnitude;
         movementDir.Normalize();
-        transform.position += movementDir * Time.deltaTime;
+        transform.position += movementDir *
+                              Time.fixedDeltaTime *
+                              Mathf.Lerp(
+                                  dist,
+                              );
     }
 }

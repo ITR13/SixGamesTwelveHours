@@ -65,7 +65,7 @@ namespace Game4
         {
             _jumpTimer -= Time.fixedDeltaTime;
             if (_jumpTimer > 0f) return;
-            _jumpTimer += jumpInterval;
+            _jumpTimer += jumpInterval + Random.value;
 
             var dir = Mathf.Sign(
                 player.transform.position.x - transform.position.x

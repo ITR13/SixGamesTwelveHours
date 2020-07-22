@@ -137,7 +137,7 @@ namespace Game4
         public static void IncreaseScore()
         {
             _score++;
-            scoreText.text = $"SCORE: {_score}";
+            _instance.scoreText.text = $"SCORE: {_score}";
 
             if (_score % 5 != 0 || _health >= 6) return;
             _health++;

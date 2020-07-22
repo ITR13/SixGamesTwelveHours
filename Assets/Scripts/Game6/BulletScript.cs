@@ -11,6 +11,6 @@ public class BulletScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.Translate(transform.forward * Time.fixedDeltaTime * 5);
+        transform.Translate(transform.forward * Time.fixedDeltaTime * 20);
     }
 }

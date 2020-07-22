@@ -615,6 +615,14 @@ MonoBehaviour:
   - {fileID: 242101637281603122}
   - {fileID: 242101638289896577}
   - {fileID: 242101637773910871}
+  - {fileID: 6487921083190461111}
+  - {fileID: 7092908530232961556}
+  - {fileID: 4232833716749159875}
+  - {fileID: 5467699952787458859}
+  - {fileID: 7682253963557689066}
+  - {fileID: 4400070170863321952}
+  - {fileID: 8576057566754145023}
+  - {fileID: 4630115432809411968}
   buttonImages:
   - {fileID: 242101638358926195}
   - {fileID: 242101638386008615}
@@ -2579,7 +2587,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 150, y: 0}
+  m_SizeDelta: {x: 140, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &242101638831608334
 CanvasRenderer:

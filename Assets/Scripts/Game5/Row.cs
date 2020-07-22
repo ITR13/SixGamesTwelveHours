@@ -1,17 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UIElements;
 
 public class Row : MonoBehaviour
 {
+    private const float Bps = 44100;
+
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private Button[] buttons;
     [SerializeField] private float frequency;
 
+    private AudioClip audioClip;
+
     private void Awake()
     {
-
+        audioClip = AudioClip.Create(frequency.ToString(), Bps);
     }
 
     private void PlayBeep()

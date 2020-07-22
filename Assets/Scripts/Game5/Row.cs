@@ -19,33 +19,32 @@ namespace Game5
         [SerializeField] private Image[] buttonImages;
         [SerializeField] private float frequency;
 
-        private AudioClip audioClip;
-        private ButtonState[] buttonStates;
+        private AudioClip _audioClip;
+        private ButtonState[] _buttonStates;
 
         private void Awake()
         {
-            audioClip = AudioClip.Create(
+            _audioClip = AudioClip.Create(
                 frequency.ToString(),
                 Bps * 9 / 10,
                 1,
                 Bps,
                 false
             );
-            buttonStates = new ButtonState[buttons.Length];
+            _buttonStates = new ButtonState[buttons.Length];
         }
 
         private void PlayBeep()
         {
-            var clip = AudioClip.Create("beep", length, 1, Bps, false);
-            clip.SetData(
+            _audioClip.SetData(
                 GenerateAudio(
-                    length,
+                    Bps * 9 / 10,
                     Bps / 5,
                     frequency
                 ),
                 0
             );
-            audioSource.PlayOneShot(clip, 0.35f);
+            audioSource.PlayOneShot(_audioClip, 0.35f);
         }
 
         private float[] GenerateAudio(int totalSize, int falloffSize, float hz)

@@ -76,7 +76,7 @@ namespace Game6
             bullet.transform.position = transform.position + direction / 2;
         }
 
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.gameObject.layer != _hurtLayer) return;
             transform.position =

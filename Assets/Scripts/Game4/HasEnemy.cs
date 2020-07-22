@@ -7,6 +7,7 @@ namespace Game4
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private int health;
+        [SerializeField] private float jumpInterval;
 
         private float _invulnerable;
         private float _jumpTimer;
@@ -31,11 +32,8 @@ namespace Game4
 
         private void Update()
         {
-            if (_jumpTimer < 0f)
-            {
-
-            }
-
+            DoJump();
+            DoInvuln();
 
             _invulnerable -= Time.deltaTime;
             spriteRenderer.color = new Color(
@@ -46,6 +44,15 @@ namespace Game4
             );
             spriteRenderer.enabled =
                 _invulnerable <= 0.5f || (_invulnerable % 0.4f > 0.15f);
+        }
+
+        private void DoJump()
+        {
+
+            if (_jumpTimer < 0f)
+            {
+                _jumpTimer += jumpInterval;
+            }
         }
     }
 }

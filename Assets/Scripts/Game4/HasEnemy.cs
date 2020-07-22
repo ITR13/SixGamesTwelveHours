@@ -75,6 +75,10 @@ namespace Game4
                 new Vector2(dir * 8, 25),
                 ForceMode2D.Impulse
             );
+
+            var scale = transform.localScale;
+            scale.x = Mathf.Abs(scale.x) * -dir;
+            transform.localScale = scale;
         }
     }
 }

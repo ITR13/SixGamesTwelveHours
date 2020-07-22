@@ -18,10 +18,12 @@ namespace Game5
         );
 
         [SerializeField] private Row rowPrefab;
+        [SerializeField] private Playbar playbarPrefab;
         [SerializeField] private List<NoteInfo> notes;
         [SerializeField] private Transform rowParent;
 
         private Row[] _rows;
+        private Playbar playbar;
 
         private static float _time = -3f;
         private static int _beat;

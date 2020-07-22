@@ -26,7 +26,10 @@ public class TtsPlayer : MonoBehaviour
             0
         );
 
-        transform.up = shootDir;
+        if (shootDir.sqrMagnitude > 0.1f)
+        {
+            transform.up = shootDir;
+        }
     }
 
     private void FixedUpdate()

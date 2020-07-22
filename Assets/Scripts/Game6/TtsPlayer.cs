@@ -65,8 +65,15 @@ public class TtsPlayer : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        var bullet = Instantiate(bulletPrefab);
-        bullet.transform.up = direction;
-        bullet.transform.position = transform.position + direction / 2;
+        var bullet = Instantiate(
+            bulletPrefab,
+            transform.position + direction / 2,
+            Quaternion.AngleAxis(
+                Vector3.Angle(direction, Vector3.up),
+                Vector3.forward
+            )
+        );
+        bullet.
+        bullet.transform.position = 
     }
 }

@@ -7,6 +7,8 @@ namespace Game4
 {
     public class HackAndSlasher : MonoBehaviour
     {
+        private HackAndSlasher _instance;
+
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidBody;
         private new Camera camera;
@@ -17,6 +19,8 @@ namespace Game4
 
         private void Awake()
         {
+            _instance = this;
+
             text = GetComponentInChildren<TextMeshPro>();
             rigidBody = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -124,8 +128,13 @@ namespace Game4
             if (_score % 5 == 0 && _health < 6)
             {
                 _health++;
-                UpdateHealthText();
+                _instance.UpdateHealthText();
             }
+        }
+
+        private void UpdateHealthText()
+        {
+            text.text = "HEALTH".Remove()
         }
     }
 }

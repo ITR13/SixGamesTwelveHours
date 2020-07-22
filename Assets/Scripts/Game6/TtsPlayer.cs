@@ -38,6 +38,7 @@ public class TtsPlayer : MonoBehaviour
         movementDir.z = 0;
         var dist = movementDir.sqrMagnitude;
         movementDir.Normalize();
+    /*
         transform.position += movementDir *
                               Time.fixedDeltaTime *
                               Mathf.Lerp(
@@ -45,7 +46,7 @@ public class TtsPlayer : MonoBehaviour
                                   2,
                                   (dist-4)/100
                               );
-
+                              */
         if (shootCooldown <= 0)
         {
             shootCooldown = 0;

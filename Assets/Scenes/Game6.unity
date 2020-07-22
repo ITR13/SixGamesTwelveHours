@@ -440,7 +440,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x
@@ -549,7 +549,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x
@@ -663,7 +663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x
@@ -741,7 +741,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x
@@ -876,7 +876,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836885704}
-  m_BodyType: 2
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -907,7 +907,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x
@@ -985,7 +985,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x

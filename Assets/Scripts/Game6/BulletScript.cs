@@ -1,16 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletScript : MonoBehaviour
+namespace Game6
 {
-    private void Awake()
+    public class BulletScript : MonoBehaviour
     {
-        Destroy(gameObject, 20f);
-    }
+        private void Awake()
+        {
+            Destroy(gameObject, 20f);
+        }
 
-    private void FixedUpdate()
-    {
-        transform.Translate(Vector3.up * Time.fixedDeltaTime * 25);
+        private void FixedUpdate()
+        {
+            transform.Translate(Vector3.up * Time.fixedDeltaTime * 25);
+        }
     }
 }

@@ -1,72 +1,72 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.PlayerLoop;
 
-public class TtsPlayer : MonoBehaviour
+namespace Game6
 {
-    private const float ShootInterval = 0.1f;
-
-    [SerializeField] private new Camera camera;
-    [SerializeField] private Transform visuals;
-    [SerializeField] private BulletScript bulletPrefab;
-
-    private Vector3 movementDir;
-    private Vector3 shootDir;
-
-    private float shootCooldown;
-
-    private void Update()
+    public class TtsPlayer : MonoBehaviour
     {
-        var worldPoint = camera.ScreenToWorldPoint(Input.mousePosition);
-        movementDir = transform.position - worldPoint;
+        private const float ShootInterval = 0.1f;
 
-        shootDir = new Vector3(
-            Input.GetAxis("Horizontal"),
-            Input.GetAxis("Vertical"),
-            0
-        );
+        [SerializeField] private new Camera camera;
+        [SerializeField] private Transform visuals;
+        [SerializeField] private BulletScript bulletPrefab;
 
-        if (shootDir.sqrMagnitude > 0.1f)
+        private Vector3 movementDir;
+        private Vector3 shootDir;
+
+        private float shootCooldown;
+
+        private void Update()
         {
-            visuals.transform.up = shootDir;
-        }
-    }
+            var worldPoint = camera.ScreenToWorldPoint(Input.mousePosition);
+            movementDir = transform.position - worldPoint;
 
-    private void FixedUpdate()
-    {
-        movementDir.z = 0;
-        var dist = movementDir.sqrMagnitude;
-        movementDir.Normalize();
+            shootDir = new Vector3(
+                Input.GetAxis("Horizontal"),
+                Input.GetAxis("Vertical"),
+                0
+            );
 
-        transform.position += movementDir *
-                              Time.fixedDeltaTime *
-                              Mathf.Lerp(
-                                  10,
-                                  2,
-                                  (dist-4)/100
-                              );
-
-        if (shootCooldown <= 0)
-        {
-            shootCooldown = 0;
-        }
-        else
-        {
-            shootCooldown -= Time.fixedDeltaTime;
+            if (shootDir.sqrMagnitude > 0.1f)
+            {
+                visuals.transform.up = shootDir;
+            }
         }
 
-        if (shootDir.sqrMagnitude > 0.1f && shootCooldown <= 0)
+        private void FixedUpdate()
         {
-            shootCooldown += ShootInterval;
-            Shoot(shootDir.normalized);
-        }
-    }
+            movementDir.z = 0;
+            var dist = movementDir.sqrMagnitude;
+            movementDir.Normalize();
 
-    private void Shoot(Vector3 direction)
-    {
-        var bullet = Instantiate(bulletPrefab);
-        bullet.transform.up = direction;
-        bullet.transform.position = transform.position + direction / 2;
+            transform.position += movementDir *
+                                  Time.fixedDeltaTime *
+                                  Mathf.Lerp(
+                                      10,
+                                      2,
+                                      (dist-4)/100
+                                  );
+
+            if (shootCooldown <= 0)
+            {
+                shootCooldown = 0;
+            }
+            else
+            {
+                shootCooldown -= Time.fixedDeltaTime;
+            }
+
+            if (shootDir.sqrMagnitude > 0.1f && shootCooldown <= 0)
+            {
+                shootCooldown += ShootInterval;
+                Shoot(shootDir.normalized);
+            }
+        }
+
+        private void Shoot(Vector3 direction)
+        {
+            var bullet = Instantiate(bulletPrefab);
+            bullet.transform.up = direction;
+            bullet.transform.position = transform.position + direction / 2;
+        }
     }
 }

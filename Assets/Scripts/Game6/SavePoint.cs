@@ -10,10 +10,11 @@ namespace Game6
             0.7592501f,
             0.9622642f
         );
+
         private static readonly Color OnColor = new Color(
-            0,
+            0.9622642f,
             0.7592501f,
-            0.9622642f
+            0
         );
 
 
@@ -21,7 +22,9 @@ namespace Game6
 
         private void Awake()
         {
-
+            spriteRenderer.color = OffColor;
         }
+
+        private void 
     }
 }

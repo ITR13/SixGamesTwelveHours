@@ -5,7 +5,7 @@ using UnityEngine.PlayerLoop;
 
 public class TtsPlayer : MonoBehaviour
 {
-    private const float ShootInterval = 0.2f;
+    private const float ShootInterval = 0.4f;
 
     [SerializeField] private new Camera camera;
     [SerializeField] private Transform visuals;
@@ -38,7 +38,7 @@ public class TtsPlayer : MonoBehaviour
         movementDir.z = 0;
         var dist = movementDir.sqrMagnitude;
         movementDir.Normalize();
-    /*
+
         transform.position += movementDir *
                               Time.fixedDeltaTime *
                               Mathf.Lerp(
@@ -46,7 +46,7 @@ public class TtsPlayer : MonoBehaviour
                                   2,
                                   (dist-4)/100
                               );
-                              */
+
         if (shootCooldown <= 0)
         {
             shootCooldown = 0;
@@ -65,13 +65,8 @@ public class TtsPlayer : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        var bullet = Instantiate(
-            bulletPrefab,
-            transform.position + direction / 2,
-            Quaternion.AngleAxis(
-                Vector3.Angle(direction, Vector3.up),
-                Vector3.forward
-            )
-        );
+        var bullet = Instantiate(bulletPrefab);
+        bullet.transform.up = direction;
+        bullet.transform.position = transform.position + direction / 2;
     }
 }

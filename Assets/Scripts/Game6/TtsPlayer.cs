@@ -5,6 +5,8 @@ using UnityEngine.PlayerLoop;
 
 public class TtsPlayer : MonoBehaviour
 {
+    private const float ShootInterval = 0.4f;
+
     [SerializeField] private new Camera camera;
     [SerializeField] private BulletScript bulletPrefab;
 
@@ -40,7 +42,7 @@ public class TtsPlayer : MonoBehaviour
                                   (dist-4)/100
                               );
 
-        if (shootCooldown < 0)
+        if (shootCooldown <= 0)
         {
             shootCooldown = 0;
         }
@@ -51,6 +53,7 @@ public class TtsPlayer : MonoBehaviour
 
         if (shootDir.sqrMagnitude > 0.1f && shootCooldown <= 0)
         {
+            shootCooldown += ShootInterval;
             Shoot(shootDir.normalized);
         }
     }

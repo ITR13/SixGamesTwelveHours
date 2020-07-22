@@ -7,7 +7,7 @@ public class TtsPlayer : MonoBehaviour
 {
     [SerializeField] private new Camera camera;
 
-    private Vector2 movementDir;
+    private Vector3 movementDir;
 
     private void Update()
     {
@@ -17,6 +17,9 @@ public class TtsPlayer : MonoBehaviour
 
     private void FixedUpdate()
     {
+        movementDir.z = 0;
+        var dist = movementDir.sqrMagnitude;
+        movementDir.Normalize();
         transform.position += movementDir * Time.deltaTime;
     }
 }

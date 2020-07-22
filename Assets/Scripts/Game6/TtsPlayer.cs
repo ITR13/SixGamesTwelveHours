@@ -11,6 +11,8 @@ public class TtsPlayer : MonoBehaviour
     private Vector3 movementDir;
     private Vector3 shootDir;
 
+    private float shootCooldown;
+
     private void Update()
     {
         var worldPoint = camera.ScreenToWorldPoint(Input.mousePosition);
@@ -38,7 +40,16 @@ public class TtsPlayer : MonoBehaviour
                                   (dist-4)/100
                               );
 
-        if (shootDir.sqrMagnitude > 0.1f)
+        if (shootCooldown < 0)
+        {
+            shootCooldown = 0;
+        }
+        else
+        {
+            shootCooldown -= Time.fixedDeltaTime;
+        }
+
+        if (shootDir.sqrMagnitude > 0.1f && shootCooldown <= 0)
         {
             Shoot(shootDir.normalized);
         }

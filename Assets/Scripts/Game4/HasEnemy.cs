@@ -29,7 +29,7 @@ namespace Game4
                 ForceMode2D.Impulse
             );
             health -= 1;
-            _invulnerable = 1.5f;
+            _invulnerable = 0.2f;
         }
 
         private void Update()

@@ -6,11 +6,9 @@ public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] private Transform target;
     private float _offset;
-    private Camera _camera;
 
     private void Awake()
     {
-        _camera = GetComponent<Camera>();
         _offset = transform.position.x - target.transform.position.x;
     }
 
@@ -18,6 +16,9 @@ public class FollowPlayer : MonoBehaviour
     {
         var pos = transform.position;
         pos.x = target.transform.position.x + _offset;
+
+        var mousePos = (Input.mousePosition.x /(float) Screen.width) * 2 - 1;
+
         transform.position = pos;
     }
 }

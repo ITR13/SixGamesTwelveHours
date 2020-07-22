@@ -9,6 +9,7 @@ namespace Game4
         [SerializeField] private int health;
 
         private float _invulnerable;
+        private float _jumpTimer;
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -30,6 +31,12 @@ namespace Game4
 
         private void Update()
         {
+            if (_jumpTimer < 0f)
+            {
+
+            }
+
+
             _invulnerable -= Time.deltaTime;
             spriteRenderer.color = new Color(
                 1,

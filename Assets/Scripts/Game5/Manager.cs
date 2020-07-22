@@ -17,6 +17,7 @@ namespace Game5
             44100 * 0.1f / BeatsPerSecond
         );
 
+        [SerializeField] private Row rowPrefab;
         [SerializeField] private List<Tuple<string, float>> notes;
         
         private Row[] _rows;
@@ -27,9 +28,11 @@ namespace Game5
         private void Awake()
         {
             _rows = new Row[notes.Count];
+            var parent = transform.GetChild(0);
             for (var i = 0; i < _rows.Length; i++)
             {
-                _rows[i] = 
+                _rows[i] = Instantiate(rowPrefab, parent);
+                _rows[i].Set(notes[i].Item1);
             }
         }
 

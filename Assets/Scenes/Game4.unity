@@ -898,7 +898,7 @@ MonoBehaviour:
   spriteRenderer: {fileID: 1154087554}
   rigidBody: {fileID: 1154087556}
   health: 3
-  jumpInterval: 0
+  jumpInterval: 5
 --- !u!1 &1258239124
 GameObject:
   m_ObjectHideFlags: 0

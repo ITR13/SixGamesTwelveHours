@@ -58,7 +58,7 @@ namespace Game4
         private void DoJump()
         {
             _jumpTimer -= Time.fixedDeltaTime;
-            if (!(_jumpTimer < 0f)) return;
+            if (_jumpTimer > 0f) return;
             _jumpTimer += jumpInterval;
 
             var dir = Mathf.Sign(
@@ -66,7 +66,7 @@ namespace Game4
             );
 
             rigidBody.AddForce(
-                new Vector2(dir * 8, 7),
+                new Vector2(dir * 8, 25),
                 ForceMode2D.Impulse
             );
         }

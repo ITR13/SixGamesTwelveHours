@@ -70,6 +70,12 @@ namespace Game6
             bullet.transform.position = transform.position + direction / 2;
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+
+            Debug.Log("!???!");
+        }
+
         private void OnCollisionEnter2D(Collision2D other)
         {
             Debug.Log(other.gameObject.layer);

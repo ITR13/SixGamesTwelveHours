@@ -73,7 +73,7 @@ namespace Game6
         private void OnTriggerEnter2D(Collider2D other)
         {
 
-            Debug.Log("!???!");
+            Debug.Log("!???!", other);
         }
 
         private void OnCollisionEnter2D(Collision2D other)

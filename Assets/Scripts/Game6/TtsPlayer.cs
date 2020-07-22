@@ -10,6 +10,7 @@ namespace Game6
         [SerializeField] private new Camera camera;
         [SerializeField] private Transform visuals;
         [SerializeField] private BulletScript bulletPrefab;
+        [SerializeField] private new Rigidbody2D rigidbody;
 
         private Vector3 movementDir;
         private Vector3 shootDir;
@@ -39,8 +40,7 @@ namespace Game6
             var dist = movementDir.sqrMagnitude;
             movementDir.Normalize();
 
-            transform.position += movementDir *
-                                  Time.fixedDeltaTime *
+            rigidbody.velocity = movementDir *
                                   Mathf.Lerp(
                                       10,
                                       2,

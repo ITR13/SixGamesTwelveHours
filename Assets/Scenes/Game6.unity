@@ -323,6 +323,7 @@ MonoBehaviour:
   camera: {fileID: 147493161}
   visuals: {fileID: 876009099}
   bulletPrefab: {fileID: 4377346312840920997, guid: 9d59260ec6c265d449fcbd9bd3c5fce7, type: 3}
+  rigidbody: {fileID: 215416807}
 --- !u!50 &215416807
 Rigidbody2D:
   serializedVersion: 4

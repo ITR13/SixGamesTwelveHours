@@ -30,7 +30,7 @@ namespace Game5
         {
             Color.gray,
             Color.red,
-            Color.blue, 
+            Color.blue,
             Color.green,
         };
 
@@ -48,7 +48,6 @@ namespace Game5
             );
             _buttonStates = new ButtonState[buttons.Length];
 
-
             for (var i = 0; i < buttons.Length; i++)
             {
                 var index = i;
@@ -59,15 +58,15 @@ namespace Game5
                     () =>
                     {
                         _buttonStates[index] =
-                            (ButtonState) (
-                                (
-                                               (int) _buttonStates[index] + 1) %
-                                           (int) ButtonState.MAX
+                            (ButtonState)(
+                                ((int)_buttonStates[index] + 1) %
+                                (int)ButtonState.MAX
                             );
                         image.color = colors[(int)_buttonStates[index]];
 
                     }
                 );
+                image.color = colors[(int)_buttonStates[index]];
             }
         }
 
@@ -130,7 +129,7 @@ namespace Game5
             {
                 var t = (i + preFalloff) * frequency;
                 var h = wave(t);
-                var scale = 1 - i / (float) falloffSize;
+                var scale = 1 - i / (float)falloffSize;
                 data[i + preFalloff] = h * scale;
             }
 

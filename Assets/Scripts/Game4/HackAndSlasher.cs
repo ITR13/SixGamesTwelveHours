@@ -1,4 +1,5 @@
 using System;
+using System.Security;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -8,6 +9,9 @@ namespace Game4
     public class HackAndSlasher : MonoBehaviour
     {
         private static HackAndSlasher _instance;
+
+        [SerializeField] private TextMeshProUGUI scoreText;
+        [SerializeField] private GameObject menu;
 
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidBody;
@@ -124,11 +128,11 @@ namespace Game4
         public static void IncreaseScore()
         {
             _score++;
-            if (_score % 5 == 0 && _health < 6)
-            {
-                _health++;
-                _instance.UpdateHealthText();
-            }
+            scoreText.text = $"SCORE: {_score}";
+
+            if (_score % 5 != 0 || _health >= 6) return;
+            _health++;
+            _instance.UpdateHealthText();
         }
 
         private void UpdateHealthText()

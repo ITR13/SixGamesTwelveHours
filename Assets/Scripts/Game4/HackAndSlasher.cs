@@ -16,7 +16,7 @@ namespace Game4
             spriteRenderer = GetComponent<SpriteRenderer>();
             camera = Camera.main;
             arm = transform.Find("Arm");
-            _invulnerable = 5;
+            _invulnerable = 0.2f;
         }
 
         private float horizontal;

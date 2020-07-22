@@ -84,14 +84,15 @@ namespace Game4
                 grounded = true;
                 return;
             }
+        }
 
-            if (_invulnerable > 0) return;
-
+        public void HurtMe()
+        {
             if (!other.gameObject.CompareTag("Enemy")) return;
             var dir = -Mathf.Sign(rigidBody.velocity.x);
             _invulnerable = 2.7f;
             rigidBody.AddForce(
-                new Vector2(dir * 8, 0), 
+                new Vector2(dir * 8, 0),
                 ForceMode2D.Impulse
             );
         }

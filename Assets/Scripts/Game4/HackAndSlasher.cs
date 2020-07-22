@@ -26,6 +26,7 @@ namespace Game4
 
         private void Update()
         {
+            _invulnerable -= Time.deltaTime;
             spriteRenderer.color = new Color(
                 1, 1, 1, Mathf.Clamp01(0.5f - _invulnerable) + 0.5f
             );

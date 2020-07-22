@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 145537605}
   - component: {fileID: 145537606}
   - component: {fileID: 145537607}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Sword
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1955148560}
-  m_Layer: 8
+  m_Layer: 0
   m_Name: Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}

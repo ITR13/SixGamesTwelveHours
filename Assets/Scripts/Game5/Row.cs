@@ -101,7 +101,7 @@ namespace Game5
                 ),
                 0
             );
-            audioSource.PlayOneShot(_audioClip, 0.15f + Mathf.Log(_frequency / 440));
+            audioSource.PlayOneShot(_audioClip, _volume);
         }
 
         private float[] GenerateAudio(
@@ -135,10 +135,11 @@ namespace Game5
             return data;
         }
 
-        public void Set(string note, float frequency)
+        public void Set(string note, float frequency, float volume)
         {
             gameObject.name = note;
             _frequency = frequency;
+            _volume = volume;
             GetComponentInChildren<TextMeshProUGUI>().text = note;
         }
     }

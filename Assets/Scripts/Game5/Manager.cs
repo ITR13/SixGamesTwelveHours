@@ -51,7 +51,12 @@ namespace Game5
             for (var i = 0; i < _rows.Length; i++)
             {
                 _rows[i] = Instantiate(rowPrefab, parent);
-                _rows[i].Set(notes[i].noteName, notes[i].frequency);
+                _rows[i]
+                    .Set(
+                        notes[i].noteName,
+                        notes[i].frequency,
+                        0.25f - 0.1f * i
+                    );
             }
         }
 

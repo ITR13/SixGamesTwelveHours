@@ -484,4 +484,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a323f340cf5234e8d00aca090bc55c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rowPrefab: {fileID: 0}
+  rowPrefab: {fileID: 242101637520080680, guid: ef0e056303fc24c4ea17bec2d131ebd0, type: 3}

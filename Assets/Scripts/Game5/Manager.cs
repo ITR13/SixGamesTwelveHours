@@ -83,7 +83,8 @@ namespace Game5
 
         public static void ResetTo(int index)
         {
-            
+            _beat = index;
+            _time = index - 3;
         }
     }
 }

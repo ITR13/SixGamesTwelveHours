@@ -10,6 +10,8 @@ public class Playbar : MonoBehaviour
     [SerializeField] private Button[] buttons;
     [SerializeField] private Image[] buttonImages;
 
+    private int prevPlayed = 0;
+
 
     private void Start()
     {
@@ -33,6 +35,6 @@ public class Playbar : MonoBehaviour
     public void Play(int index)
     {
         index %= buttons.Length;
-        
+        buttonImages[prevPlayed].color = Color.white;
     }
 }

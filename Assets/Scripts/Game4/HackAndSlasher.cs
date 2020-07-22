@@ -10,8 +10,7 @@ namespace Game4
         private new Camera camera;
         private Transform arm;
 
-        public static int Health;
-        public static int Score;
+        private static int _health, _score;
 
         private void Awake()
         {
@@ -21,8 +20,8 @@ namespace Game4
             arm = transform.Find("Arm");
             _invulnerable = 0.2f;
 
-            Score = 0;
-            Health = 6;
+            _score = 0;
+            _health = 6;
         }
 
         private float horizontal;
@@ -109,6 +108,11 @@ namespace Game4
             Debug.Log("Has enemy?: " + hasEnemy);
             if (hasEnemy == null) return;
             hasEnemy.HurtMe(hasEnemy.transform.position - transform.position);
+        }
+
+        public static void IncreaseScore()
+        {
+            
         }
     }
 }

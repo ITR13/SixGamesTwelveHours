@@ -30,6 +30,12 @@ namespace Game4
             );
             health -= 1;
             _invulnerable = 1.5f;
+
+            if (health < 0)
+            {
+                HackAndSlasher.IncreaseScore();
+                Destroy(gameObject);
+            }
         }
 
         private void Update()

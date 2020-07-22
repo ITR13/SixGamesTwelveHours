@@ -15,5 +15,10 @@ namespace Game6
         {
             rigidbody.velocity = transform.up * 25;
         }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            Debug.Log("TRIGGER");
+        }
     }
 }

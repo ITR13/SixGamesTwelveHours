@@ -15,7 +15,11 @@ public class TtsPlayer : MonoBehaviour
         var worldPoint = camera.ScreenToWorldPoint(Input.mousePosition);
         movementDir = transform.position - worldPoint;
 
-
+        shootDir = new Vector3(
+            Input.GetAxis("Horizontal"),
+            Input.GetAxis("Vertical"),
+            0
+        );
     }
 
     private void FixedUpdate()
@@ -30,5 +34,15 @@ public class TtsPlayer : MonoBehaviour
                                   2,
                                   (dist-4)/100
                               );
+
+        if (shootDir.sqrMagnitude > 0.1f)
+        {
+            Shoot(shootDir.normalized);
+        }
+    }
+
+    private void Shoot(Vector3 direction)
+    {
+        
     }
 }

@@ -15,10 +15,10 @@ public class FollowPlayer : MonoBehaviour
     private void LateUpdate()
     {
         var mousePos = (Input.mousePosition.x / (float)Screen.width) * 2 - 1;
-        var targetPo9s = transform.position;
-        targetPo9s.x = target.transform.position.x + _offset * mousePos;
+        var targetPos = transform.position;
+        targetPos.x = target.transform.position.x + _offset * mousePos;
 
 
-        transform.position = targetPo9s;
+        transform.position = Vector3.Lerp()
     }
 }

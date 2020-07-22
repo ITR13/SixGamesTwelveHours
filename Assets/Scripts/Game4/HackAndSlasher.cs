@@ -30,6 +30,8 @@ namespace Game4
             spriteRenderer.color = new Color(
                 1, 1, 1, Mathf.Clamp01(0.5f - _invulnerable) + 0.5f
             );
+            spriteRenderer.enabled =
+                _invulnerable <= 0.5f || (_invulnerable % 0.3f < 0.1f);
 
             horizontal = Input.GetAxis("Horizontal");
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Vertical") > 0)

@@ -1,69 +1,77 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Build;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class Row : MonoBehaviour
+namespace Game5
 {
-    private const float Bps = 44100;
-
-    [SerializeField] private AudioSource audioSource;
-    [SerializeField] private Button[] buttons;
-    [SerializeField] private Image[] buttonImages;
-
-    [SerializeField] private float frequency;
-
-    private AudioClip audioClip;
-
-    private void Awake()
+    public class Row : MonoBehaviour
     {
-        audioClip = AudioClip.Create(
-            frequency.ToString(),
-            Bps * 9 / 10,
-            1,
-            Bps,
-            false
-        );
-    }
+        private const int Bps = 44100;
 
-    private void PlayBeep()
-    {
-        var clip = AudioClip.Create("beep", length, 1, Bps, false);
-        clip.SetData(
-            GenerateAudio(
-                length,
-                Bps / 5,
-                frequency
-            ),
-            0
-        );
-        audioSource.PlayOneShot(clip, 0.35f);
-    }
-
-    private float[] GenerateAudio(int totalSize, int falloffSize, float hz)
-    {
-        var preFalloff = totalSize - falloffSize;
-
-        var data = new float[totalSize];
-
-        var frequency = hz / Bps;
-
-        for (var i = 0; i < preFalloff; i++)
+        private enum ButtonState
         {
-            var t = 2f * i * Mathf.PI * frequency;
-            var h = Mathf.Sin(t);
-            data[i] = h;
+            Off,
+            Beep,
         }
 
-        for (var i = 0; i < falloffSize; i++)
+
+        [SerializeField] private AudioSource audioSource;
+        [SerializeField] private Button[] buttons;
+        [SerializeField] private Image[] buttonImages;
+        [SerializeField] private float frequency;
+
+        private AudioClip audioClip;
+        private ButtonState[] buttonStates;
+
+        private void Awake()
         {
-            var t = 2f * (i + preFalloff) * Mathf.PI * frequency;
-            var h = Mathf.Sin(t);
-            var scale = 1 - i / (float)falloffSize;
-            data[i + preFalloff] = h * scale;
+            audioClip = AudioClip.Create(
+                frequency.ToString(),
+                Bps * 9 / 10,
+                1,
+                Bps,
+                false
+            );
+            buttonStates = new ButtonState[buttons.Length];
         }
 
-        return data;
+        private void PlayBeep()
+        {
+            var clip = AudioClip.Create("beep", length, 1, Bps, false);
+            clip.SetData(
+                GenerateAudio(
+                    length,
+                    Bps / 5,
+                    frequency
+                ),
+                0
+            );
+            audioSource.PlayOneShot(clip, 0.35f);
+        }
+
+        private float[] GenerateAudio(int totalSize, int falloffSize, float hz)
+        {
+            var preFalloff = totalSize - falloffSize;
+
+            var data = new float[totalSize];
+
+            var frequency = hz / Bps;
+
+            for (var i = 0; i < preFalloff; i++)
+            {
+                var t = 2f * i * Mathf.PI * frequency;
+                var h = Mathf.Sin(t);
+                data[i] = h;
+            }
+
+            for (var i = 0; i < falloffSize; i++)
+            {
+                var t = 2f * (i + preFalloff) * Mathf.PI * frequency;
+                var h = Mathf.Sin(t);
+                var scale = 1 - i / (float)falloffSize;
+                data[i + preFalloff] = h * scale;
+            }
+
+            return data;
+        }
     }
 }

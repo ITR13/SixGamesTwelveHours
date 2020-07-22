@@ -87,10 +87,10 @@ namespace Game4
 
             if (_invulnerable > 0) return;
 
-            if (other.gameObject.CompareTag("Enemy"))
-            {
-                var dir = rigidBody.velocity.x;
-            }
+            if (!other.gameObject.CompareTag("Enemy")) return;
+            var dir = -Mathf.Sign(rigidBody.velocity.x);
+            _invulnerable = 2.7f;
+            rigidBody.AddForce();
         }
     }
 }

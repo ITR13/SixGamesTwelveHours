@@ -66,5 +66,15 @@ namespace Game5
             public string noteName;
             public float frequency;
         }
+
+        private void OnDestroy()
+        {
+            PlayerPrefs.Save();
+        }
+
+        private void OnApplicationQuit()
+        {
+            PlayerPrefs.Save();
+        }
     }
 }

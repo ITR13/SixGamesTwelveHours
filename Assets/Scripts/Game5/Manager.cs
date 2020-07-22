@@ -17,7 +17,7 @@ namespace Game5
             44100 * 0.1f / BeatsPerSecond
         );
 
-        [SerializeField] List<Tuple<>
+        [SerializeField] private List<Tuple<string, float>> notes;
         
         private Row[] _rows;
 
@@ -26,7 +26,11 @@ namespace Game5
 
         private void Awake()
         {
-            
+            _rows = new Row[notes.Count];
+            for (var i = 0; i < _rows.Length; i++)
+            {
+                _rows[i] = 
+            }
         }
 
         private void Update()

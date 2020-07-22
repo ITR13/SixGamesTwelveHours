@@ -12,7 +12,7 @@ namespace Game4
         [SerializeField] private float jumpInterval;
 
         private float _invulnerable;
-        private float _jumpTimer;
+        private float _jumpTimer = 2;
 
         private void OnTriggerEnter2D(Collider2D other)
         {

@@ -16,6 +16,7 @@ namespace Game4
             spriteRenderer = GetComponent<SpriteRenderer>();
             camera = Camera.main;
             arm = transform.Find("Arm");
+            _invulnerable = 5;
         }
 
         private float horizontal;
@@ -26,7 +27,7 @@ namespace Game4
         private void Update()
         {
             spriteRenderer.color = new Color(
-                1, 1, 1, Mathf.Clamp01(0.5f - _invulnerable + 0.5f)
+                1, 1, 1, Mathf.Clamp01(0.5f - _invulnerable) + 0.5f
             );
 
             horizontal = Input.GetAxis("Horizontal");

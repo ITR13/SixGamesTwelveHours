@@ -5,6 +5,7 @@ namespace Game4
 {
     public class HackAndSlasher : MonoBehaviour
     {
+        private SpriteRender sprite;
         private Rigidbody2D rigidBody;
         private new Camera camera;
         private Transform arm;
@@ -23,6 +24,8 @@ namespace Game4
 
         private void Update()
         {
+            sprite.
+
             horizontal = Input.GetAxis("Horizontal");
             if (Input.GetButtonDown("Fire1") || Input.GetAxis("Vertical") > 0)
             {
@@ -32,6 +35,8 @@ namespace Game4
             var worldMousePos = camera.ScreenToWorldPoint(Input.mousePosition);
             worldMousePos.z = arm.position.z;
             arm.right = worldMousePos - arm.position;
+
+
         }
 
         private void FixedUpdate()

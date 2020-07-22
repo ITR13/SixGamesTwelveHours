@@ -72,11 +72,11 @@ namespace Game6
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.layer == LayerMask.NameToLayer("Hurt"))
-            {
-                transform.position =
-                    SavePoint.CurrentSavePoint.transform.position;
-            }
+            if (other.gameObject.layer != LayerMask.NameToLayer("Hurt")) return;
+            transform.position =
+                SavePoint.CurrentSavePoint == null
+                    ? Vector3.zero
+                    : SavePoint.CurrentSavePoint.transform.position;
         }
     }
 }

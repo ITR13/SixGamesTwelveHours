@@ -61,7 +61,14 @@ namespace Game4
             if (!(_jumpTimer < 0f)) return;
             _jumpTimer += jumpInterval;
 
+            var dir = Mathf.Sign(
+                player.transform.position.x - transform.position.x
+            );
 
+            rigidBody.AddForce(
+                new Vector2(, 0),
+                ForceMode2D.Impulse
+            );
         }
     }
 }

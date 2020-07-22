@@ -21,6 +21,8 @@ public class TtsPlayer : MonoBehaviour
             Input.GetAxis("Vertical"),
             0
         );
+
+        transform.up = shootDir;
     }
 
     private void FixedUpdate()
@@ -44,6 +46,7 @@ public class TtsPlayer : MonoBehaviour
 
     private void Shoot(Vector3 direction)
     {
-        
+        var bullet = Instantiate(bullet);
+        bullet.transform.up = direction;
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 
 namespace Game4
@@ -9,11 +10,13 @@ namespace Game4
         private Rigidbody2D rigidBody;
         private new Camera camera;
         private Transform arm;
+        private TextMeshPro text;
 
         private static int _health, _score;
 
         private void Awake()
         {
+            text = GetComponentInChildren<TextMeshPro>();
             rigidBody = GetComponent<Rigidbody2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
             camera = Camera.main;
@@ -22,6 +25,7 @@ namespace Game4
 
             _score = 0;
             _health = 6;
+            text.text = "HEALTH";
         }
 
         private float horizontal;
@@ -100,6 +104,8 @@ namespace Game4
                 new Vector2(dir * 8, 0),
                 ForceMode2D.Impulse
             );
+
+            _health--;
         }
 
         private void OnTriggerEnter2D(Collider2D other)

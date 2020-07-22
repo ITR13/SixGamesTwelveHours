@@ -4,6 +4,8 @@ namespace Game4
 {
     public class HasEnemy : MonoBehaviour
     {
+        [SerializeField] private HackAndSlasher player;
+
         [SerializeField] private SpriteRenderer spriteRenderer;
         [SerializeField] private Rigidbody2D rigidBody;
         [SerializeField] private int health;
@@ -32,9 +34,16 @@ namespace Game4
 
         private void Update()
         {
-            DoJump();
             DoInvuln();
+        }
 
+        private void FixedUpdate()
+        {
+            DoJump();
+        }
+
+        private void DoInvuln()
+        {
             _invulnerable -= Time.deltaTime;
             spriteRenderer.color = new Color(
                 1,
@@ -48,11 +57,11 @@ namespace Game4
 
         private void DoJump()
         {
+            _jumpTimer -= Time.fixedDeltaTime;
+            if (!(_jumpTimer < 0f)) return;
+            _jumpTimer += jumpInterval;
 
-            if (_jumpTimer < 0f)
-            {
-                _jumpTimer += jumpInterval;
-            }
+
         }
     }
 }

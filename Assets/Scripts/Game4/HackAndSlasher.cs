@@ -7,7 +7,7 @@ namespace Game4
 {
     public class HackAndSlasher : MonoBehaviour
     {
-        private HackAndSlasher _instance;
+        private static HackAndSlasher _instance;
 
         private SpriteRenderer spriteRenderer;
         private Rigidbody2D rigidBody;
@@ -30,7 +30,7 @@ namespace Game4
 
             _score = 0;
             _health = 6;
-            text.text = "HEALTH";
+            UpdateHealthText();
         }
 
         private float horizontal;
@@ -134,7 +134,7 @@ namespace Game4
 
         private void UpdateHealthText()
         {
-            text.text = "HEALTH".Remove()
+            text.text = "HEALTH".Remove(_health);
         }
     }
 }

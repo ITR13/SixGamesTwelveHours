@@ -10,6 +10,9 @@ namespace Game4
         private new Camera camera;
         private Transform arm;
 
+        public static int Health;
+        public static int Score;
+
         private void Awake()
         {
             rigidBody = GetComponent<Rigidbody2D>();
@@ -17,6 +20,9 @@ namespace Game4
             camera = Camera.main;
             arm = transform.Find("Arm");
             _invulnerable = 0.2f;
+
+            Score = 0;
+            Health = 6;
         }
 
         private float horizontal;

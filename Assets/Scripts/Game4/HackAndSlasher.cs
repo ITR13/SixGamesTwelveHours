@@ -117,7 +117,6 @@ namespace Game4
         private void OnTriggerEnter2D(Collider2D other)
         {
             var hasEnemy = other.GetComponent<HasEnemy>();
-            Debug.Log("Has enemy?: " + hasEnemy);
             if (hasEnemy == null) return;
             hasEnemy.HurtMe(hasEnemy.transform.position - transform.position);
         }

@@ -1,7 +1,7 @@
 using System;
 using System.Globalization;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 namespace Game5
 {
@@ -50,6 +50,15 @@ namespace Game5
             {
                 var button = buttons[i];
                 var image = buttonImages[i];
+
+                button.onClick.AddListener(
+                    () =>
+                    {
+
+                        image.color = colors[_buttonStates[i]];
+
+                    }
+                );
             }
         }
 

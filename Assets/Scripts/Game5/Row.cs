@@ -13,7 +13,8 @@ namespace Game5
         {
             Off,
             Sine,
-            SawTooth
+            SawTooth,
+            Triangle
         }
 
 
@@ -35,6 +36,14 @@ namespace Game5
                 false
             );
             _buttonStates = new ButtonState[buttons.Length];
+
+
+            for (var i = 0; i < buttons.Length; i++)
+            {
+                var button = buttons[i];
+                var image = buttonImages[i];
+
+            }
         }
 
         public void Play(int index)
@@ -52,6 +61,7 @@ namespace Game5
                     break;
                 case ButtonState.Triangle:
                     PlayBeep(t => Mathf.PingPong(t * 2, 1));
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }

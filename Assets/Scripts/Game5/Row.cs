@@ -38,9 +38,9 @@ namespace Game5
         {
             _audioClip = AudioClip.Create(
                 frequency.ToString(CultureInfo.InvariantCulture),
-                BitsPerSecond * 9 / 10,
+                Manager.ClipLength,
                 1,
-                BitsPerSecond,
+                Manager.BitsPerSecond,
                 false
             );
             _buttonStates = new ButtonState[buttons.Length];
@@ -92,8 +92,8 @@ namespace Game5
         {
             _audioClip.SetData(
                 GenerateAudio(
-                    BitsPerSecond * 9 / 10,
-                    BitsPerSecond / 5,
+                    Manager.ClipLength,
+                    Manager.FalloffLength,
                     frequency,
                     wave
                 ),
@@ -113,7 +113,7 @@ namespace Game5
 
             var data = new float[totalSize];
 
-            var frequency = hz / BitsPerSecond;
+            var frequency = hz / Manager.BitsPerSecond;
 
             for (var i = 0; i < preFalloff; i++)
             {

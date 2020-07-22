@@ -14,11 +14,11 @@ public class FollowPlayer : MonoBehaviour
 
     private void LateUpdate()
     {
-        var pos = transform.position;
-        pos.x = target.transform.position.x + _offset;
+        var mousePos = (Input.mousePosition.x / (float)Screen.width) * 2 - 1;
+        var targetPo9s = transform.position;
+        targetPo9s.x = target.transform.position.x + _offset * mousePos;
 
-        var mousePos = (Input.mousePosition.x /(float) Screen.width) * 2 - 1;
 
-        transform.position = pos;
+        transform.position = targetPo9s;
     }
 }

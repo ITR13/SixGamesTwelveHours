@@ -134,7 +134,7 @@ namespace Game4
 
         private void UpdateHealthText()
         {
-            text.text = "HEALTH".Remove(_health);
+            text.text = "HEALTH".Substring(0, _health);
         }
     }
 }

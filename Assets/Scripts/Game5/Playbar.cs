@@ -23,10 +23,7 @@ public class Playbar : MonoBehaviour
             var image = buttonImages[i];
 
             button.onClick.AddListener(
-                () =>
-                {
-                    Manager.ResetTo(index)
-                }
+                () =>Manager.ResetTo(index);
             );
             image.color = colors[(int)_buttonStates[index]];
         }
@@ -35,6 +32,8 @@ public class Playbar : MonoBehaviour
     public void Play(int index)
     {
         index %= buttons.Length;
-        buttonImages[prevPlayed].color = Color.white;
+        buttonImages[prevPlayed].color = new Color(0.25f, 025f, 0.25f, 1);
+        buttonImages[index].color = Color.yellow;
+        prevPlayed = index;
     }
 }

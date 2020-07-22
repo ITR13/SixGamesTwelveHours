@@ -27,7 +27,7 @@ namespace Game5
 
         private void Update()
         {
-            _time += Time.deltaTime / BeatsPerSecond;
+            _time += Time.deltaTime * BeatsPerSecond;
             if(_time < _beat) return;
             foreach (var row in _rows)
             {

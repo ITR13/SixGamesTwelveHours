@@ -8,11 +8,14 @@ public class TtsPlayer : MonoBehaviour
     [SerializeField] private new Camera camera;
 
     private Vector3 movementDir;
+    private Vector3 shootDir;
 
     private void Update()
     {
         var worldPoint = camera.ScreenToWorldPoint(Input.mousePosition);
         movementDir = transform.position - worldPoint;
+
+
     }
 
     private void FixedUpdate()

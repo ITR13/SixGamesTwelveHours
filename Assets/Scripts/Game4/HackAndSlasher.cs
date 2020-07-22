@@ -88,6 +88,7 @@ namespace Game4
 
         public void HurtMe()
         {
+            if(_invulnerable > 0) return;
             var dir = -Mathf.Sign(rigidBody.velocity.x);
             _invulnerable = 2.7f;
             rigidBody.AddForce(

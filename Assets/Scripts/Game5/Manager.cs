@@ -25,16 +25,11 @@ namespace Game5
         private float _time;
         private int _beat;
 
-        private void Awake()
-        {
-            _rows = new Row[notes.Count];
-        }
-
         private void Update()
         {
             _time += Time.deltaTime / BeatsPerSecond;
             if(_time < _beat) return;
-            foreach (var row in rows)
+            foreach (var row in _rows)
             {
                 row.Play(_beat);
             }
@@ -44,13 +39,13 @@ namespace Game5
 
         private void Reset()
         {
+            _rows = new Row[notes.Count];
             var parent = transform.GetChild(0);
 
-            while (parent.childCount > 0)
+            for (var i = parent.childCount - 1; i > 0; i--)
             {
-
+                Destroy(parent.GetChild(i).gameObject);
             }
-
 
             for (var i = 0; i < _rows.Length; i++)
             {

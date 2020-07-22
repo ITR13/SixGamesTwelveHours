@@ -53,5 +53,11 @@ namespace Game5
                 _rows[i].Set(notes[i].Key, notes[i].Value);
             }
         }
+
+        [Serializable]
+        private struct MyStruct
+        {
+            
+        }
     }
 }

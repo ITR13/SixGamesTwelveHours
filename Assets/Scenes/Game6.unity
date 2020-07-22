@@ -936,6 +936,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DeathWall
       objectReference: {fileID: 0}
+    - target: {fileID: 688100498975640397, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 688100498975640398, guid: c7d8eda027839ec45be9844da0faa2aa, type: 3}
       propertyPath: m_Size.x
       value: 0.01

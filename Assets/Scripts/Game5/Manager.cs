@@ -55,7 +55,7 @@ namespace Game5
                     .Set(
                         notes[i].noteName,
                         notes[i].frequency,
-                        0.25f - 0.1f * i
+                        0.3f - 0.01f * i
                     );
             }
         }

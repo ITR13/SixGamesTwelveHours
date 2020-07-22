@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 namespace Game4
 {
@@ -106,6 +107,7 @@ namespace Game4
             );
 
             _health--;
+            UpdateHealthText();
         }
 
         private void OnTriggerEnter2D(Collider2D other)
@@ -118,7 +120,12 @@ namespace Game4
 
         public static void IncreaseScore()
         {
-            
+            _score++;
+            if (_score % 5 == 0 && _health < 6)
+            {
+                _health++;
+                UpdateHealthText();
+            }
         }
     }
 }

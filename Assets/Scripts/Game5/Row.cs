@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -34,7 +35,16 @@ namespace Game5
             _buttonStates = new ButtonState[buttons.Length];
         }
 
-        private void PlayBeep()
+        public void Play(int index)
+        {
+            index %= buttons.Length;
+            switch (hideFlags)
+            {
+                
+            }
+        }
+
+        private void PlayBeep(Func<float, float> )
         {
             _audioClip.SetData(
                 GenerateAudio(

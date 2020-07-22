@@ -21,7 +21,7 @@ namespace Game4
         {
             if (_invulnerable > 0) return;
             rigidBody.AddForce(
-                direction.normalized * 8,
+                direction.normalized * 8 + Vector3.up * 2,
                 ForceMode2D.Impulse
             );
             health -= 1;

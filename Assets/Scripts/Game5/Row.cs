@@ -23,6 +23,14 @@ namespace Game5
         [SerializeField] private Image[] buttonImages;
         [SerializeField] private float frequency;
 
+        private readonly Color[] colors = new[]
+        {
+            Color.gray,
+            Color.red,
+            Color.blue, 
+            Color.green,
+        };
+
         private AudioClip _audioClip;
         private ButtonState[] _buttonStates;
 
@@ -42,7 +50,6 @@ namespace Game5
             {
                 var button = buttons[i];
                 var image = buttonImages[i];
-
             }
         }
 

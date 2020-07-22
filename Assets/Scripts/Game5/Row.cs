@@ -1,4 +1,5 @@
 using System;
+using System.Globalization;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -27,7 +28,7 @@ namespace Game5
         private void Awake()
         {
             _audioClip = AudioClip.Create(
-                frequency.ToString(),
+                frequency.ToString(CultureInfo.InvariantCulture),
                 Bps * 9 / 10,
                 1,
                 Bps,
@@ -44,10 +45,10 @@ namespace Game5
                 case ButtonState.Off:
                     break;
                 case ButtonState.Sine:
-                    PlayBeep(Mathf.Sin);
+                    PlayBeep(t => Mathf.Sin(t * Mathf.PI * 2));
                     break;
                 case ButtonState.SawTooth:
-                    PlayBeep(Mathf.Repeat());
+                    PlayBeep(t => Mathf.Repeat(t, 1));
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -83,7 +84,7 @@ namespace Game5
 
             for (var i = 0; i < preFalloff; i++)
             {
-                var t = 2f * i * Mathf.PI * frequency;
+                var t = 2f * i * frequency;
                 var h = wave(t);
                 data[i] = h;
             }

@@ -5,14 +5,17 @@ using UnityEngine.UIElements;
 
 public class Row : MonoBehaviour
 {
-    private AudioSource audioSource;
-    private Button[] buttons;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private Button[] buttons;
+    [SerializeField] private float frequency;
 
+    private void Awake()
+    {
+
+    }
 
     private void PlayBeep()
     {
-        var length = Mathf.FloorToInt(Mathf.Lerp(0.3f, 0.75f, TotalError) * Bps);
-        var frequency = 440 * Mathf.Pow(2, -TotalError * TotalError * 4f);
         var clip = AudioClip.Create("beep", length, 1, Bps, false);
         clip.SetData(
             GenerateAudio(

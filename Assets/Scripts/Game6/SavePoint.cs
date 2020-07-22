@@ -28,7 +28,7 @@ namespace Game6
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (CurrentSavePoint == null)
+            if (CurrentSavePoint != null)
             {
                 CurrentSavePoint.spriteRenderer.color = OffColor;
             }

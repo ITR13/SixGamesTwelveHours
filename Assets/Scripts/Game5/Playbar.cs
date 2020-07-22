@@ -10,12 +10,10 @@ public class Playbar : MonoBehaviour
     [SerializeField] private Button[] buttons;
     [SerializeField] private Image[] buttonImages;
 
-    private int prevPlayed = 0;
-
+    private int _prevPlayed = 0;
 
     private void Start()
     {
-
         for (var i = 0; i < buttons.Length; i++)
         {
             var index = i;
@@ -23,17 +21,21 @@ public class Playbar : MonoBehaviour
             var image = buttonImages[i];
 
             button.onClick.AddListener(
-                () =>Manager.ResetTo(index);
+                () =>
+                {
+                    Manager.ResetTo(index);
+                    buttonImages[_prevPlayed].color = new Color(0.25f, 025f, 0.25f, 1);
+                }
             );
-            image.color = colors[(int)_buttonStates[index]];
+            image.color = new Color(0.25f, 025f, 0.25f, 1);
         }
     }
 
     public void Play(int index)
     {
         index %= buttons.Length;
-        buttonImages[prevPlayed].color = new Color(0.25f, 025f, 0.25f, 1);
+        buttonImages[_prevPlayed].color = new Color(0.25f, 025f, 0.25f, 1);
         buttonImages[index].color = Color.yellow;
-        prevPlayed = index;
+        _prevPlayed = index;
     }
 }

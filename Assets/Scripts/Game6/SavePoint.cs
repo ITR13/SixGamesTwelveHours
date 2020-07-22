@@ -17,6 +17,7 @@ namespace Game6
             0
         );
 
+        public static SavePoint CurrentSavePoint { get; private set; }
 
         [SerializeField] private SpriteRenderer spriteRenderer;
 
@@ -25,6 +26,10 @@ namespace Game6
             spriteRenderer.color = OffColor;
         }
 
-        private void 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (!other.gameObject.CompareTag("Player")) return;
+
+        }
     }
 }

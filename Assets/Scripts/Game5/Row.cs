@@ -50,6 +50,8 @@ namespace Game5
                 case ButtonState.SawTooth:
                     PlayBeep(t => Mathf.Repeat(t, 1));
                     break;
+                case ButtonState.Triangle:
+                    PlayBeep(t => Mathf.PingPong(t * 2, 1));
                 default:
                     throw new ArgumentOutOfRangeException();
             }
@@ -84,14 +86,14 @@ namespace Game5
 
             for (var i = 0; i < preFalloff; i++)
             {
-                var t = 2f * i * frequency;
+                var t = i * frequency;
                 var h = wave(t);
                 data[i] = h;
             }
 
             for (var i = 0; i < falloffSize; i++)
             {
-                var t = 2f * (i + preFalloff) * Mathf.PI * frequency;
+                var t = (i + preFalloff) * frequency;
                 var h = wave(t);
                 var scale = 1 - i / (float) falloffSize;
                 data[i + preFalloff] = h * scale;

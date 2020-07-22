@@ -8,6 +8,7 @@ public class TtsPlayer : MonoBehaviour
     private const float ShootInterval = 0.4f;
 
     [SerializeField] private new Camera camera;
+    [SerializeField] private Transform visuals;
     [SerializeField] private BulletScript bulletPrefab;
 
     private Vector3 movementDir;
@@ -28,7 +29,7 @@ public class TtsPlayer : MonoBehaviour
 
         if (shootDir.sqrMagnitude > 0.1f)
         {
-            transform.up = shootDir;
+            visuals.transform.up = shootDir;
         }
     }
 

@@ -48,5 +48,6 @@ public class TtsPlayer : MonoBehaviour
     {
         var bullet = Instantiate(bullet);
         bullet.transform.up = direction;
+        bullet.transform.position = transform.position + direction / 2;
     }
 }

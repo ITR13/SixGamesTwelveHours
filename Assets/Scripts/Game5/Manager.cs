@@ -61,7 +61,6 @@ namespace Game5
             }
 
             {
-                var playBar = 
             }
         }
 

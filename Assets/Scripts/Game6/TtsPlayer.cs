@@ -68,5 +68,10 @@ namespace Game6
             bullet.transform.up = direction;
             bullet.transform.position = transform.position + direction / 2;
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            
+        }
     }
 }

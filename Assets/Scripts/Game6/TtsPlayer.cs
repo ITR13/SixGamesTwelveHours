@@ -72,6 +72,7 @@ namespace Game6
 
         private void OnCollisionEnter2D(Collision2D other)
         {
+            Debug.Log(other.gameObject.layer);
             if (other.gameObject.layer != LayerMask.NameToLayer("Hurt")) return;
             transform.position =
                 SavePoint.CurrentSavePoint == null

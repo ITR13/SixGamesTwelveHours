@@ -88,7 +88,7 @@ namespace Game4
 
         public void HurtMe()
         {
-            if(_invulnerable > 0) return;
+            if (_invulnerable > 0) return;
             var dir = -Mathf.Sign(rigidBody.velocity.x);
             _invulnerable = 2.7f;
             rigidBody.AddForce(
@@ -100,7 +100,8 @@ namespace Game4
         private void OnTriggerEnter2D(Collider2D other)
         {
             var hasEnemy = other.GetComponent<HasEnemy>();
-            if(hasEnemy==null) return;
+            Debug.Log("Has enemy?: " + hasEnemy);
+            if (hasEnemy == null) return;
             hasEnemy.HurtMe(hasEnemy.transform.position - transform.position);
         }
     }

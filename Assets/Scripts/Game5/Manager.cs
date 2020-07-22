@@ -23,8 +23,8 @@ namespace Game5
 
         private Row[] _rows;
 
-        private float _time = -3f;
-        private int _beat;
+        private static float _time = -3f;
+        private static int _beat;
 
         private void Update()
         {
@@ -79,6 +79,11 @@ namespace Game5
         private void OnApplicationQuit()
         {
             PlayerPrefs.Save();
+        }
+
+        public static void ResetTo(int index)
+        {
+            
         }
     }
 }

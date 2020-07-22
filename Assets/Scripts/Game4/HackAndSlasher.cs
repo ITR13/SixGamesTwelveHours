@@ -90,7 +90,10 @@ namespace Game4
             if (!other.gameObject.CompareTag("Enemy")) return;
             var dir = -Mathf.Sign(rigidBody.velocity.x);
             _invulnerable = 2.7f;
-            rigidBody.AddForce();
+            rigidBody.AddForce(
+                new Vector2(dir * 8, 0), 
+                ForceMode2D.Impulse
+            );
         }
     }
 }

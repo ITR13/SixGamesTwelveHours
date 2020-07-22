@@ -19,6 +19,7 @@ namespace Game4
         private float horizontal;
         private float jumpIfGrounded;
         private bool grounded;
+        private float _invulnerable;
 
         private void Update()
         {
@@ -66,7 +67,18 @@ namespace Game4
 
         private void OnCollisionEnter2D(Collision2D other)
         {
-            if (other.gameObject.CompareTag("Ground")) grounded = true;
+            if (other.gameObject.CompareTag("Ground"))
+            {
+                grounded = true;
+                return;
+            }
+
+            if (_invulnerable > 0) return;
+
+            if (other.gameObject.CompareTag("Enemy"))
+            {
+                var dir = rigidBody.velocity.x;
+            }
         }
     }
 }

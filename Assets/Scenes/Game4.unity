@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &612052 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4470057369692207460, guid: 31519799d5a1ee447b34d629e601302f, type: 3}
+  m_PrefabInstance: {fileID: 1816037608}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &31422396
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -857,6 +862,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698e392708f8ab44798660b9498f56f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 991857801}
+  menu: {fileID: 612052}
 --- !u!1 &930849835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1146,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1051834536}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -1353,8 +1360,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1816037609}
   - {fileID: 991857800}
+  - {fileID: 1816037609}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

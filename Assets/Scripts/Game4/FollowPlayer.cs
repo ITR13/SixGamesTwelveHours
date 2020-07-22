@@ -17,12 +17,6 @@ public class FollowPlayer : MonoBehaviour
         var mousePos = (Input.mousePosition.x / (float)Screen.width) * 2 - 1;
         var targetPos = transform.position;
         targetPos.x = target.transform.position.x + _offset * mousePos;
-
-
-        transform.position = Vector3.MoveTowards(
-            transform.position,
-            targetPos,
-            Time.deltaTime * 20
-        );
+        transform.position = targetPos;
     }
 }

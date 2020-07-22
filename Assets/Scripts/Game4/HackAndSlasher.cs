@@ -99,7 +99,7 @@ namespace Game4
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            throw new System.NotImplementedException();
+            if(!other.gameObject.tag)
         }
     }
 }

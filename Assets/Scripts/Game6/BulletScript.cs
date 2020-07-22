@@ -4,6 +4,8 @@ namespace Game6
 {
     public class BulletScript : MonoBehaviour
     {
+        [SerializeField] private new Rigidbody2D rigidbody;
+
         private void Awake()
         {
             Destroy(gameObject, 20f);
@@ -11,7 +13,7 @@ namespace Game6
 
         private void FixedUpdate()
         {
-            transform.Translate(Vector3.up * Time.fixedDeltaTime * 25);
+            rigidbody.velocity = transform.up * 25;
         }
     }
 }

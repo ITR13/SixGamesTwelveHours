@@ -7,15 +7,12 @@ namespace Game5
 {
     public class Row : MonoBehaviour
     {
-        private const int BitsPerSecond = 44100;
-
         private enum ButtonState
         {
             Off,
             Sine,
             SawTooth,
             Triangle,
-
 
             MAX,
         }

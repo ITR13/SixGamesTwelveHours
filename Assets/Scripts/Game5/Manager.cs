@@ -8,7 +8,11 @@ namespace Game5
         public const float BeatsPerSecond = 2;
 
         public readonly int ClipLength = Mathf.FloorToInt(
-            44100 / BeatsPerSecond
+            44100 * 0.95f / BeatsPerSecond
+        );
+
+        public readonly int FalloffLength = Mathf.FloorToInt(
+            44100 * 0.1f / BeatsPerSecond
         );
         
 

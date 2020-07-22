@@ -66,7 +66,7 @@ namespace Game4
             );
 
             rigidBody.AddForce(
-                new Vector2(dir * 8, 3),
+                new Vector2(dir * 8, 7),
                 ForceMode2D.Impulse
             );
         }

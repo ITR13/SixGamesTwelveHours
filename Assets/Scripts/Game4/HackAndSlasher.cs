@@ -88,7 +88,6 @@ namespace Game4
 
         public void HurtMe()
         {
-            if (!other.gameObject.CompareTag("Enemy")) return;
             var dir = -Mathf.Sign(rigidBody.velocity.x);
             _invulnerable = 2.7f;
             rigidBody.AddForce(

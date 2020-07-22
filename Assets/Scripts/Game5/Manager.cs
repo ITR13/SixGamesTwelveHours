@@ -59,6 +59,10 @@ namespace Game5
                         0.27f - 0.01f * i
                     );
             }
+
+            {
+                var playBar = 
+            }
         }
 
         [Serializable]

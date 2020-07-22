@@ -6,7 +6,9 @@ namespace Game4
     {
         private void OnTriggerEnter2D(Collider2D other)
         {
-            throw new System.NotImplementedException();
+            var player = other.gameObject.GetComponent<HackAndSlasher>();
+            if (player == null) return;
+            player.HurtMe();
         }
     }
 }
